@@ -1,20 +1,140 @@
-{% load static %}
+<!--{% load static %}-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    {% block css %}
+    <link rel="stylesheet" href="../static/css/base.css">
+    <!--{% block css %}
 
     {% endblock %}
     {% block js %}
 
-    {% endblock %}
+    {% endblock %} -->
     <title>Title</title>
 </head>
 <body>
-    {% block content %}
+    <header>
+        <div id="appMountPoint">
+            <div class="our-story-header-wrapper">
+                <div class="our-story-header">
+                    <span class="our-story-logo">
+                        <img class="logo-netflix-txt" src="https://i.ibb.co/r5krrdz/logo.png" alt ="logo_text">
+                    </span>
+                    <div class="selection-container">
+                        <div class="ui-select-wrapper">
+                            <div class="select-arrow">
+                                <select class="ui-select">
+                                    <option selected lang="ko" value="/kr/">한국어</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/login" class="auth-links">로그인</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    {% endblock %}
+    <!--{% block content %}
+
+    {% endblock %}-->
+
+    <div class="footer">
+        <div class="footer_container">
+
+            <p class="footer_question">질문이 있으신가요?</p>
+            <ul class="footer_links">
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">자주 묻는 질문</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">고객 센터</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">계정</span></a>
+                </li>
+                <li class="footer_item">
+                <a href="#"><span class="footer_label">미디어 센터</span></a>
+                </li>
+            </ul>
+            <ul class="footer_links">
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">투자 정보(IR)</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">입사 정보</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">넷플릭스 지원 디바이스</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">이용 약관</span></a>
+                </li>
+                </a>
+            </ul>
+            <ul class="footer_links">
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">개인정보</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">쿠키 설정</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">회사 정보</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">문의하기</span></a>
+                </li>
+            </ul>
+            <ul class="footer_links">
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">속도 테스트</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">법적 고지</span></a>
+                </li>
+                <li class="footer_item">
+                    <a href="#"><span class="footer_label">오직 넷플릭스에서</span></a>
+                </li>
+            </ul>
+            <div class="lang-selection-container" id="lang-switcher">
+                <div data-uia="language-picker+container" class="ui-select-wrapper">
+                    <label for="lang-switcher-select" class="ui-label">
+              <span class="ui-label-text">
+                언어 선택
+              </span>
+                        <p></p>
+                    </label>
+                    <div class="select-arrow medium prefix globe">
+
+                        <select data-uia="language-picker" class="ui-select medium" id="lang-switcher-select"
+                                tabindex="0" placeholder="lang-switcher">
+                            <option selected="" lang="ko" value="/kr/" data-language="ko" data-country="KR">
+                                한국어
+                            </option>
+                            <option lang="en" value="/kr-en/" data-language="en" data-country="KR">
+                                English
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <p class="footer_nbk">넷플릭스 내일배움캠프</p>
+            <div class="copy_text">
+                <div class="copy-text-block">넷플릭스 클론 코딩 팀스파르타(주) 통신판매업신고번호: 2020-서울강남-02300 전화번호: 080-001-9587</div>
+                <div class="copy-text-block">대표: 이 범 규</div>
+                <div class="copy-text-block">이메일 주소: 17team3!4!@netflix.com</div>
+                <div class="copy-text-block">주소: 서울특별시 강남구 논현로 425, 501호</div>
+                <div class="copy-text-block">사업자등록번호: 783-86-01715</div>
+                <div class="copy-text-block">클라우드 호스팅: Amazon Web Services Inc.</div>
+                <div id="" class="copy-text-block" data-uia=""><a
+                        href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2018300016930200431&amp;pageUnit=10&amp;searchCnd=bup_nm&amp;searchKrwd=%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4&amp;pageIndex=1">공정거래위원회
+                    웹사이트</a></div>
+            </div>
+
+        </div>
+    </div>
+    </div>
 </body>
 </html>
