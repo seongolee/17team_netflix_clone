@@ -1,0 +1,203 @@
+@media only screen and (min-width: 950px) and (max-width: 1449px),
+    only screen and (min-width: 1450px) {
+    .our-story-card {
+        padding: 70px 45px;
+    }
+
+    .email-form {
+        max-width: 950px;
+        padding-top: 0.85rem;
+    }
+
+    .email-form-lockup .simpleForm {
+        vertical-align: top;
+        flex: 1 0 auto;
+        text-align: right;
+    }
+
+    .email-form-lockup {
+        display: flex;
+        margin: 0 auto;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .email-form-lockup .nf-input input {
+        min-width: 450px;
+        height: 52px;
+    }
+    .nmhp-cta-extra-large {
+        font-size: 1.625rem !important;
+        min-height: 63px !important;
+    }
+}
+
+
+ul{
+    display: block;
+    list-style-type: disc;
+}
+
+img {
+    max-width: 100%;
+    border: 0;
+}
+.our-story-cards {
+    margin: 0 auto;
+}
+
+.our-story-card {
+    position: relative;
+    border-bottom: 8px solid #222;
+    margin-bottom: 0;
+    background: 0 0;
+    color: #fff;
+    padding: 50px 5%;
+}
+
+.our-story-card-background {
+    position: absolute;
+    top: -70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.our-story-card-background .concord-img-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.concord-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+}
+
+.our-story-card-text {
+    position: relative;
+    width: 100%;
+    padding: 75px 0;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.our-story-card-text h1, h2 {
+    max-width: 640px;
+    margin: 0 auto;
+    font-weight: 400
+}
+
+.our-story-card-title {
+    font-size: 1.75rem;
+}
+
+.our-story-card-subtitle {
+    font-size: 1.125rem;
+    margin: 1rem auto;
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+.email-form-title {
+    padding: 0 5%;
+    max-width: 450px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.email-form-lockup {
+    text-align: center;
+}
+
+ul.simple-form {
+    padding: 0;
+}
+
+.nf-form-space {
+    margin-bottom: 10px;
+}
+
+ul.simple-form > li {
+    list-style: none;
+    margin-left: 0;
+}
+
+.email-form-lockup .nf-input {
+    margin: 10px auto;
+    max-width: 500px;
+    position: relative;
+}
+
+.nf-input .nf-input-placement {
+    position: relative;
+}
+
+.nf-input .nf-text-field {
+    height: 40px;
+    padding: 10px 0 0 10px;
+    width: auto;
+    border-radius: 2px;
+    display: block;
+    border: 1px solid lightgray;
+}
+
+.nf-input .place-label {
+    position: absolute;
+    top: 33%;
+    left: 10px;
+    color: #8c8c8c;
+    cursor: text;
+    transition: font .1s ease,top .1s ease,transform .1s ease;
+}
+
+.nf-text-field:focus +.place-label {
+    top: 7px;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.our-story-card-text .our-story-cta-container {
+    float: none;
+}
+
+.nmhp-cta-extra-large {
+    font-size: 1rem;
+    min-height: 40px;
+    position: relative;
+    min-width: 74px;
+    background-color: #e50914;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #e50914, #db0510);
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    border: 0;
+}
+
+.nmhp-cta {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    margin: 0.25em auto;
+    padding: 0 1em;
+}
+
+.nmhp-cta .cta-btn-txt {
+    padding: 0.35rem 0;
+    flex: 1 1 auto;
+    text-align: center;
+}
