@@ -1,9 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>find_page</title>
-</head>
-<body>
-</body>
-</html>
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/find_pw/find_pw_page.css' %}">
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/find_pw/find_pw.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="total-find-container">
+        <div class="find-container">
+            <span class="find_id_pw_text">이메일/비밀번호를 <br> 잊으셨나요?</span>
+            <p></p>
+            <span class="choose-notice">비밀번호 재설정 안내를 받을 방법을 선택하세요.</span>
+            <div class="choose-box">
+                <div class="email-radio">
+                    <input type="radio" name="choice" id="choose_email" value="email" class="choose" checked
+                           onchange="which_show()">
+                    <label for="choose_email">이메일 주소</label>
+                </div>
+                <div class="msg-radio">
+                    <input type="radio" name="choice" id="choose_msg" value="msg" class="choose"
+                           onchange="which_show()">
+                    <label for="choose_msg">문자 메시지(SMS)</label>
+                </div>
+
+            </div>
+            <div class="choose-email-result" id="email_result">
+                <label for="send-email">비밀번호 재설정 안내 이메일을 보내드리겠습니다.</label>
+                <input type="text" class="email-input" id="send-email" name="send-email" placeholder="name@example.com">
+            </div>
+            <div class="choose-msg-result" id="msg_result">
+                <label for="send-msg">비밀번호 재설정 인증 코드를 문자로 <br> 보내드리겠습니다. 문자 또는 데이터 요금이 부과될 수 있습니다.</label>
+                <input type="text" class="msg-input" id="send-msg" name="send-msg">
+            </div>
+            <button class="send-btn" type="submit" id="send-btn">이메일로 받기</button>
+        </div>
+        <p></p>
+        <span class="google-check">이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 <br> 로봇이  아님을 확인합니다. <span class="detail"
+                                                                                                   id="detail"
+                                                                                                   onclick="show_detail()">자세히 알아보기</span></span>
+        <p></p>
+        <div class="google-sec" id="google-sec">
+            <span>Google reCAPTCHA가 수집하는 정보에는 Google <br>
+                <a href="https://policies.google.com/privacy"><span class="link">개인정보처리방침</span></a>과 <a
+                        href="https://policies.google.com/terms"><span class="link">서비스 약관</span></a>이 적용되며, 해당 정보는 reCAPTCHA 서비스 제공, 관리 및 개선과 일반적인 보안 유지에 <br>
+                사용됩니다(Google의 개인 맞춤 광고에 사용 안 함).</span>
+        </div>
+
+
+    </div>
+{% endblock %}
+
+
+
+

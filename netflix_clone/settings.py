@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'sign_up',
+    'find_user',
 ]
 
 MIDDLEWARE = [
