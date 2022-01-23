@@ -1,17 +1,16 @@
 body{
-    background-size: cover;
+    background-size: 140%;
+    overflow-x: hidden;
     display: block;
     height: 100%;
-    min-height: 100vh;
-    overflow: hidden;
     width: 100%;
     z-index: -1;
     background-image: url(https://assets.nflxext.com/ffe/siteui/acquisition/login/login-the-crown_2-1500x1000.jpg);
 }
 .total-find-container {
-    padding: 0 5%;
     margin: 0 auto;
     width: 630px;
+    padding-bottom: 50px;
 
 }
 
@@ -23,7 +22,7 @@ body{
     flex-direction: column;
     margin-top: 100px;
     color: #333;
-    padding: 45px;
+    padding: 50px;
     background-color: #f3f3f3;
 
 }
@@ -33,5 +32,94 @@ body{
 }
 
 .choose-notice {
-    font-size: 20px;
+    font-size: 21px;
+}
+.choose-box {
+    padding: 24px;
+    font-size: 21px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+
+}
+.choose {
+    margin-bottom: 5px;
+    width: 35px;
+    height: 35px;
+    vertical-align: middle;
+}
+
+.choose-email-result {
+    width: 90%;
+    height: 105px;
+    font-size: 21px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.choose-email-result input{
+    outline: #B3B3B3;
+    font-size: 22px;
+    width: 100%;
+    height: 50px;
+    padding-left: 20px;
+}
+
+.choose-msg-result {
+    width: 95%;
+    height: 170px;
+    font-size: 21px;
+    display:none;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.choose-msg-result input{
+    outline: #B3B3B3;
+    font-size: 22px;
+    width: 95%;
+    height: 50px;
+    padding-left: 20px;
+}
+
+.send-btn {
+    margin-top: 48px;
+    background-color: #017AF3;
+    width: 95%;
+    height: 65px;
+    outline: 0;
+    border: none;
+    color: white;
+    font-size: 25px;
+}
+.send-btn:hover {
+    background-color: dodgerblue;
+}
+
+.google-check {
+    color: #999;
+    font-size: 21px;
+}
+
+.detail {
+    text-decoration: underline;
+    color: #999;
+    font-size: 21px;
+}
+
+.google-sec {
+    display: none;
+    margin-top: 10px;
+    color: #999;
+    font-size: 21px;
+}
+.link {
+    text-decoration: underline;
+    color: #999;
+    font-size: 21px;
+    text-decoration-color: #999 !important;
 }
