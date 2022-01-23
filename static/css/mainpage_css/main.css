@@ -1,0 +1,558 @@
+/*header, footer*/
+body {
+    min-width: 320px;
+    margin: 0;
+    background-color: black;
+}
+
+
+.our-story-header-wrapper {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.our-story-header-wrapper .our-story-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 0.5rem;
+    height: auto;
+    position: relative;
+    margin: 0 3.5rem;
+}
+
+
+.our-story-header-wrapper .our-story-header .our-story-logo {
+    margin-right: auto;
+}
+
+
+.our-story-header-wrapper .our-story-header .our-story-logo .logo-netflix-txt {
+    width: 8.375rem;
+    height: 2.25rem;
+    padding-top: 0;
+}
+
+
+.selection-container {
+    display: inline-block;
+    margin: 0 0.75rem;
+}
+
+
+/*언어선택 공통부분*/
+.ui-select-wrapper .select-arrow {
+    position: relative;
+    width: 100%;
+}
+
+.ui-select-wrapper .select-arrow::before {
+    font-size: .75rem;
+    left: 0.5rem;
+    color: #fff;
+    top: 17%;
+    content: '🇰🇷';
+    position: absolute;
+}
+
+.ui-select-wrapper .ui-select {
+    padding: 0.4rem 1.375rem;
+    background: rgba(0,0,0,.4);
+    border: 1px solid #aaa;
+    color: #757575;
+    border-radius: 2px;
+    align-items: center;
+    display: inline-block;
+}
+
+
+
+.our-story-header-wrapper .auth-links {
+    background-color: #e50914;
+    padding: 7px 17px;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.footer{
+    width: 100%;
+    -webkit-text-size-adjust: 100%;         /*webkit 부분은 크롬버전일때 글자크기가 같게 모든디바이스에도 적용 (글자 깨지는 현상 방지)*/
+    -webkit-font-smoothing: antialiased;    /*폰트가 렌더링 될 때 부드럽게*/
+    word-break: keep-all;                   /* 화면 줄어들었을때 글씨 줄바꿈하기(단어 안끊기게)*/
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #757575;
+    padding: 100px 100px 30px 100px;             /* 화면 줄어들었을 때에도 좌우 여백 남게*/
+    position: relative;
+    bottom: 0;
+
+}
+
+
+
+
+.footer_question {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+
+/* 자주묻는 질문들 등 목차 링크 리스트들 */
+.footer_links {
+    list-style: none;
+    font-size: 17px;
+    padding: 0;                     /*왼쪽으로 붙어서 정렬시키게*/
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.footer_label {
+    width: 200px;
+    color: #757575;                /* 링크색깔 회색으로 맞추기 */
+    margin-bottom: 2px;            /*라인별 줄간격*/
+    display: inline-block;         /* li 엘리먼트들을 한줄에 정확히 나란히 정렬하게*/
+    min-width: 165px;
+}
+
+/* 언어선택 푸터부분 */
+ .lang-selection-container{
+    font-size: 1.2em;
+    margin-top: 30px;
+ }
+
+ /*select 부분 크기, 글자 위치*/
+ .lang-selection-container .ui-select-wrapper .ui-select {
+    padding: 0.4rem 2.2rem;
+     width: 165px;
+     height: 60px;
+     font-size: 1.2em;
+}
+/* kr 위치& 크기 */
+ .lang-selection-container .ui-select-wrapper .select-arrow::before {
+    font-size: 1rem;
+    left: 1rem;
+    top: 30%;
+    content: '🇰🇷';
+}
+
+ /* 선택창 색깔 */
+ .ui-select-wrapper .ui-select option {
+     background-color: black;
+ }
+
+/* 넷플릭스 내일배움캠프 글자 */
+.footer_nbk {
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+@media (max-width:768px) {
+    .footer_question {
+        width: auto;
+        font-size: 1em;
+    }
+    .footer_label {
+        width: auto;
+        font-size: 8px;
+    }
+    .lang-selection-container {
+        font-size: .75em;
+    }
+}
+
+/*하단 넷플릭스 내일배움캠프 밑부분*/
+.copy_text {
+    font-size: .8em;
+    line-height: 1.5em;
+    color: #757575;
+}
+
+/*여기까지 base.html css*/
+
+
+/*header*/
+.main {
+    position: relative;
+    margin-top: 60px;
+    width: 100%;
+    padding: 40px 2.5vw;
+    color: #fff;
+}
+
+.heading {
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 50px;
+}
+
+.first_btn {
+    width: 8.375rem;
+    height: 2.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10%;
+    border: none;
+}
+
+.first_btn:hover {
+    transform: scale(1.5);
+    transition: transform 1s;
+    filter: brightness(70%);
+}
+
+
+.second_btn {
+    width: 10.375rem;
+    height: 2.75rem;
+    background-color: gray;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10%;
+    border: none;
+}
+
+.second_btn:hover {
+    transform: scale(1.5);
+    transition: transform 1s;
+    filter: brightness(70%);
+}
+
+.info {
+    width: 50%;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/*card sheet*/
+.movie-list {
+    width: 100%;
+    height: 250px;
+    margin-top: 40px;
+    position: relative;
+}
+
+.movie-category {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.movie-container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.movie-container::-webkit-scrollbar {
+    display: none;
+}
+
+.movie {
+    flex: 0 0 auto;
+    width: 18%;
+    height: 200px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+    /*-ms-overflow-style: none;*/
+    /*-webkit-overflow-scrolling: touch;*/
+}
+
+.movie_detail:hover {
+    transform: scale(1.5);
+    transition: transform 1s;
+    filter: brightness(70%);
+    color: white;
+}
+
+.movie img {
+    width: 90%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.movie p {
+    text-transform: capitalize;
+    height: 20px;
+    overflow: hidden;
+}
+
+.pre-btn,
+.nxt-btn {
+    position: absolute;
+    height: 160px;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 2.5vw;
+    background: #181818;
+    border: none;
+    outline: none;
+    opacity: 0;
+}
+
+.pre-btn {
+    left: -2.5vw;
+}
+
+.nxt-btn {
+    right: -2.5vw;
+}
+
+.pre-btn img,
+.nxt-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.nxt-btn:hover,
+.pre-btn:hover {
+    opacity: 1;
+}
+
+/*movies*/
+.movie-info {
+    width: 100%;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.movie-detail {
+    width: 50%;
+    height: 100%;
+    background: rgb(24, 24, 24);
+    background: linear-gradient(90deg, rgba(24, 24, 24, 1), rgba(24, 24, 24, 0) 100%);
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+}
+
+.movie-name {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.genres {
+    opacity: 0.6;
+    margin: 30px 0;
+}
+
+.des {
+    width: 70%;
+    line-height: 20px;
+    margin-bottom: 30px;
+}
+
+.starring span {
+    opacity: 0.6;
+}
+
+/*!*iframe*!*/
+/*.trailer-container,*/
+/*.recommendations {*/
+/*    color: #fff;*/
+/*    padding: 5vw 5vw 0;*/
+/*}*/
+
+/*.heading {*/
+/*    font-size: 30px;*/
+/*    font-weight: 300;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*iframe {*/
+/*    width: 400px;*/
+/*    height: 200px;*/
+/*}*/
+
+/*!*추천 동영상*!*/
+/*.recommendations-container {*/
+/*    width: 100%;*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*}*/
+
+/*.movie p {*/
+/*    position: absolute;*/
+/*    bottom: 30px;*/
+/*    width: 100%;*/
+/*    height: 30px;*/
+/*    line-height: 30px;*/
+/*    background: rgba(0, 0, 0, 0.5);*/
+/*    text-align: center;*/
+/*    opacity: 0;*/
+/*}*/
+
+/*.movie:hover p {*/
+/*    opacity: 1;*/
+/*}*/
+
+/*tmp*/
+/*@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700);*/
+.snip1273 {
+    font-family: 'Raleway', Arial, sans-serif;
+    position: relative;
+    margin: 10px;
+    min-width: 310px -60px;
+    max-width: 310px;
+    width: 50%;
+    color: #ffffff;
+    text-align: left;
+    background-color: #000000;
+    font-size: 16px;
+}
+
+.snip1273 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+}
+
+.snip1273 img {
+    position: relative;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+.snip1273 figcaption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    padding: 20px 30px;
+}
+
+.snip1273 figcaption:before,
+.snip1273 figcaption:after {
+    width: 1px;
+    height: 0;
+}
+
+.snip1273 figcaption:before {
+    right: 0;
+    top: 0;
+}
+
+.snip1273 figcaption:after {
+    left: 0;
+    bottom: 0;
+}
+
+.snip1273 h3,
+.snip1273 p {
+    line-height: 1.5em;
+}
+
+.snip1273 h3 {
+    margin: 0 0 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.snip1273 p {
+    font-size: 0.8em;
+    font-weight: 500;
+    margin: 0 0 15px;
+}
+
+.snip1273 a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.snip1273:before,
+.snip1273:after,
+.snip1273 figcaption:before,
+.snip1273 figcaption:after {
+    position: absolute;
+    content: '';
+    background-color: #ffffff;
+    z-index: 1;
+    -webkit-transition: all 0.4s ease-in;
+    transition: all 0.4s ease-in;
+    opacity: 0.8;
+}
+
+.snip1273:before,
+.snip1273:after {
+    height: 1px;
+    width: 0%;
+}
+
+.snip1273:before {
+    top: 0;
+    left: 0;
+}
+
+.snip1273:after {
+    bottom: 0;
+    right: 0;
+}
+
+.snip1273:hover img,
+.snip1273.hover img {
+    opacity: 0.4;
+}
+
+.snip1273:hover figcaption,
+.snip1273.hover figcaption {
+    opacity: 1;
+}
+
+.snip1273:hover figcaption:before,
+.snip1273.hover figcaption:before,
+.snip1273:hover figcaption:after,
+.snip1273.hover figcaption:after {
+    height: 100%;
+}
+
+.snip1273:hover:before,
+.snip1273.hover:before,
+.snip1273:hover:after,
+.snip1273.hover:after {
+    width: 100%;
+}
+
+.snip1273:hover:before,
+.snip1273.hover:before,
+.snip1273:hover:after,
+.snip1273.hover:after,
+.snip1273:hover figcaption:before,
+.snip1273.hover figcaption:before,
+.snip1273:hover figcaption:after,
+.snip1273.hover figcaption:after {
+    opacity: 0.1;
+}

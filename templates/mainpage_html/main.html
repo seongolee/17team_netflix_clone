@@ -1,0 +1,1328 @@
+{% load static %}
+
+{# block_list: css, js, content #}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../../17team_netflix_clone/static/css/mainpage_css/main.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% block css %}
+
+    {% endblock %}
+    {% block js %}
+
+    {% endblock %}
+    <title>Netflix Clone</title>
+
+</head>
+<body>
+<div id="appMountPoint">
+    <div class="basicLayout">
+        <div class="our-story-container">
+            <div class="our-story-header-wrapper">
+                <div class="our-story-header">
+
+                <span class="our-story-logo">
+                    <img class="logo-netflix-txt" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo_text">
+                </span>
+
+                    <p class="section" style="color: white; margin-right: 10px; ">홈</p>
+                    <p class="section" style="color: white; margin-right: 10px; ">TV프로그램</p>
+                    <p class="section" style="color: white; margin-right: 10px; ">영화</p>
+                    <p class="section" style="color: white; margin-right: 10px; ">인기 있는 콘텐츠</p>
+
+                    <div class="selection-container">
+                        <div class="ui-select-wrapper">
+                            <div class="select-arrow">
+                                <select class="ui-select">
+                                    <option selected lang="ko" value="/kr/">한국어</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="/login" class="auth-links">로그인</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- main section -->
+        <header class="main">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1 class="heading">movies</h1>
+            <p class="info">Movies / Chaeyoung Hong's passionate and platonic love story in Gather Town
+                BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
+            </p>
+            <button class="first_btn" onclick="">재생</button>
+            <button class="second_btn" onclick="">상세 정보</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">Popular movie</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">시청 중인 콘텐츠</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">한국 영화</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">액션 SF</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">애니메이션</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">호러 & 공포</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">로멘스</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">블록버스타</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">판타지</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+
+            <div class="movie-list">
+
+                <button class="pre-btn"><img src="../../static/img/mainpage_img/arrow-88-64.png" alt=""></button>
+
+                <h1 class="movie-category">코미디</h1>
+
+                <div class="movie-container">
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+
+                    <figure class="snip1273">
+                        <img src="../../static/img/mainpage_img/오징어%20게임.jpg" style="background-size: cover;"
+                             alt="sample72"/>
+                        <figcaption>
+                            <h3>오징어 게임</h3>
+                            <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                            <img src="../../static/img/mainpage_img/play-3-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/plus-5-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-up-64.png"
+                                 style=" width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/thumb-down-64.png"
+                                 style="width: 30px; height: 30px; margin-right: 10px;" onclick="">
+                            <img src="../../static/img/mainpage_img/arrow-206-64.png" style="width: 30px; height: 30px;"
+                                 onclick="" alt="상세정보">
+                            <a href="#"></a>
+                    </figure>
+
+                </div>
+
+                <button class="nxt-btn"><img src="../../static/img/mainpage_img/arrow-30-64.png" alt=""></button>
+
+            </div>
+        </header>
+
+        <!-- movie info -->
+        <div class="movie-info">
+            <div class="movie-detail">
+                <h1 class="movie-name">Movie Name</h1>
+                <p class="genres">장르 ex) Comedy</p>
+                <p class="des">영화 설명 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+                    ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ상세정보 클릭시 보여줄 설명</p>
+                <p class="starring"><span>Starring:</span></p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!--<h1 class="movie-name"></h1>-->
+        <!--<p class="genres"></p>-->
+        <!--<p class="des"></p>-->
+        <!--<p class="starring" style="color: white"><span>Starring:</span></p>-->
+
+        <!--<div class="trailer-container">-->
+        <!--    <h1 class="heading">Video Clip</h1>-->
+        <!--    <iframe src="" title="YouTube video player" frameborder="0"-->
+        <!--            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"-->
+        <!--            allowfullscreen></iframe>-->
+        <!--</div>-->
+
+        <!--<div class="recommendations">-->
+        <!--    <h1 class="heading">More Like This</h1>-->
+        <!--    <div class="recommendations-container">-->
+        <!--        <div class="movie">-->
+        <!--            <img src="img/poster.jpg" alt="">-->
+        <!--            <p class="movie-title">movie name</p>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+        <div class="footer">
+
+            <div class="footer-container">
+                <p class="footer_question">질문이 있으신가요?</p>
+                <ul class="footer_links">
+                    <li>
+                        <a href="#"><span class="footer_label">자주 묻는 질문</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">고객 센터</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">계정</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">미디어 센터</span></a>
+                    </li>
+                </ul>
+                <ul class="footer_links">
+                    <li>
+                        <a href="#"><span class="footer_label">투자 정보(IR)</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">입사 정보</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">넷플릭스 지원 디바이스</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">이용 약관</span></a>
+                    </li>
+                    </a>
+                </ul>
+                <ul class="footer_links">
+                    <li>
+                        <a href="#"><span class="footer_label">개인정보</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">쿠키 설정</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">회사 정보</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">문의하기</span></a>
+                    </li>
+                </ul>
+                <ul class="footer_links">
+                    <li>
+                        <a href="#"><span class="footer_label">속도 테스트</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">법적 고지</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label">오직 넷플릭스에서</span></a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="footer_label"> </span></a>
+                    </li>
+                </ul>
+                <div class="lang-selection-container" id="lang-switcher">
+                    <div data-uia="language-picker+container" class="ui-select-wrapper">
+                        <label for="lang-switcher-select" class="ui-label">
+                              <span class="ui-label-text">
+                                언어 선택
+                              </span>
+                            <p></p>
+                        </label>
+                        <div class="select-arrow medium prefix globe">
+
+                            <select data-uia="language-picker" class="ui-select medium" id="lang-switcher-select"
+                                    tabindex="0" placeholder="lang-switcher">
+                                <option selected="" lang="ko" value="/kr/" data-language="ko" data-country="KR">
+                                    한국어
+                                </option>
+                                <option lang="en" value="/kr-en/" data-language="en" data-country="KR">
+                                    English
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <p class="footer_nbk">넷플릭스 내일배움캠프</p>
+                <div class="copy_text">
+                    <div class="copy-text-block">넷플릭스 클론 코딩 팀스파르타(주) 통신판매업신고번호: 2020-서울강남-02300 전화번호: 080-001-9587
+                    </div>
+                    <div class="copy-text-block">대표: 이 범 규</div>
+                    <div class="copy-text-block">이메일 주소: 17team3!4!@netflix.com</div>
+                    <div class="copy-text-block">주소: 서울특별시 강남구 논현로 425, 501호</div>
+                    <div class="copy-text-block">사업자등록번호: 783-86-01715</div>
+                    <div class="copy-text-block">클라우드 호스팅: Amazon Web Services Inc.</div>
+                    <div id="" class="copy-text-block" data-uia="">
+                        <a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2018300016930200431&amp;pageUnit=10&amp;searchCnd=bup_nm&amp;searchKrwd=%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4&amp;pageIndex=1"><span
+                                class="footer_label">공정거래위원회 웹사이트</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
