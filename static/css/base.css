@@ -1,17 +1,11 @@
 body {
     min-width: 320px;
     margin: 0;
-    font-size: 16px;
+    background-color: black;
 }
 
-#appMountPoint {
-    background-color: #000;
-}
 
-.our-story-container {
-    width: 100%;
-    overflow-x: hidden;
-}
+
 
 .our-story-header-wrapper {
     position: relative;
@@ -23,7 +17,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10;
 }
 
 .our-story-header-wrapper .our-story-header {
@@ -42,26 +35,23 @@ body {
     margin-right: auto;
 }
 
+
 .our-story-header-wrapper .our-story-header .our-story-logo .logo-netflix-txt {
     width: 8.375rem;
     height: 2.25rem;
     padding-top: 0;
 }
 
+
 .selection-container {
     display: inline-block;
     margin: 0 0.75rem;
 }
 
-.selection-container .ui-select-wrapper {
-    width: auto;
-    position: relative;
-    display: inline-block;
-}
 
+/*언어선택 공통부분*/
 .ui-select-wrapper .select-arrow {
     position: relative;
-    display: inline-block;
     width: 100%;
 }
 
@@ -78,12 +68,13 @@ body {
     padding: 0.4rem 1.375rem;
     background: rgba(0,0,0,.4);
     border: 1px solid #aaa;
-    color: #fff;
+    color: #757575;
     border-radius: 2px;
-    width: 100%;
     align-items: center;
     display: inline-block;
 }
+
+
 
 .our-story-header-wrapper .auth-links {
     background-color: #e50914;
@@ -94,138 +85,99 @@ body {
     text-decoration: none;
 }
 
+
 .footer{
-    -webkit-text-size-adjust: 100%;
-    font-size: 16px;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    word-break: keep-all;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;         /*webkit 부분은 크롬버전일때 글자크기가 같게 모든디바이스에도 적용 (글자 깨지는 현상 방지)*/
+    -webkit-font-smoothing: antialiased;    /*폰트가 렌더링 될 때 부드럽게*/
+    word-break: keep-all;                   /* 화면 줄어들었을때 글씨 줄바꿈하기(단어 안끊기게)*/
     font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     max-width: 1000px;
-    margin: 0 auto;
-    margin-bottom: 0;
-    background: 0 0;
+    margin-left: auto;
+    margin-right: auto;
     color: #757575;
-    padding: 70px 45px;
-    border-bottom: none;
-    padding-bottom: 0;
+    padding: 100px 100px 30px 100px;             /* 화면 줄어들었을 때에도 좌우 여백 남게*/
     position: relative;
-    top: 125px;
     bottom: 0;
 
 }
 
-.selection-container {
-  display: inline-block;
-  margin: 0 0.75rem;
-  position: relative;
-  width: auto;
-}
 
-
-
-
-
-.footer_container {
-    font-size: 1em;
-    color: #757575;
-    width: 90%;
-    padding-top: 0;
-    max-width: 70%;
-    margin: 1rem auto;
-    /* overflow: auto; */
-    padding: 0 15px;
-}
 
 
 .footer_question {
-
-    font-size: 1em;
-    color: #757575;
-    padding: 0;
-    margin: 0 0 30px;
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 
 /* 자주묻는 질문들 등 목차 링크 리스트들 */
 .footer_links {
     list-style: none;
-    color: #757575;
-    max-width: 1000px;
-    font-size: 13px;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    font-size: 17px;
+    padding: 0;                     /*왼쪽으로 붙어서 정렬시키게*/
     display: flex;
-  justify-content: space-between;
-}
-
-
-.footer_item {
-  display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	grid-gap: 2rem;
-}
-.footer_item li {
-	line-height: 1.9;
-}
-.footer_item a {
-	color: #999;
-	font-size: 0.9rem;
+    justify-content: space-between;
 }
 
 
 .footer_label {
-
-    color: #757575;
-    font-size: 13px;
-    box-sizing: border-box;
-    padding: 0;
-    margin-bottom: 16px;
-    display: inline-block;
+    width: 200px;
+    color: #757575;                /* 링크색깔 회색으로 맞추기 */
+    margin-bottom: 2px;            /*라인별 줄간격*/
+    display: inline-block;         /* li 엘리먼트들을 한줄에 정확히 나란히 정렬하게*/
     min-width: 165px;
-    width: 25%;
-    padding-right: 12px;
-    vertical-align: top;
-    list-style: none;
-    margin-left: 0;
 }
 
+/* 언어선택 푸터부분 */
  .lang-selection-container{
-   -webkit-text-size-adjust: 100%;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    word-break: keep-all;
-    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-    font-size: 1em;
-    color: #757575;
-    margin-top: 20px;
+    font-size: 1.2em;
+    margin-top: 30px;
  }
 
-.ui-selcet-wrapper {
-
-    font-size: 1em;
-    color: #757575;
-    display: inline-block;
-    position: relative;
-    width: auto;
+ /*select 부분 크기, 글자 위치*/
+ .lang-selection-container .ui-select-wrapper .ui-select {
+    padding: 0.4rem 2.2rem;
+     width: 165px;
+     height: 60px;
+     font-size: 1.2em;
+}
+/* kr 위치& 크기 */
+ .lang-selection-container .ui-select-wrapper .select-arrow::before {
+    font-size: 1rem;
+    left: 1rem;
+    top: 30%;
+    content: '🇰🇷';
 }
 
+ /* 선택창 색깔 */
+ .ui-select-wrapper .ui-select option {
+     background-color: black;
+ }
+
+/* 넷플릭스 내일배움캠프 글자 */
 .footer_nbk {
-      -webkit-text-size-adjust: 100%;
-    direction: ltr;
-    -webkit-font-smoothing: antialiased;
-    word-break: keep-all;
-    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-    color: #757575;
-    font-size: 13px;
-    margin-top: 24px;
+    font-size: 15px;
+    margin-top: 30px;
 }
 
-.copy_text{
-  width: 90%;
-  color: #757575;
-  margin: 20px 0;
-  font-size: .75em;
-  line-height: 1em;
+@media (max-width:768px) {
+    .footer_question {
+        width: auto;
+        font-size: 1em;
+    }
+    .footer_label {
+        width: auto;
+        font-size: 8px;
+    }
+    .lang-selection-container {
+        font-size: .75em;
+    }
+}
+
+/*하단 넷플릭스 내일배움캠프 밑부분*/
+.copy_text {
+    font-size: .8em;
+    line-height: 1.5em;
+    color: #757575;
 }
