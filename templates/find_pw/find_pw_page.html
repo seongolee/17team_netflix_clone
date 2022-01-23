@@ -1,9 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% extends 'base.html' %}
+    {% load static %}
+
+    {% block css %}
+        <link rel="stylesheet" href="{% static 'css/find_pw/find_pw_page.css' %}">
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+
     <meta charset="UTF-8">
-    <title>find_page</title>
+    <link rel="stylesheet" href="../../static/css/find_pw/find_pw_page.css">
+    <title>Title</title>
 </head>
 <body>
+    <div class="total-find-container">
+        <div class="find-container">
+            <span class="find_id_pw_text">이메일/비밀번호를 <br> 잊으셨나요?</span>
+            <p></p>
+            <span class="choose-notice">비밀번호 재설정 안내를 받을 방법을 선택하세요.</span>
+            <p></p>
+            <div class="choose-box">
+                <input type="radio" name="choice" id="choose-email" value="email" class="choose">
+                <label for="choose-email">이메일 주소</label>
+                <input type="radio" name="choice" id="choose-msg" value="msg" class="choose">
+                <label for="choose-msg">문자 메시지(SMS)</label>
+            </div>
+            <div class="choose-email-result">
+                <label for="send-email">비밀번호 재설정 안내 이메일을 보내드리겠습니다.</label>
+                    <input type="text" class="email-input" id="send-email" name="send-email">
+            </div>
+            <div class="choose-msg-result">
+                <label for="send-msg">비밀번호 재설정 인증 코드를 문자로 보내드리겠습니다. <br> 문자 또는 데이터 요금이 부과될 수 있습니다.</label>
+                    <input type="number" class="msg-input" id="send-msg" name="send-msg">
+            </div>
+            <button type="submit" id="send-btn">이메일로 받기</button>
+        </div>
+    </div>
 </body>
 </html>
