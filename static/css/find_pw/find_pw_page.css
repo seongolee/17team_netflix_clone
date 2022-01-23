@@ -1,4 +1,5 @@
 body{
+    background-repeat: no-repeat;
     background-size: 140%;
     overflow-x: hidden;
     display: block;
@@ -9,7 +10,7 @@ body{
 }
 .total-find-container {
     margin: 0 auto;
-    width: 630px;
+    width: 450px;
     padding-bottom: 50px;
 
 }
@@ -20,23 +21,23 @@ body{
     align-items: flex-start;
     justify-content: space-around;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 50px;
     color: #333;
-    padding: 50px;
+    padding: 30px;
     background-color: #f3f3f3;
 
 }
 
 .find_id_pw_text {
-    font-size: 42px;
+    font-size: 2em;
 }
 
 .choose-notice {
-    font-size: 21px;
+    font-size: 15px;
 }
 .choose-box {
-    padding: 24px;
-    font-size: 21px;
+    padding: 20px;
+    font-size: 16px;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
@@ -45,15 +46,15 @@ body{
 }
 .choose {
     margin-bottom: 5px;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
 }
 
 .choose-email-result {
     width: 90%;
-    height: 105px;
-    font-size: 21px;
+    height: 80px;
+    font-size: 15px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -62,16 +63,16 @@ body{
 
 .choose-email-result input{
     outline: #B3B3B3;
-    font-size: 22px;
+    font-size: 16px;
     width: 100%;
-    height: 50px;
+    height: 45px;
     padding-left: 20px;
 }
 
 .choose-msg-result {
     width: 95%;
     height: 170px;
-    font-size: 21px;
+    font-size: 15px;
     display:none;
     align-items: flex-start;
     justify-content: space-between;
@@ -80,21 +81,22 @@ body{
 
 .choose-msg-result input{
     outline: #B3B3B3;
-    font-size: 22px;
+    font-size: 16px;
     width: 95%;
-    height: 50px;
+    height: 45px;
     padding-left: 20px;
 }
 
 .send-btn {
-    margin-top: 48px;
+    cursor: pointer;
+    margin-top: 40px;
     background-color: #017AF3;
     width: 95%;
-    height: 65px;
+    height: 48px;
     outline: 0;
     border: none;
     color: white;
-    font-size: 25px;
+    font-size: 20px;
 }
 .send-btn:hover {
     background-color: dodgerblue;
@@ -102,24 +104,24 @@ body{
 
 .google-check {
     color: #999;
-    font-size: 21px;
+    font-size: 14px;
 }
 
 .detail {
     text-decoration: underline;
     color: #999;
-    font-size: 21px;
+    font-size: 14px;
 }
 
 .google-sec {
     display: none;
     margin-top: 10px;
     color: #999;
-    font-size: 21px;
+    font-size: 14px;
 }
 .link {
     text-decoration: underline;
     color: #999;
-    font-size: 21px;
+    font-size: 14px;
     text-decoration-color: #999 !important;
 }
