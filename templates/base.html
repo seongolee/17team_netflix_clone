@@ -3,18 +3,18 @@
 {# block_list: css, js, content #}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="../static/css/base.css">
     {% block css %}
-
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
     {% block js %}
 
     {% endblock %}
     <title>Title</title>
 </head>
+
 <body>
 <div id="appMountPoint">
     <div class="basicLayout">
@@ -71,7 +71,6 @@
                         <li>
                             <a href="#"><span class="footer_label">이용 약관</span></a>
                         </li>
-                        </a>
                     </ul>
                     <ul class="footer_links">
                         <li>
@@ -107,7 +106,6 @@
                               <span class="ui-label-text">
                                 언어 선택
                               </span>
-                                <p></p>
                             </label>
                             <div class="select-arrow medium prefix globe">
 
@@ -142,6 +140,6 @@
         </div>
     </div>
 </div>
-</div>
+
 </body>
 </html>
