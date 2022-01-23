@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/logout/logout.css' %}">
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="total-logout-container">
+        <div class="logout-container">
+            <span class="logout_text">벌써 나가시려고요?</span>
+            <p></p>
+            <span class="notice_text">참고로 알려드리면, 매번 Netflix에서 <br> 로그아웃하실 필요는 없습니다. 공용 컴퓨터에서 <br>
+                이용한 경우에만 로그아웃하시면 됩니다.</span>
+            <p></p>
+            <span class="notice_text">30초 후 Netflix.com으로 이동합니다.</span>
+            <button class="send-btn" type="submit" id="send-btn">지금 이동</button>
+        </div>
+
+
+    </div>
+{% endblock %}

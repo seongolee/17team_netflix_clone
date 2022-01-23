@@ -1,0 +1,52 @@
+body{
+    background-repeat: no-repeat;
+    background-size: 140%;
+    overflow-x: hidden;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(https://assets.nflxext.com/ffe/siteui/acquisition/login/login-the-crown_2-1500x1000.jpg);
+}
+.total-logout-container {
+    margin: 0 auto;
+    width: 450px;
+    padding-bottom: 50px;
+
+}
+
+
+.logout-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: 50px;
+    color: #333;
+    padding: 50px;
+    background-color: #f3f3f3;
+
+}
+
+.logout_text {
+    font-size: 2em;
+}
+
+.notice_text {
+    font-size: 16px;
+}
+
+.send-btn {
+    cursor: pointer;
+    margin-top: 40px;
+    background-color: #017AF3;
+    width: 95%;
+    height: 48px;
+    outline: 0;
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+.send-btn:hover {
+    background-color: dodgerblue;
+}
