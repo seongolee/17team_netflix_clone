@@ -15,12 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-# 여기 url이 첫번째 루트 / 내 마이그레이션스의 url은 두번째 루트
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('sign_up.urls')),
     path('', include('find_user.urls')),
     path('', include('logout.urls')),
-    path('', include('logout.urls')),
-    path('login/', include('login.urls')),
 ]
