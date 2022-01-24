@@ -420,7 +420,7 @@ body {
     font-family: 'Raleway', Arial, sans-serif;
     position: relative;
     margin: 10px;
-    min-width: 310px -60px;
+    min-width: 310px;
     max-width: 310px;
     width: 50%;
     color: #ffffff;
@@ -511,7 +511,7 @@ body {
 .snip1273:before,
 .snip1273:after {
     height: 1px;
-    width: 0%;
+    width: 0;
 }
 
 .snip1273:before {
