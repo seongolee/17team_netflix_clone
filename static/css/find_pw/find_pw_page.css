@@ -1,4 +1,4 @@
-body{
+#appMountPoint{
     background-repeat: no-repeat;
     background-size: 140%;
     overflow-x: hidden;
@@ -8,11 +8,20 @@ body{
     z-index: -1;
     background-image: url(https://assets.nflxext.com/ffe/siteui/acquisition/login/login-the-crown_2-1500x1000.jpg);
 }
+.auth-links {
+
+}
 .total-find-container {
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    word-break: keep-all;
+    font-family: 'Netflix Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     margin: 0 auto;
     width: 450px;
-    padding-bottom: 50px;
 
+}
+.find_id_pw_text {
+    font-size: 2em;
 }
 
 
@@ -21,19 +30,15 @@ body{
     align-items: flex-start;
     justify-content: space-around;
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 40px;
     color: #333;
-    padding: 30px;
+    padding: 40px 35px;
     background-color: #f3f3f3;
 
 }
 
-.find_id_pw_text {
-    font-size: 2em;
-}
-
 .choose-notice {
-    font-size: 15px;
+    font-size: 16px;
 }
 .choose-box {
     padding: 20px;
@@ -46,15 +51,15 @@ body{
 }
 .choose {
     margin-bottom: 5px;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     vertical-align: middle;
 }
 
 .choose-email-result {
-    width: 90%;
-    height: 80px;
-    font-size: 15px;
+    width: 95%;
+    height: 95px;
+    font-size: 16px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
@@ -64,33 +69,55 @@ body{
 .choose-email-result input{
     outline: #B3B3B3;
     font-size: 16px;
-    width: 100%;
+    width: 93%;
     height: 45px;
     padding-left: 20px;
 }
 
 .choose-msg-result {
     width: 95%;
-    height: 170px;
-    font-size: 15px;
+    height: 130px;
+    font-size: 16px;
     display:none;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
 }
+.msg-input {
+    height: 45px;
+    display:flex;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.msg-input select {
+    outline: none;
+    cursor: pointer;
+    height: 47px;
+    border-radius: 0;
+    padding: 5px;
+    font-size: 14px;
+
+}
+
 
 .choose-msg-result input{
-    outline: #B3B3B3;
+    border-top: 0.5px solid gray;
+    border-bottom: 0.5px solid gray;
+    border-right: 0.5px solid gray;
+    border-left: none;
+    outline: 0.1px lightgray;
     font-size: 16px;
-    width: 95%;
-    height: 45px;
+    width: 90%;
+    height: 43px;
     padding-left: 20px;
 }
 
 .send-btn {
+    font-weight: 400;
     cursor: pointer;
-    margin-top: 40px;
-    background-color: #017AF3;
+    margin-top: 30px;
+    background-color: #0080ff;
+    box-shadow: 0 1px 0 rgba(0,0,0,.55);
     width: 95%;
     height: 48px;
     outline: 0;
@@ -103,17 +130,19 @@ body{
 }
 
 .google-check {
+    height: 40px;
     color: #999;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .detail {
     text-decoration: underline;
     color: #999;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .google-sec {
+    height: 80px;
     display: none;
     margin-top: 10px;
     color: #999;
@@ -124,4 +153,50 @@ body{
     color: #999;
     font-size: 14px;
     text-decoration-color: #999 !important;
+}
+
+@media (max-width:740px) {
+    #appMountPoint {
+        background-image: none;
+        background-color: white;
+    }
+    .our-story-header-wrapper {
+        border-bottom: 0.5px solid lightgrey;
+    }
+    .footer {
+        background-color: rgba(0,0,0,.75);
+    }
+    .our-story-header.lang-selection-container {
+        display: none;
+    }
+
+    .auth-links {
+        background-color: white;
+        color: #e50914;
+        font-weight: bold;
+    }
+    .total-find-container {
+        padding-bottom: 35px;
+        width: 100%;
+        height: 100%;
+        background-color: #f3f3f3;
+    }
+    .find-container {
+        padding: 20px;
+        margin-top: 0;
+    }
+    .choose-msg-result input {
+        width: 200px;
+    }
+    .choose-email-result input {
+        width: 95%;
+    }
+    .google-check {
+        margin-left: 35px;
+    }
+    .google-sec {
+
+        padding: 0 35px;
+    }
+
 }
