@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 {% load static %}
 
-{# block_list: css, js, content #}
+{# block_list: others, title, content #}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    {% block css %}
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    {% block others %}
     {% endblock %}
-    {% block js %}
-
-    {% endblock %}
-    <title>Title</title>
+    <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
