@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 {% load static %}
 
 {# block_list: css, js, content #}
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,10 +23,13 @@
                     <span class="our-story-logo">
                         <img class="logo-netflix-txt" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo_text">
                     </span>
-                    <div class="selection-container">
+                    <div class="lang-selection-container">
                         <div class="ui-select-wrapper">
+                            <label for="lang-switcher-header-select" class="ui-label">
+                                <span class="ui-label-text">언어 선택</span>
+                            </label>
                             <div class="select-arrow">
-                                <select class="ui-select">
+                                <select class="ui-select medium" id="lang-switcher-header-select">
                                     <option selected lang="ko" value="/kr/">한국어</option>
                                 </select>
                             </div>

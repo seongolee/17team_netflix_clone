@@ -1,23 +1,19 @@
 body {
     min-width: 320px;
     margin: 0;
-    background-color: black;
+    color: #333;
+    background-color: #f3f3f3;
+    font-size: 16px;
+    direction: ltr;
 }
 
+#appMountPoint {
+    background-color: #000;
+}
 
-
-
-.our-story-header-wrapper {
-    position: relative;
-    max-width: 1920px;
-    margin: 0 auto;
-    padding-top: 20px;
+.our-story-container {
     width: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
+    overflow-x: hidden;
 }
 
 .our-story-header-wrapper .our-story-header {
@@ -27,10 +23,26 @@ body {
     align-items: flex-start;
     padding-top: 0.5rem;
     height: auto;
+}
+
+.our-story-header-wrapper {
+    position: relative;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 100%;
+    height: 5rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+.our-story-header {
     position: relative;
     margin: 0 3.5rem;
 }
-
 
 .our-story-header-wrapper .our-story-header .our-story-logo {
     margin-right: auto;
@@ -43,17 +55,44 @@ body {
     padding-top: 0;
 }
 
-
-.selection-container {
+.our-story-header .lang-selection-container {
     display: inline-block;
     margin: 0 0.75rem;
 }
 
+.ui-label {
+    font-size: 16px;
+    font-weight: 400;
+    color: #8c8c8c;
+    margin-bottom: 6px;
+}
+
+.ui-select-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.lang-selection-container .ui-label {
+    display: block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    border: 0
+}
+
+.lang-selection-container .ui-select-wrapper {
+    width: auto;
+}
 
 /*언어선택 공통부분*/
 .ui-select-wrapper .select-arrow {
     position: relative;
     width: 100%;
+    display: inline-block;
 }
 
 .ui-select-wrapper .select-arrow::before {
@@ -74,8 +113,6 @@ body {
     align-items: center;
     display: inline-block;
 }
-
-
 
 .our-story-header-wrapper .auth-links {
     background-color: #e50914;
@@ -125,22 +162,21 @@ body {
 
 /* 언어선택 푸터부분 */
  .lang-selection-container{
-    font-size: 1.2em;
-    margin-top: 30px;
+     margin-top: 20px;
  }
 
  /*select 부분 크기, 글자 위치*/
  .lang-selection-container .ui-select-wrapper .ui-select {
-    padding: 0.4rem 2.2rem;
-     width: 165px;
-     height: 60px;
-     font-size: 1.2em;
+     background: rgba(0,0,0,.4);
+     border: 1px solid #aaa;
+     color: #fff;
+     font-size: .875rem;
 }
 /* kr 위치& 크기 */
  .lang-selection-container .ui-select-wrapper .select-arrow::before {
-    font-size: 1rem;
-    left: 1rem;
-    top: 30%;
+    font-size: .75rem;
+    left: 0.5rem;
+    top: 25%;
     content: '🇰🇷';
 }
 
@@ -153,6 +189,13 @@ body {
 .footer_nbk {
     font-size: 15px;
     margin-top: 30px;
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px), only screen and (min-width: 950px)
+    and (max-width:1449px), only screen and (min-width: 1450px) {
+    .our-story-container .select-arrow .ui-select.medium {
+        padding: 0.5rem 1.375rem;
+    }
 }
 
 @media (max-width:768px) {
@@ -169,9 +212,29 @@ body {
     }
 }
 
+@media only screen and (min-width: 950px) and (max-width: 1449px) {
+    .our-story-header-wrapper {
+        height: 4rem;
+    }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px), only screen and (min-width: 1450px) {
+    .our-story-header .lang-selection-container {
+        margin-right: 2rem;
+    }
+}
+
 /*하단 넷플릭스 내일배움캠프 밑부분*/
 .copy_text {
     font-size: .8em;
     line-height: 1.5em;
     color: #757575;
+}
+
+.our-story-container .select-arrow .ui-select.medium {
+    padding-left: 1.375rem;
+    padding-right: 1.375rem;
+    line-height: 1.3em;
+    overflow: hidden;
+    white-space: nowrap;
 }
