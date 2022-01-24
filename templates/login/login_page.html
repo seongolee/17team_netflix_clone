@@ -1,13 +1,454 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
 
-</body>
-</html>
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/login/login.css' %}">
+{% endblock %}
+
+{% block js %}
+
+{% endblock %}
+
+
+<!--base.html 에서 미리 정한 content 블록 위치에 넣어주기!-->
+{% block content %}
+
+<div class="login-body">
+    <div>
+
+        <div class="login-content login-form hybrid-login-form hybrid-login-form-signup"
+             data-uia="login-page-container">
+            <div class="hybrid-login-form-main"><h1 data-uia="login-page-title">로그인</h1>
+                <form method="post" class="login-form" action="">
+                    <div data-uia="login-field+container"
+                         class="nfInput nfEmailPhoneInput login-input login-input-email">
+                        <div class="nfInputPlacement">
+                            <div class="nfEmailPhoneControls"><label class="input_id" placeholder=""><input type="text"
+                                                                                                            data-uia="login-field"
+                                                                                                            name="userLoginId"
+                                                                                                            class="nfTextField hasText"
+                                                                                                            id="id_userLoginId"
+                                                                                                            value="kc137@naver.com"
+                                                                                                            tabindex="0"
+                                                                                                            autocomplete="email"
+                                                                                                            dir="ltr">
+                                <label
+                                        for="id_userLoginId" class="placeLabel">이메일 주소 또는 전화번호
+                                </label>
+                            </label>
+                                <div data-uia="phone-country-selector+container"
+                                     class="ui-select-wrapper country-select"><a
+                                        data-uia="phone-country-selector+target" href="#"
+                                        class="ui-select-wrapper-link">
+                                    <div class="ui-select-current"
+                                         placeholder="{&quot;current_selected_country&quot;:&quot;KR&quot;}"><span
+                                            class="country-select-flag nf-flag nf-flag-kr"></span><span
+                                            class="country-select-code">+<!-- -->82</span></div>
+                                </a>
+                                    <ul data-uia="phone-country-selector+option-list"
+                                        class="ui-select-options ui-select-options-hidden flag-select-item-list">
+
+                                        <li data-uia="option-TW" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;TW&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="TW" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-tw"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">대만 <em
+                                                    class="country-code"> +886</em></span></a></li>
+                                        <li data-uia="option-KR"
+                                            class="flag-select-option ui-select-item ui-select-item-selected"
+                                            placeholder="{&quot;id&quot;:&quot;KR&quot;,&quot;selected&quot;:true,&quot;highlighted&quot;:false}">
+                                            <a id="KR" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-kr"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">대한민국 <em
+                                                    class="country-code"> +82</em></span></a></li>
+
+                                        <li data-uia="option-DE" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;DE&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="DE" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-de"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">독일 <em
+                                                    class="country-code"> +49</em></span></a></li>
+
+                                        <li data-uia="option-LA" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;LA&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="LA" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-la"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">라오스 <em
+                                                    class="country-code"> +856</em></span></a></li>
+
+                                        <li data-uia="option-RU" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;RU&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="RU" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-ru"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">러시아 <em
+                                                    class="country-code"> +7</em></span></a></li>
+
+                                        <li data-uia="option-MO" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;MO&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="MO" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-mo"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">마카오(중국 특별행정구) <em
+                                                    class="country-code"> +853</em></span></a></li>
+
+                                        <li data-uia="option-MY" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;MY&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="MY" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-my"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">말레이시아 <em
+                                                    class="country-code"> +60</em></span></a></li>
+
+                                        <li data-uia="option-MX" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;MX&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="MX" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-mx"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">멕시코 <em
+                                                    class="country-code"> +52</em></span></a></li>
+
+                                        <li data-uia="option-MN" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;MN&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="MN" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-mn"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">몽골 <em
+                                                    class="country-code"> +976</em></span></a></li>
+                                        <li data-uia="option-US" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;US&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="US" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-us"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">미국 <em
+                                                    class="country-code"> +1</em></span></a></li>
+
+                                        <li data-uia="option-MM" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;MM&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="MM" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-mm"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">미얀마 <em
+                                                    class="country-code"> +95</em></span></a></li>
+
+                                        <li data-uia="option-VE" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;VE&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="VE" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-ve"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">베네수엘라 <em
+                                                    class="country-code"> +58</em></span></a></li>
+                                        <li data-uia="option-VN" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;VN&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="VN" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-vn"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">베트남 <em
+                                                    class="country-code"> +84</em></span></a></li>
+                                        <li data-uia="option-BE" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;BE&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="BE" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-be"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">벨기에 <em
+                                                    class="country-code"> +32</em></span></a></li>
+
+                                        <li data-uia="option-KP" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;KP&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="KP" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-kp"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">북한 <em
+                                                    class="country-code"> +850</em></span></a></li>
+
+                                        <li data-uia="option-BR" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;BR&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="BR" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-br"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">브라질 <em
+                                                    class="country-code"> +55</em></span></a></li>
+
+                                        <li data-uia="option-SE" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;SE&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="SE" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-se"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">스웨덴 <em
+                                                    class="country-code"> +46</em></span></a></li>
+                                        <li data-uia="option-CH" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;CH&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="CH" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-ch"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">스위스 <em
+                                                    class="country-code"> +41</em></span></a></li>
+                                        <li data-uia="option-ES" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;ES&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="ES" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-es"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">스페인 <em
+                                                    class="country-code"> +34</em></span></a></li>
+
+                                        <li data-uia="option-SG" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;SG&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="SG" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-sg"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">싱가포르 <em
+                                                    class="country-code"> +65</em></span></a></li>
+
+                                        <li data-uia="option-GB" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;GB&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="GB" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-gb"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">영국 <em
+                                                    class="country-code"> +44</em></span></a></li>
+
+                                        <li data-uia="option-AU" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;AU&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="AU" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-au"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">오스트레일리아 <em
+                                                    class="country-code"> +61</em></span></a></li>
+                                        <li data-uia="option-AT" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;AT&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="AT" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-at"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">오스트리아 <em
+                                                    class="country-code"> +43</em></span></a></li>
+
+                                        <li data-uia="option-UA" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;UA&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="UA" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-ua"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">우크라이나 <em
+                                                    class="country-code"> +380</em></span></a></li>
+                                        <li data-uia="option-IQ" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;IQ&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="IQ" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-iq"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">이라크 <em
+                                                    class="country-code"> +964</em></span></a></li>
+
+                                        <li data-uia="option-IT" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;IT&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="IT" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-it"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">이탈리아 <em
+                                                    class="country-code"> +39</em></span></a></li>
+                                        <li data-uia="option-IN" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;IN&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="IN" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-in"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">인도 <em
+                                                    class="country-code"> +91</em></span></a></li>
+                                        <li data-uia="option-JP" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;JP&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="JP" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-jp"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">일본 <em
+                                                    class="country-code"> +81</em></span></a></li>
+
+                                        <li data-uia="option-CN" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;CN&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="CN" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-cn"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">중국 <em
+                                                    class="country-code"> +86</em></span></a></li>
+
+                                        <li data-uia="option-CZ" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;CZ&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="CZ" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-cz"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">체코 <em
+                                                    class="country-code"> +420</em></span></a></li>
+                                        <li data-uia="option-CL" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;CL&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="CL" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-cl"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">칠레 <em
+                                                    class="country-code"> +56</em></span></a></li>
+
+                                        <li data-uia="option-CA" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;CA&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="CA" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-ca"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">캐나다 <em
+                                                    class="country-code"> +1</em></span></a></li>
+
+                                        <li data-uia="option-CX" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;CX&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="CX" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-cx"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">크리스마스섬 <em
+                                                    class="country-code"> +61</em></span></a></li>
+                                        <li data-uia="option-KG" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;KG&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="KG" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-kg"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">키르기스스탄 <em
+                                                    class="country-code"> +996</em></span></a></li>
+
+                                        <li data-uia="option-TH" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;TH&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="TH" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-th"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">태국 <em
+                                                    class="country-code"> +66</em></span></a></li>
+                                        <li data-uia="option-TR" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;TR&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="TR" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-tr"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">터키 <em
+                                                    class="country-code"> +90</em></span></a></li>
+
+                                        <li data-uia="option-FR" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;FR&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="FR" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-fr"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">프랑스 <em
+                                                    class="country-code"> +33</em></span></a></li>
+
+                                        <li data-uia="option-PH" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;PH&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="PH" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-ph"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">필리핀 <em
+                                                    class="country-code"> +63</em></span></a></li>
+
+                                        <li data-uia="option-HK" class="flag-select-option ui-select-item"
+                                            placeholder="{&quot;id&quot;:&quot;HK&quot;,&quot;selected&quot;:false,&quot;highlighted&quot;:false}">
+                                            <a id="HK" tabindex="-1" class="ui-select-item-link clearfix"><span
+                                                    class="country-select-flag nf-flag nf-flag-hk"></span><span id=""
+                                                                                                                class="country-name"
+                                                                                                                data-uia="">홍콩(중국 특별행정구) <em
+                                                    class="country-code"> +852</em></span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-uia="password-field+container"
+                         class="nfInput nfPasswordInput login-input login-input-password">
+                        <div class="nfInputPlacement">
+                            <div class="nfPasswordControls"><label class="input_id" placeholder=""><input
+                                    type="password" data-uia="password-field" name="password"
+                                    class="nfTextField hasText" id="id_password" value="!wldyd1" tabindex="0"
+                                    autocomplete="password" dir="ltr"><label for="id_password"
+                                                                             class="placeLabel">비밀번호</label></label>
+                                <button data-uia="password-visibility-toggle" id="id_password_toggle" type="button"
+                                        class="nfPasswordToggle" title="비밀번호 표시">표시
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn login-button btn-submit btn-small" type="submit" autocomplete="off" tabindex="0"
+                            data-uia="login-submit-button">로그인
+                    </button>
+                    <div class="hybrid-login-form-help">
+                        <div class="ui-binary-input login-remember-me"><input type="checkbox" class="" name="rememberMe"
+                                                                              id="bxid_rememberMe_true" value="true"
+                                                                              tabindex="0" data-uia="rememberMe"
+                                                                              checked=""><label
+                                for="bxid_rememberMe_true" data-uia="label+rememberMe"><span
+                                class="login-remember-me-label-text">로그인 정보 저장</span></label>
+                            <div class="helper"></div>
+                        </div>
+                        <a class="link login-help-link" target="_self" data-uia="login-help-link">도움이 필요하신가요?</a></div>
+                    <input type="hidden" name="flow" value="websiteSignUp"><input type="hidden" name="mode"
+                                                                                  value="login"><input type="hidden"
+                                                                                                       name="action"
+                                                                                                       value="loginAction"><input
+                        type="hidden" name="withFields"
+                        value="rememberMe,nextPage,userLoginId,password,countryCode,countryIsoCode,recaptchaResponseToken,recaptchaError,recaptchaResponseTime"><input
+                        type="hidden" name="authURL" value="1643012489360.qmgsM8XwKiP8BC7lA5RS9NksrLY="><input
+                        type="hidden" name="nextPage" value=""><input type="hidden" name="showPassword" value=""><input
+                        type="hidden" name="countryCode" value="+82"><input type="hidden" name="countryIsoCode"
+                                                                            value="KR"></form>
+            </div>
+            <div class="hybrid-login-form-other">
+
+<!--                기존 페이스북 로그인폼-->
+<!--                <form method="post" class="login-form" action="">-->
+<!--                    <div class="facebookForm regOption">-->
+<!--                        <div class="fb-minimal">-->
+<!--                            <hr>-->
+<!--                            <button class="btn minimal-login btn-submit btn-small" type="submit" autocomplete="off"-->
+<!--                                    tabindex="0" data-uia="">-->
+<!--                                <div class="fb-login" data-uia="fb-login"><img class="icon-facebook"-->
+<!--                                                                               src="https://assets.nflxext.com/ffe/siteui/login/images/FB-f-Logo__blue_57.png"><span-->
+<!--                                        class="fbBtnText">Facebook으로 로그인</span></div>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <input type="hidden" name="flow" value="websiteSignUp"><input type="hidden" name="mode"-->
+<!--                                                                                  value="login"><input type="hidden"-->
+<!--                                                                                                       name="action"-->
+<!--                                                                                                       value="facebookLoginAction"><input-->
+<!--                        type="hidden" name="withFields" value="rememberMe,nextPage,accessToken"><input type="hidden"-->
+<!--                                                                                                       name="authURL"-->
+<!--                                                                                                       value="1643012489360.qmgsM8XwKiP8BC7lA5RS9NksrLY="><input-->
+<!--                        type="hidden" name="nextPage" value=""><input type="hidden" name="showPassword" value=""><input-->
+<!--                        type="hidden" name="countryCode" value="+82"><input type="hidden" name="countryIsoCode"-->
+<!--                                                                            value="KR"><input type="hidden"-->
+<!--                                                                                              name="accessToken"-->
+<!--                                                                                              value=""></form>-->
+               <button class="facebook_button" type="button">
+                   <span class="facebook_icon">
+                   </span>
+                   <a href="#">
+                       <span class="facebook_login">
+                           Facebook으로 로그인
+                       </span>
+                   </a>
+               </button>
+
+
+
+                <div class="login-signup-now" data-uia="login-signup-now">Netflix 회원이 아닌가요? <a class=" " target="_self"
+                                                                                               href="/">지금 가입하세요</a>.
+                </div>
+                <div class="recaptcha-terms-of-use" data-uia="recaptcha-terms-of-use">
+                    <p><span>이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다.</span>&nbsp;<button
+                            class="recaptcha-terms-of-use--link-button" data-uia="recaptcha-learn-more-button">자세히 알아보기
+                    </button>
+                    </p>
+                    <div class="recaptcha-terms-of-use--disclosure" data-uia="recaptcha-disclosure"><span id=""
+                                                                                                          data-uia="recaptcha-disclosure-text">Google reCAPTCHA가 수집하는 정보에는 Google <a
+                            href="https://policies.google.com/privacy" id="recaptcha-privacy-link"
+                            data-uia="recaptcha-privacy-link" target="_blank">개인정보처리방침</a>과 <a
+                            href="https://policies.google.com/terms" id="recaptcha-tos-link"
+                            data-uia="recaptcha-tos-link" target="_blank">서비스 약관</a>이 적용되며, 해당 정보는 reCAPTCHA 서비스 제공, 관리 및 개선과 일반적인 보안 유지에 사용됩니다(Google의 개인 맞춤 광고에 사용 안 함).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

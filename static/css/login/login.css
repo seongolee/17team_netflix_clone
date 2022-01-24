@@ -1,0 +1,739 @@
+div {
+    display: block;
+    word-break: keep-all;
+}
+
+.login-body {
+    color: #333;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.hybrid-login-form {
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+}
+
+.hybrid-login-form h1 {
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.hybrid-login-form .login-form {
+    margin-bottom: 0;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.hybrid-login-form .login-input {
+    padding-bottom: 16px;
+}
+
+.hybrid-login-form .nfInput {
+    max-width: 100%;
+}
+
+.login-input {
+    padding-bottom: 24px;
+}
+
+.nfInput {
+    max-width: 500px;
+    position: relative;
+}
+
+.hybrid-login-form .nfEmailPhoneControls {
+    border-radius: 4px;
+    border: 0;
+}
+
+.nfEmailPhoneControls {
+    position: relative;
+}
+
+label {
+    cursor: default;
+}
+
+.hybrid-login-form .nfEmailPhoneControls .nfTextField {
+    background: #333;
+}
+
+.hybrid-login-form .nfTextField {
+    border-radius: 4px;
+    border: 0;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding: 16px 20px 0;
+}
+
+.nfInput .nfTextField {
+    height: 48px;
+    padding: 10px 10px 0;
+    width: 100%;
+}
+
+.nfTextField {
+    box-sizing: border-box;
+    font-size: 16px;
+    display: block;
+    appearance: none;
+    width: 100%;
+    color: #000;
+    padding: 10px 11px;
+    height: 44px;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.hybrid-login-form .hasText+.placeLabel, .hybrid-login-form .nfTextField:focus+.placeLabel {
+    top: 7px;
+}
+
+.nfInput .hasText+.placeLabel, .nfInput .nfTextField:focus+.placeLabel {
+    top: 4px;
+    font-size: 11px;
+    transform: translateY(0);
+}
+
+.hybrid-login-form .placeLabel {
+    left: 20px;
+}
+
+.nfInput .placeLabel {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    color: #8c8c8c;
+    font-size: 14px;
+    transition: font .1s ease,top .1s ease,transform .1s ease,-webkit-transform .1s ease,-moz-transform .1s ease,-o-transform .1s ease;
+}
+
+.hybrid-login-form .ui-select-wrapper.country-select {
+    right: 0;
+    top: 0;
+    width: 88px;
+    display: none;
+}
+
+.nfEmailPhoneControls .ui-select-wrapper.country-select {
+    position: absolute;
+    right: 1px;
+    top: 3px;
+    border: 0;
+}
+
+.ui-select-wrapper {
+    padding: 0;
+    margin: 0;
+    border: solid 1px #b3b3b3;
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+}
+
+.hybrid-login-wrapper .ui-select-wrapper {
+    border: none;
+}
+
+.ui-select-wrapper.country-select {
+    vertical-align: top;
+    position: relative;
+    width: 95px;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #b3b3b3;
+}
+/*넷플릭스에서 Pseudo ::after element 라는데 혹시 몰라서 우선 따옴*/
+/*.hybrid-login-form .ui-select-wrapper::after {*/
+/*    color: #8c8c8c;*/
+/*    top: 22px;*/
+/*}*/
+
+/*.ui-select-wrapper:after {*/
+/*    font-family: nf-icon;*/
+/*    color: #000;*/
+/*    font-size: 6px;*/
+/*    content: '\e898';*/
+/*    position: absolute;*/
+/*    pointer-events: none;*/
+/*    right: 10px;*/
+/*    top: 17px;*/
+/*}*/
+
+.ui-select-wrapper-link {
+    box-sizing: inherit;
+    height: 100%;
+}
+
+.ui-select-wrapper-link {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+a {
+    background-color: transparent;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+.hybrid-login-form .ui-select-wrapper.country-select .ui-select-current {
+    height: 50px;
+}
+
+.ui-select-wrapper.country-select .ui-select-current {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    box-sizing: inherit;
+}
+
+.nfEmailPhoneControls .ui-select-current {
+    background: 0 0;
+}
+
+.ui-select-current {
+    padding: 10px 20px 10px 10px;
+    margin: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+}
+
+.nf-flag.nf-flag-kr {
+    background-position: -5px -2651px;
+    width: 16px;
+    height: 11px;
+}
+
+.country-select-flag {
+    box-sizing: inherit;
+}
+
+.nf-flag {
+    background-image: url(https://assets.nflxext.com/ffe/siteui/common/icons/flags/flag-sprite-v5.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.ui-select-wrapper-link {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    display: block;
+    color: #333;
+}
+
+.country-select-code {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 0 4px;
+    min-width: 32px;
+    text-align: center;
+}
+
+.hybrid-login-form .ui-select-options {
+    background: #595959;
+    border-radius: 2px;
+    border: 0;
+    box-shadow: 0 2px 16px 0 rgb(0 0 0 / 50%);
+    max-height: 285px;
+    max-width: 90vw;
+    padding: 15px;
+    right: 0;
+    top: 51px;
+    width: 500px;
+}
+
+.hybrid-login-form .ui-select-item-highlighted, .hybrid-login-form .ui-select-item:hover {
+    background: #737373;
+}
+
+.hybrid-login-form .ui-select-item-link {
+    color: #fff;
+}
+
+.hybrid-login-form .ui-select-item {
+    border-radius: 2px;
+    padding: 10px 15px;
+}
+
+.flag-select-option {
+    box-sizing: inherit;
+}
+
+.ui-select-item {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+ul>li {
+    margin-left: 1.1em;
+    margin-bottom: 5px;
+    list-style-type: disc;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.ui-select-item-link {
+    color: #333;
+    text-decoration: none;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.hybrid-login-form .ui-select-item-link .country-select-flag {
+    display: none;
+}
+
+/*넷플릭스에서 Pseuso ::after element 라는데 혹시 몰라서 우선 따옴*/
+/*.clearfix:after {*/
+/*    content: ' ';*/
+/*    display: block;*/
+/*    width: 0;*/
+/*    height: 0;*/
+/*    overflow: hidden;*/
+/*    clear: both;*/
+/*}*/
+
+/*비밀번호 css 시작*/
+
+.hybrid-login-form .nfInput {
+    max-width: 100%;
+}
+
+.nfPasswordInput {
+    position: relative;
+    z-index: 0;
+}
+
+.nfInput {
+    max-width: 500px;
+    position: relative;
+}
+
+.nfInput .nfInputPlacement {
+    position: relative;
+}
+
+.hybrid-login-form .nfPasswordControls {
+    border-radius: 4px;
+    border: 0;
+    background: #333;
+}
+
+.nfPasswordControls>label {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.hybrid-login-form .nfTextField {
+    border-radius: 4px;
+    border: 0;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding: 16px 20px 0;
+}
+
+.nfPasswordInput .nfTextField {
+    background: 0 0;
+}
+
+.nfInput .nfTextField {
+    height: 48px;
+    padding: 10px 10px 0;
+    width: 100%;
+}
+
+.nfTextField:invalid, .nfTextField:valid {
+    box-shadow: none;
+}
+
+.hybrid-login-form .hasText+.placeLabel, .hybrid-login-form .nfTextField:focus+.placeLabel {
+    top: 7px;
+}
+
+.nfInput .hasText+.placeLabel, .nfInput .nfTextField:focus+.placeLabel {
+    top: 4px;
+    font-size: 11px;
+    transform: translateY(0);
+}
+
+.hybrid-login-form .placeLabel {
+    left: 20px;
+}
+
+.hybrid-login-form .nfPasswordControls .nfPasswordToggle {
+    height: 50px;
+    padding: 0 12px;
+    display: none;
+}
+
+.nfPasswordToggle {
+    appearance: none;
+    color: #8c8c8c;
+    font-size: 14px;
+    border: 0;
+    background: 0 0;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button {
+    overflow: visible;
+    -webkit-appearance: button;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+.btn {
+    position: relative;
+    font-size: 1em;
+    padding: 24.5px 2em;
+    min-width: 74px;
+    min-height: 50px;
+    margin: 0.5em 0.5em 0.5em 0;
+    text-decoration: none;
+    text-decoration-line: none;
+    text-decoration-thickness: initial;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+    line-height: 1em;
+    vertical-align: middle;
+    cursor: pointer;
+    letter-spacing: .1px;
+    user-select: none;
+    text-align: center;
+    box-sizing: border-box;
+    border: 0;
+}
+
+.login-button.btn {
+    width: 100%;
+    background: #e50914;
+}
+
+.hybrid-login-form .login-button {
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 12px;
+}
+
+.action-button, .btn-blue, .btn-submit {
+    color: #fff;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 55%);
+}
+
+.hybrid-login-form .login-remember-me {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.ui-binary-input {
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 36px;
+    user-select: none;
+    font-size: 16px;
+}
+
+.login-remember-me {
+    display: inline-block;
+    margin-bottom: -5px;
+}
+
+.ui-binary-input input[type=checkbox], .ui-binary-input input[type=radio] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.login-remember-me input {
+    margin-right: 10px;
+}
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+input {
+    line-height: normal;
+}
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 3px 4px;
+    padding: initial;
+    border: initial;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    -webkit-rtl-ordering: logical;
+}
+
+/*체크박스 누른 후 변화효과!*/
+.hybrid-login-form .login-remember-me input[type=checkbox]:checked+label::after {
+    color: #000;
+    font-size: 18px;
+    left: -21px;
+    top: 0;
+}
+
+.ui-binary-input input[type=checkbox]:checked+label:after {
+    color: #0080ff;
+    content: "\e804";
+    top: -2px;
+    left: -36px;
+    font-family: nf-icon;
+    font-size: 28px;
+}
+
+.ui-binary-input input[type=checkbox]+label:after, .ui-binary-input input[type=radio]+label:after {
+    position: absolute;
+}
+
+.hybrid-login-form .login-remember-me-label-text {
+    color: #b3b3b3;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.ui-binary-input input[type=checkbox]+label, .ui-binary-input input[type=radio]+label {
+    color: #333;
+    position: relative;
+    display: block;
+    line-height: 1.2;
+    padding: 6px 0;
+}
+
+.ui-binary-input .helper {
+    font-size: 14px;
+    line-height: 1.3em;
+    color: grey;
+}
+
+.hybrid-login-form .login-help-link {
+    cursor: pointer;
+    color: #b3b3b3;
+    -webkit-box-flex: 0;
+    font-size: 13px;
+    font-weight: 500;
+    padding-top: 2px;
+}
+
+input[type="hidden" i] {
+    appearance: none;
+    background-color: initial;
+    cursor: default;
+    display: none !important;
+    padding: initial;
+    border: initial;
+}
+
+.hybrid-login-form .login-signup-now {
+    color: #737373;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 16px;
+}
+
+/*구글 캡챠부분*/
+.recaptcha-terms-of-use {
+    margin-top: 11px;
+    font-size: 13px;
+    color: #8c8c8c;
+}
+
+.recaptcha-terms-of-use {
+    position: relative;
+    text-align: left;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.recaptcha-terms-of-use {
+    margin-top: 11px;
+    font-size: 13px;
+    color: #8c8c8c;
+}
+
+.recaptcha-terms-of-use--link-button {
+    background-color: transparent;
+    border: none;
+    color: #0071eb;
+    cursor: pointer;
+    display: inline;
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0;
+}
+
+.recaptcha-terms-of-use--disclosure {
+    visibility: hidden;
+    opacity: 0;
+    transition: height .5s ease,opacity .5s ease;
+}
+
+@media only screen and (min-width: 740px) {
+    .login-body {
+        margin: 0 auto -236px;
+        min-height: 100vh;
+        background-color: transparent;
+        max-width: 450px;
+    }
+
+    .login-body:before {
+        content: "";
+        height: 91px;
+        display: block;
+    }
+
+    .login-body:after {
+    content: "";
+    height: 236px;
+    display: block;
+}
+
+.hybrid-login-form.hybrid-login-form-signup {
+    min-height: 660px;
+}
+.hybrid-login-form .login-signup-now a {
+    color: #fff;
+}
+
+.hybrid-login-form {
+    min-height: 625px;
+    padding: 60px 68px 40px;
+    margin-bottom: 90px;
+}
+
+.login-content {
+    padding: 40px;
+}
+
+#appMountPoint {
+    background-color: transparent;
+    color: #fff;
+}
+
+#appMountPoint>div {
+    background-color: #000;
+    color: #fff;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/*////////////////////////////////////////*/
+}
+
+
+@media only screen and (min-width: 500px){
+.login-content {
+    min-width: 380px;
+}
+.login-button.btn {
+    padding: 16px;
+    font-size: 18px;
+}
+
+.btn.btn-small {
+    display: inline-block;
+
+    min-width: 98px;
+    min-height: 37px;
+    width: auto;
+    line-height: 1em;
+}
+
+}
+
+
+@media only screen and (min-width: 360px){
+
+    .login-button.btn {
+    width: 100%;
+    max-width: 100%;
+}
+}
