@@ -11,6 +11,7 @@
             <div class="our-story-card-background">
                 <div class="concord-img-wrapper">
                     <img class="concord-img" src="{% static 'img/sign_up/netflix_card1.jpeg' %}" srcset="{% static 'img/sign_up/netflix_card1.jpeg' %} 1000w, {% static 'img/sign_up/netflix_card1.jpeg' %} 1500w, {% static 'img/sign_up/netflix_card1.jpeg' %} 1800w">
+                    <div class="concord-img-gradient"></div>
                 </div>
             </div>
             <div class="our-story-card-text">
@@ -19,9 +20,9 @@
                 <form class="email-form">
                     <h3 class="email-form-title">시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</h3>
                     <div class="email-form-lockup">
-                        <ul class="simple-form">
+                        <ul class="simple-form structural">
                             <li class="nf-form-space">
-                                <div class="nf-input">
+                                <div class="nf-input nf-input-responsive">
                                     <div class="nf-input-placement">
                                         <label class="input-id">
                                             <input class="nf-text-field" id="id-email" type="email" name="email" maxlength="50" minlength="5">
@@ -34,6 +35,11 @@
                         <div class="our-story-cta-container">
                             <button class="nmhp-cta-extra-large nmhp-cta" type="submit">
                                 <span id class="cta-btn-txt">시작하기</span>
+                                <span id class="chevron-right-arrow">
+                                    <svg viewBox="0 0 6 12" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M.61 1.312l.78-.624L5.64 6l-4.25 5.312-.78-.624L4.36 6z" fill="none" fill-rule="evenodd"></path>
+                                    </svg>
+                                </span>
                             </button>
                         </div>
                     </div>

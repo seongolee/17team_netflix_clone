@@ -86,7 +86,6 @@ body {
     text-decoration: none;
 }
 
-
 .footer{
     width: 100%;
     -webkit-text-size-adjust: 100%;         /*webkit 부분은 크롬버전일때 글자크기가 같게 모든디바이스에도 적용 (글자 깨지는 현상 방지)*/
@@ -100,17 +99,12 @@ body {
     padding: 100px 100px 30px 100px;             /* 화면 줄어들었을 때에도 좌우 여백 남게*/
     position: relative;
     bottom: 0;
-
 }
-
-
-
 
 .footer_question {
     font-size: 1.5em;
     margin-bottom: 1.5em;
 }
-
 
 /* 자주묻는 질문들 등 목차 링크 리스트들 */
 .footer_links {
@@ -120,7 +114,6 @@ body {
     display: flex;
     justify-content: space-between;
 }
-
 
 .footer_label {
     width: 200px;
