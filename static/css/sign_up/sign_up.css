@@ -12,6 +12,34 @@ img {
     height: auto;
     border: 0;
 }
+
+form {
+    margin-top: 0;
+}
+
+h2, h3, h4, h5 {
+    margin: 0.75em 0 0.25em;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.nmhp-cta:after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    flex: 0 0 auto;
+}
+
+.nmhp-cta-extra-large:after {
+    min-height: 40px;
+}
+
 .our-story-cards {
     margin: 0 auto;
 }
@@ -43,11 +71,25 @@ img {
     left: 0;
 }
 
-.concord-img {
+.hero-card .concord-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transform: none;
+}
+
+.hero-card .concord-img-gradient {
+    position: absolute;
+    background-image: linear-gradient(to top, rgba(0,0,0.8) 0, rgba(0,0,0,0) 60%,
+    rgba(0,0,0,.8) 100%);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.hero-card .our-story-card-title {
+    font-size: 1.75em;
 }
 
 .hero-card .our-story-card-text {
@@ -57,6 +99,7 @@ img {
     max-width: 950px;
     margin: 0 auto;
     text-align: center;
+    z-index: 1;
 }
 
 .hero-card h1, .hero-card h2 {
@@ -76,7 +119,6 @@ img {
 .email-form {
     display: flex;
     flex-direction: column;
-    margin-top: 0;
 }
 
 .email-form-title {
@@ -88,6 +130,11 @@ img {
 
 .email-form-lockup {
     text-align: center;
+}
+
+ul.structural {
+    padding: 0;
+    margin: 0;
 }
 
 ul.simple-form {
@@ -103,10 +150,21 @@ ul.simple-form > li {
     margin-left: 0;
 }
 
-.email-form-lockup .nf-input {
-    margin: 10px auto;
+.nf-input {
     max-width: 500px;
     position: relative;
+}
+
+.email-form-lockup .nf-input {
+    margin: 10px auto;
+}
+
+.nf-text-field {
+    font-size: 16px;
+    border: solid 1px #8c8c8c;
+    border-radius: 2px;
+    appearance: none;
+    color: #000;
 }
 
 .nf-input .nf-input-placement {
@@ -114,19 +172,17 @@ ul.simple-form > li {
 }
 
 .nf-input .nf-text-field {
-    height: 40px;
-    padding: 10px 0 0 10px;
-    width: auto;
-    border-radius: 2px;
-    display: block;
-    border: 1px solid lightgray;
+    height: 48px;
+    padding: 10px 10px 0;
+    width: 100%;
 }
 
 .nf-input .place-label {
     position: absolute;
-    top: 33%;
+    top: 38%;
     left: 10px;
     color: #8c8c8c;
+    font-size: 14px;
     cursor: text;
     transition: font .1s ease,top .1s ease,transform .1s ease;
 }
@@ -137,7 +193,7 @@ ul.simple-form > li {
     font-size: 13px;
 }
 
-.our-story-card-text .our-story-cta-container {
+.hero-card .our-story-card-text .our-story-cta-container {
     float: none;
 }
 
@@ -169,6 +225,22 @@ ul.simple-form > li {
     padding: 0.35rem 0;
     flex: 1 1 auto;
     text-align: center;
+}
+
+.nmhp-cta .chevron-right-arrow {
+    height: 0.75em;
+    width: 0.35em;
+    flex: 0 1 auto;
+    margin: 0 0 0 0.5em;
+    position: relative;
+}
+
+.nmhp-cta .chevron-right-arrow svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1px 0;
+    height: 100%;
 }
 
 .animation-card .animation-card-container {
@@ -313,14 +385,93 @@ ul.simple-form > li {
 }
 
 
-@media only screen and (min-width: 950px) and (max-width: 1449px) {
+
+@media only screen and (min-width: 550px) and (max-width: 949px), only screen and (min-width: 950px) and (max-width: 1449px), only screen and (min-width: 1450px) {
     .our-story-card {
-        padding: 70px 45px!important;
+        padding: 70px 45px;
+    }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px), only screen and (min-width: 1450px) {
+    .our-story-card-background {
+        top: -100px;
+    }
+
+    .hero-card .our-story-card-title {
+        font-size: 4rem;
+    }
+
+    .hero-card .our-story-card-subtitle {
+        font-size: 1.625rem;
     }
 
     .email-form {
         max-width: 950px;
         padding-top: 0.85rem;
+    }
+
+    .email-form-title {
+        max-width: none;
+        padding-bottom: 20px;
+        font-size: 1.2rem;
+    }
+
+    .email-form-lockup {
+        display: flex;
+        margin: 0 auto;
+        flex-direction: row;
+    }
+
+    .email-form-lockup .simple-form {
+        vertical-align: top;
+        flex: 1 0 auto;
+        text-align: right;
+    }
+
+    .email-form-lockup .our-story-cta-container {
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        flex: 1 0 auto;
+    }
+
+    .email-form-lockup .nmhp-cta {
+        margin: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-left: 1px solid #333;
+        padding: 0 1em;
+    }
+
+    .nmhp-cta .cta-btn-txt {
+        padding: 0.5rem 0;
+    }
+
+    .email-form-lockup .nf-input {
+        margin: 0;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px) {
+    .hero-card .our-story-card-title {
+        font-size: 3.125rem;
+    }
+
+    .hero-card .our-story-card-subtitle {
+        font-size: 1.625rem;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 549px), only screen and (min-width: 550px) and (max-width: 949px) {
+    .email-form-title {
+        padding: 0 10%;
+    }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px) {
+    .hero-card .our-story-card-title {
+        font-size: 3.125rem;
     }
 
     .email-form-lockup .simpleForm {
@@ -329,20 +480,15 @@ ul.simple-form > li {
         text-align: right;
     }
 
-    .email-form-lockup {
-        display: flex;
-        margin: 0 auto;
-        flex-direction: row;
-        align-items: center;
+    .email-form-lockup .nf-input input {
+        min-width: 428px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
     }
 
-    .email-form-lockup .nf-input input {
-        min-width: 450px;
-        height: 52px;
-    }
     .nmhp-cta-extra-large {
-        font-size: 1.625rem !important;
-        min-height: 63px !important;
+        font-size: 1.625rem;
+        min-height: 60px;
     }
 
     .animation-card.download-and-watch .our-story-card-animation {
@@ -351,5 +497,37 @@ ul.simple-form > li {
 
     .animation-card.download-and-watch .our-story-card-animation .our-story-card-animation-image img {
         height: 4.5em;
+    }
+
+    .nmhp-cta-extra-large:after {
+        min-height: 60px;
+    }
+}
+
+@media screen and (min-width: 740px) {
+    .nf-input .place-label {
+        font-size: 16px;
+    }
+
+    .nf-input.nf-input-responsive .nf-text-field {
+        width: 100%;
+    }
+
+    h3 {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (min-width:1450px) {
+    .email-form-lockup .nf-input input {
+        min-width: 478px;
+        height: 58px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .nmhp-cta-extra-large {
+        font-size: 1.875rem;
+        min-height: 70px;
     }
 }
