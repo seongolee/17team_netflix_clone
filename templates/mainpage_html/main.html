@@ -5,10 +5,14 @@
 {# block_list: css, js, content #}
 
 
-
 {% block css %}
     <link rel="stylesheet" href="{% static 'css/mainpage_css/main.css' %}">
 {% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{% static 'js/mainpage_js/main.js' %}"></script>
+{% endblock %}
+
 
 {% block content %}
 
@@ -21,7 +25,37 @@
                     BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH BLAH
                 </p>
                 <button class="first_btn" onclick="">재생</button>
-                <button class="second_btn" onclick="">상세 정보</button>
+                <button class="second_btn" onclick="modalOn()">상세 정보</button>
+                <div id="modal" class="modal-overlay">
+                    <div class="modal-window">
+                        <div class="tmp_box">
+                        </div>
+                        <div class="close-area" onclick="modalOff()">X</div>
+                        <div class="title">
+                            <h2 style="margin-right: 30px;">Movie</h2>
+                            <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                                 style="width: 40px; height: 40px; margin-right: 15px; padding-top: 20px;" onclick=""
+                                 alt="play_icon">
+                            <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                                 style="width: 40px; height: 40px; margin-right: 15px; " onclick="" alt="plus_icon">
+                            <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                                 style=" width: 40px; height: 40px; margin-right: 15px; " onclick="" alt="thumbup_icon">
+                            <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                                 style="width: 40px; height: 40px; margin-right: 15px; " onclick=""
+                                 alt="thumbdown_icon">
+                        </div>
+                        <div class="content">
+                            <p class="genres">장르 ex) Comedy </p>
+                            <p class="des">영화 설명 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ </p>
+                            <p class="des">ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ </p>
+                            <p class="des">ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ </p>
+                            <p class="des">ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ </p>
+                            <p class="des">ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ </p>
+                            <p class="starring"><span>Starring:</span></p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -39,15 +73,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -59,36 +93,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -101,15 +114,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -122,15 +135,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -155,15 +189,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -175,36 +209,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -217,15 +230,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -238,15 +251,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -271,15 +305,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -291,36 +325,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -333,15 +346,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -354,15 +367,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -387,15 +421,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -407,36 +441,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -449,15 +462,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -470,15 +483,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -503,15 +537,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -523,36 +557,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -565,15 +578,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -586,15 +599,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -619,15 +653,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -639,36 +673,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -681,15 +694,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -702,15 +715,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -735,15 +769,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -755,36 +789,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -797,15 +810,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -818,15 +831,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -851,15 +885,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -871,36 +905,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -913,15 +926,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -934,15 +947,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -967,15 +1001,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -987,36 +1021,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -1029,15 +1042,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -1050,15 +1063,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -1083,15 +1117,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -1103,36 +1137,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
-                        <a href="#"></a>
-                    </figcaption>
-                </figure>
-
-
-                <figure class="snip1273">
-                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
-                         alt="sample72"/>
-                    <figcaption>
-                        <h3>오징어 게임</h3>
-                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -1145,15 +1158,15 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -1166,15 +1179,36 @@
                         <h3>오징어 게임</h3>
                         <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="play_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="plus_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
                         <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbup_icon">
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
                         <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 10px;" onclick="" alt="thumbdown_icon">
-                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px;"
-                             onclick="" alt="arrow_icon">
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
+                        <a href="#"></a>
+                    </figcaption>
+                </figure>
+
+
+                <figure class="snip1273">
+                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                         alt="sample72"/>
+                    <figcaption>
+                        <h3>오징어 게임</h3>
+                        <p>빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는법</p>
+                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="play_icon">
+                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="plus_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbup_icon">
+                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick="" alt="thumbdown_icon">
+                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}" style="width: 30px; height: 30px; z-index: 2;"
+                             onclick="modalOn()" alt="arrow_icon">
                         <a href="#"></a>
                     </figcaption>
                 </figure>
@@ -1186,23 +1220,18 @@
         </div>
 
 
-        <!-- movie info -->
-        <div class="movie-info">
-            <div class="movie-detail">
-                <h1 class="movie-name">Movie Name</h1>
-                <p class="genres">장르 ex) Comedy</p>
-                <p class="des">영화 설명 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
-                    ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ상세정보 클릭시 보여줄 설명</p>
-                <p class="starring"><span>Starring:</span></p>
-            </div>
-        </div>
+        {#        <!-- movie info -->#}
+        {#        <div class="movie-info">#}
+        {#            <div class="movie-detail">#}
+        {#                <h1 class="movie-name">Movie Name</h1>#}
+        {#                <p class="genres">장르 ex) Comedy</p>#}
+        {#                <p class="des">영화 설명 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ#}
+        {#                    ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ상세정보 클릭시 보여줄 설명</p>#}
+        {#                <p class="starring"><span>Starring:</span></p>#}
+        {#            </div>#}
+        {#        </div>#}
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
         <!--<h1 class="movie-name"></h1>-->
         <!--<p class="genres"></p>-->
         <!--<p class="des"></p>-->
@@ -1225,4 +1254,5 @@
         <!--    </div>-->
         <!--</div>-->
     </header>
+
 {% endblock %}
