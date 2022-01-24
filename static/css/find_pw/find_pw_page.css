@@ -9,13 +9,18 @@
     background-image: url(https://assets.nflxext.com/ffe/siteui/acquisition/login/login-the-crown_2-1500x1000.jpg);
 }
 .our-story-header-wrapper .auth-links {
-    display: none;
+    font-size:1.2em;
+    background-color: black;
     font-weight: bold;
     padding: 7px 17px;
     color: red;
     cursor: pointer;
     text-decoration: none;
 }
+.lang-selection-container{
+    display: none !important;
+     margin-top: 20px;
+ }
 
 .total-find-container {
     -webkit-text-size-adjust: 100%;
@@ -41,6 +46,29 @@
     padding: 40px 35px;
     background-color: #f3f3f3;
 
+}
+.none-email {
+    font-size: 16px;
+    border-radius: 2px;
+    width: 100%;
+    background-color: #ffa00a;
+    color: white;
+    margin: 10px 0;
+}
+
+.ui-msg-icon:before {
+    content: '\e805';
+    line-height: 1.5em;
+    padding-left: 20px;
+    font-size: 1.5em;
+}
+.ui-msg-icon {
+    width: 53px;
+}
+.ui-msg-content {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px 10px;
 }
 
 .choose-notice {
@@ -172,8 +200,9 @@
     .footer {
         background-color: rgba(0,0,0,.75);
     }
-    .our-story-header.lang-selection-container.lang-selection-container .ui-select-wrapper {
-        display: none;
+    .our-story-header-wrapper .auth-links {
+        font-size:1em;
+        background-color: white;
     }
 
     .total-find-container {
