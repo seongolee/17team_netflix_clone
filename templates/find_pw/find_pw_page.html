@@ -4,21 +4,36 @@
 
 {% block others %}
     <link rel="stylesheet" href="{% static 'css/find_pw/find_pw_page.css' %}">
-    <script src="{% static 'js/find_pw/find_pw.js' %}"></script>
+    <script defer src="{% static 'js/find_pw/find_pw.js' %}"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
 {% endblock %}
+{% block title %}비밀번호 찾기{% endblock %}
 
 {% block content %}
 
     <div class="total-find-container">
         <div class="find-container">
             <span class="find_id_pw_text">이메일/비밀번호를 잊으셨나요?</span>
-            <p></p>
+<!--            이메일 없을 시-->
             <div class="none-email">
-                <div class="ui-msg-icon"></div>
+                <div class="ui-msg-icon"><i class="fas fa-times-circle fa-2x"></i></div>
                 <div class="ui-msg-content">
                     이 이메일 주소와 연결된 계정을 찾을 수 없습니다.
                 </div>
             </div>
+<!--            번호 없을 시-->
+            <div class="none-email">
+                <div class="ui-msg-icon"><i class="fas fa-times-circle fa-2x"></i></div>
+                <div class="ui-msg-content">
+                    계정과 연결되지 않은 전화번호입니다. 이메일 주소를 대신 입력하여 로그인해 주세요.
+                </div>
+            </div>
+
+
             <span class="choose-notice">비밀번호 재설정 안내를 받을 방법을 선택하세요.</span>
             <div class="choose-box">
                 <div class="email-radio">
@@ -35,10 +50,15 @@
             </div>
             <div class="choose-email-result" id="email_result">
                 <label for="send-email">비밀번호 재설정 안내 이메일을 보내드리겠습니다.</label>
-                <input type="text" class="email-input" id="send-email" name="send-email" placeholder="name@example.com">
+                <div class="correct_type">
+                    <input type="text" class="email-input" id="send-email" name="send-email" placeholder="name@example.com" onchange="checkIt()">
+                    <span id="error_email"></span>
+                </div>
+
             </div>
             <div class="choose-msg-result" id="msg_result">
                 <label for="send-msg">비밀번호 재설정 인증 코드를 문자로 보내드리겠습니다. 문자 또는 데이터 요금이 부과될 수 있습니다.</label>
+                <p></p>
                 <div class="msg-input">
                     <select name="countryCode" id="">
                         <option data-countryCode="KR" value="82" SELECTED>&#127472;&#127479; +82</option>
@@ -260,12 +280,17 @@
                         <!--                        <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>-->
                         <!--                    </optgroup>-->
                     </select>
+                    <div class="correct_type_msg">
+                       <input type="text" class="msg-input" id="send-msg" name="send-msg" onchange="checkPhone()">
+                        <span id="error_phone"></span>
+                    </div>
 
-                    <input type="text" class="msg-input" id="send-msg" name="send-msg">
                 </div>
 
             </div>
-            <button class="send-btn" type="submit" id="send-btn">이메일로 받기</button>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" id="send-btn" type="button">이메일로 받기</button>
+            </div>
         </div>
         <p></p>
         <p class="google-check">이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이  아님을 확인합니다.
