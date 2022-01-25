@@ -1,13 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block css %}
+{% block others %}
     <link rel="stylesheet" href="{% static 'css/logout/logout.css' %}">
 {% endblock %}
 
-{% block js %}
-
-{% endblock %}
+{% block title %}로그아웃{% endblock %}
 
 {% block content %}
     <div class="total-logout-container">
