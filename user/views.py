@@ -7,6 +7,6 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 def create_profile():
 
-    user = UserModel.objects.create_user(username=username, password=password, email =email)
+    user = UserModel.objects.create_user(username=username, password=password, email =email,)
     for i in range(5):
         ProfileId.objects.create(profile_id=user.userid +i)
