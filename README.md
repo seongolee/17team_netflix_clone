@@ -1,5 +1,5 @@
-#### 17team_netflix_clone 
-
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fseongolee%2F17team_netflix_clone&count_bg=%2349E3D8&title_bg=%23555555&icon=github.svg&icon_color=%23CFDD4F&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+ #### 17team_netflix_clone 
 김성오 김지용 김석준 윤소현
 
 ## 내일배움캠프 글로벌 OTT 서비스 넷플릭스(Netflix) 프로젝트
