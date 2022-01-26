@@ -1,4 +1,4 @@
-# 17team_netflix_clone -- 김성오 김지용 김석준 윤소현 --
+#### 17team_netflix_clone -- 김성오 김지용 김석준 윤소현 --
 
 ## 내일배움캠프 글로벌 OTT 서비스 넷플릭스(Netflix) 프로젝트
 
