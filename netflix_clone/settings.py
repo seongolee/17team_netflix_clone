@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'find_user',
     'logout',
     'main',
+    'login',
 ]
 
 MIDDLEWARE = [
