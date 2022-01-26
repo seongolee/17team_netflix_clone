@@ -1,13 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/login/login.css' %}">
+{% block others %}
+    <link rel="stylesheet" href="{% static 'css/login/login.css' %}">
 {% endblock %}
 
-{% block js %}
-
-{% endblock %}
 
 
 <!--base.html 에서 미리 정한 content 블록 위치에 넣어주기!-->
@@ -430,7 +427,7 @@
 
 
                 <div class="login-signup-now" data-uia="login-signup-now">Netflix 회원이 아닌가요? <a class=" " target="_self"
-                                                                                               href="/">지금 가입하세요</a>.
+                                                                                               href="/sign_up">지금 가입하세요</a>.
                 </div>
                 <div class="recaptcha-terms-of-use" data-uia="recaptcha-terms-of-use">
                     <p><span>이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다.</span>&nbsp;<button
