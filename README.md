@@ -1,6 +1,6 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fseongolee%2F17team_netflix_clone&count_bg=%2349E3D8&title_bg=%23555555&icon=github.svg&icon_color=%23CFDD4F&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
  #### 17team_netflix_clone 
-김성오 김지용 김석준 윤소현
+이성오 김지용 김석준 윤소현
 
 ## 내일배움캠프 글로벌 OTT 서비스 넷플릭스(Netflix) 프로젝트
 
@@ -45,11 +45,11 @@ Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=
 
 ### 🧙 맴버구성
 - :lipstick: Frontend
-  - 김성오, 김지용, 김석준, 윤소현
+  - 이성오 김지용 김석준 윤소현
 - :computer: Backend - (https://github.com/eungenie/SpringBoot-Project-Triport)
-  - 김성오, 김지용, 김석준, 윤소현
+  - 이성오 김지용 김석준 윤소현
 - 😎 Design
-  - 김성오, 김지용, 김석준, 윤소현
+  - 이성오 김지용 김석준 윤소현
 
 ### 📌 기술 선택 이유! - <a href="https://github.com/rayrayj92/triport/wiki/%EA%B8%B0%EC%88%A0-%EC%84%A0%ED%83%9D-%EC%9D%B4%EC%9C%A0" >상세보기 - WIKI 이동</a>
 
