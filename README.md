@@ -21,8 +21,6 @@
   <img src="https://user-images.githubusercontent.com/74017167/151192199-41094171-58ee-4867-8096-cdabd1fa0504.png" width="300px" />
 </p>
 
-### 🔗 라이브
-https://triport.kr/
 
 ### 🏠 소개
 Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=Trils)</b> & <b>블로그 서비스 (=Trilog)</b>를 제공하고 있는 여행 매니아들만의 서비스입니다.
@@ -70,7 +68,7 @@ Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=
 <!-- ### 📌 기술 선택 이유! - <a href="https://github.com/seongolee/17team_netflix_clone/wiki" >상세보기 - WIKI 이동</a> -->
 
 ### 📌 페이지별 기능
-- sign-up 회원가입
+**✔** sign-up 회원가입
     
     회원가입 정보 입력 / 이메일 입력
     
@@ -78,16 +76,16 @@ Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=
     
     비밀번호 입력과 비밀번호 확인 입력
     
-- sign -in 로그인
+**✔** sign -in 로그인
     1. 유효성 검사 / 이메일 또는 휴대폰 입력
     2. 소셜 로그인 기능 / e-mail 로그인
     3. 소셜 로그인 기능 / kakao 로그인
-- find user 비밀번호 찾기
+**✔** find user 비밀번호 찾기
     1. 유효성 검사 / 이메일 또는 휴대폰 입력
     2. 인증번호 발송 기능 / E-mail 발송, 문자 메시지(SMS) 발송
     3. 인증번호 확인
     4. 비밀번호 변경 / 변경 후 재로그인
-- main 서비스 화면
+**✔** main 서비스 화면
     1. Modal 창 구현 (onclick 시 display: flex, none 값)
     2. 메인 container 영화 Clip 자동 재생
     3. Genre 별 동영상 정렬
