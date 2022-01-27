@@ -18,7 +18,7 @@
 </p>
 
 <p align='center'>
-  <img src="https://cdn5.vectorstock.com/i/1000x1000/31/89/34-3-4-number-logo-design-with-a-creative-cut-vector-29583189.jpg" width="350px height=350px" />
+  <img src="https://user-images.githubusercontent.com/56148289/151285357-4eeb3b99-d992-4bfb-a434-e43bb421df54.png">
 </p>
 
 
@@ -70,25 +70,27 @@
     
     비밀번호 입력과 비밀번호 확인 입력
     
-**✔** sign -in 로그인
-    1. 유효성 검사 / 이메일 또는 휴대폰 입력
-    2. 소셜 로그인 기능 / e-mail 로그인
-    3. 소셜 로그인 기능 / kakao 로그인
-**✔** find user 비밀번호 찾기
-    1. 유효성 검사 / 이메일 또는 휴대폰 입력
-    2. 인증번호 발송 기능 / E-mail 발송, 문자 메시지(SMS) 발송
-    3. 인증번호 확인
-    4. 비밀번호 변경 / 변경 후 재로그인
-**✔** main 서비스 화면
-    1. Modal 창 구현 (onclick 시 display: flex, none 값)
-    2. 메인 container 영화 Clip 자동 재생
-    3. Genre 별 동영상 정렬
-    4. 추천 시스템 / 토큰으로 쪼개 백터화를 뿌려서 코사인 유사도를 이용
-    5. 옆 arrow 버튼 클릭시 스크롤 옆으로 이동
-    6. 영상 도중에 나갈시 봤던 곳까지 영상시간 저장
-    7. 영상 스트리밍
-    8. 영상 종료 시 별점 주는 창 띄우기
-    9. 로그아웃 버튼 활성화 / drop_down 창 내리고 프로필 창 및 프로필 변경, 로그아웃 section 구별
+**✔** sign -in 로그인\
+ 1. 유효성 검사 / 이메일 또는 휴대폰 입력\
+ 2. 소셜 로그인 기능 / e-mail 로그인\
+ 3. 소셜 로그인 기능 / kakao 로그인\
+
+**✔** find user 비밀번호 찾기\
+ 1. 유효성 검사 / 이메일 또는 휴대폰 입력\
+ 2. 인증번호 발송 기능 / E-mail 발송, 문자 메시지(SMS) 발송\
+ 3. 인증번호 확인\
+ 4. 비밀번호 변경 / 변경 후 재로그인\
+
+**✔** main 서비스 화면\
+ 1. Modal 창 구현 (onclick 시 display: flex, none 값)\
+ 2. 메인 container 영화 Clip 자동 재생\
+ 3. Genre 별 동영상 정렬\
+ 4. 추천 시스템 / 토큰으로 쪼개 백터화를 뿌려서 코사인 유사도를 이용\
+ 5. 옆 arrow 버튼 클릭시 스크롤 옆으로 이동\
+ 6. 영상 도중에 나갈시 봤던 곳까지 영상시간 저장\
+ 7. 영상 스트리밍\
+ 8. 영상 종료 시 별점 주는 창 띄우기\
+ 9. 로그아웃 버튼 활성화 / drop_down 창 내리고 프로필 창 및 프로필 변경, 로그아웃 section 구별\
 
 
 ### 📌 문제를 이렇게 해결했어요! - <a href="https://github.com/seongolee/17team_netflix_clone/wiki" >상세보기 - WIKI 이동</a>
