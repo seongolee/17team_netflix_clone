@@ -49,33 +49,57 @@ Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=
 - 😎 Design
   - 이성오 김지용 김석준 윤소현
 
-### ⚙ 적용기술 및 구현 기능 적용 기술
+## 🔧 기술스택
 
-Front-End : JavaScript, HTML&CSS\
-Back-End : Python, Django, Tensorflow , AWS S3 / RDS \
-Common : Git, Github, Slack, Notion, Figma
+**✔**사용언어 및 프레임워크 및 기능 : HTML, JavaScript(ES6+), Ajax, Python, PythonDjango  Bootstrap
 
-### 📌 기술 선택 이유! - <a href="https://github.com/rayrayj92/triport/wiki/%EA%B8%B0%EC%88%A0-%EC%84%A0%ED%83%9D-%EC%9D%B4%EC%9C%A0" >상세보기 - WIKI 이동</a>
+**✔**사용기술 백엔드 언어: HTML, JavaScript(ES6+), Python
 
-### 📌 주요 기능
-#### 로그인/회원가입 - <a href="https://github.com/rayrayj92/triport/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C#-%EB%A1%9C%EA%B7%B8%EC%9D%B8--%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85" >상세보기 - WIKI 이동</a>
-- PythonDjango 기반 일반 로그인
-- Github 로그인
-- 이메일기반 비밀번호 재설정 메일보내기
+**✔**라이브러리 :    /   Flask ORM RDS bs4  requests  jsonify tensorflow
 
-#### Trils (영상 릴스) - <a href="https://github.com/rayrayj92/triport/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C#-trils-%EC%98%81%EC%83%81-%EB%A6%B4%EC%8A%A4" >상세보기 - WIKI 이동</a>
-- 스트리밍 서비스
-- 릴스 좋아요
-- 릴스 메인 페이지 무한 스크롤
-- 사용자 가이드
+**✔**데이터베이스: AWS S3, RDS, ORM
 
-#### Trilog (블로그) - <a href="https://github.com/rayrayj92/triport/wiki/%EC%A3%BC%EC%9A%94-%EA%B8%B0%EB%8A%A5-%EC%86%8C%EA%B0%9C#-trilog-%EB%B8%94%EB%A1%9C%EA%B7%B8" >상세보기 - WIKI 이동</a>
-- 게시물, 좋아요, 댓글, 대댓글
-- Toast UI Editor (WSYSWYG) 에디터 활용
-- Kakao Map 키워드 검색 및 위치 설정
-- 블로그 메인 페이지 무한 스크롤
+**✔**프로젝트 관리도구: Sourcetree
 
-### 📌 문제를 이렇게 해결했어요! - <a href="https://github.com/rayrayj92/triport/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85" >상세보기 - WIKI 이동</a>
+**✔**프론트엔드 언어: html css javascript
+
+**✔**개발툴: PyCharm, VScode
+
+**✔**Common : Git, Github, Slack, Notion, Figma, Google_Spread_Sheet
+
+<!-- ### 📌 기술 선택 이유! - <a href="https://github.com/seongolee/17team_netflix_clone/wiki" >상세보기 - WIKI 이동</a> -->
+
+### 📌 페이지별 기능
+- sign-up 회원가입
+    
+    회원가입 정보 입력 / 이메일 입력
+    
+    회원가입 정보 입력 / 핸드폰번호 입력
+    
+    비밀번호 입력과 비밀번호 확인 입력
+    
+- sign -in 로그인
+    1. 유효성 검사 / 이메일 또는 휴대폰 입력
+    2. 소셜 로그인 기능 / e-mail 로그인
+    3. 소셜 로그인 기능 / kakao 로그인
+- find user 비밀번호 찾기
+    1. 유효성 검사 / 이메일 또는 휴대폰 입력
+    2. 인증번호 발송 기능 / E-mail 발송, 문자 메시지(SMS) 발송
+    3. 인증번호 확인
+    4. 비밀번호 변경 / 변경 후 재로그인
+- main 서비스 화면
+    1. Modal 창 구현 (onclick 시 display: flex, none 값)
+    2. 메인 container 영화 Clip 자동 재생
+    3. Genre 별 동영상 정렬
+    4. 추천 시스템 / 토큰으로 쪼개 백터화를 뿌려서 코사인 유사도를 이용
+    5. 옆 arrow 버튼 클릭시 스크롤 옆으로 이동
+    6. 영상 도중에 나갈시 봤던 곳까지 영상시간 저장
+    7. 영상 스트리밍
+    8. 영상 종료 시 별점 주는 창 띄우기
+    9. 로그아웃 버튼 활성화 / drop_down 창 내리고 프로필 창 및 프로필 변경, 로그아웃 section 구별
+
+
+### 📌 문제를 이렇게 해결했어요! - <a href="https://github.com/seongolee/17team_netflix_clone/wiki" >상세보기 - WIKI 이동</a>
 
 ### [Notion](https://www.notion.so/Netflix-Clone-17Team-Project-c5753c3e9b434085ac9e68f0a2a49007)
 ### 📌AWS EC2 업로드 / [Link]
