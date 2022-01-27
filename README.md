@@ -51,6 +51,12 @@ Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=
 - 😎 Design
   - 이성오 김지용 김석준 윤소현
 
+### ⚙ 적용기술 및 구현 기능 적용 기술
+
+Front-End : JavaScript, HTML&CSS\
+Back-End : Python, Django, Tensorflow , AWS S3 / RDS \
+Common : Git, Github, Slack, Notion, Figma
+
 ### 📌 기술 선택 이유! - <a href="https://github.com/rayrayj92/triport/wiki/%EA%B8%B0%EC%88%A0-%EC%84%A0%ED%83%9D-%EC%9D%B4%EC%9C%A0" >상세보기 - WIKI 이동</a>
 
 ### 📌 주요 기능
@@ -72,3 +78,6 @@ Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=
 - 블로그 메인 페이지 무한 스크롤
 
 ### 📌 문제를 이렇게 해결했어요! - <a href="https://github.com/rayrayj92/triport/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85" >상세보기 - WIKI 이동</a>
+
+### [Notion]
+### 📌AWS EC2 업로드 / [Link]
