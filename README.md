@@ -77,5 +77,5 @@ Common : Git, Github, Slack, Notion, Figma
 
 ### 📌 문제를 이렇게 해결했어요! - <a href="https://github.com/rayrayj92/triport/wiki/%ED%8A%B8%EB%9F%AC%EB%B8%94%EC%8A%88%ED%8C%85" >상세보기 - WIKI 이동</a>
 
-### [Notion]
+### [Notion](https://www.notion.so/Netflix-Clone-17Team-Project-c5753c3e9b434085ac9e68f0a2a49007)
 ### 📌AWS EC2 업로드 / [Link]
