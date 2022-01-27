@@ -36,7 +36,7 @@
 
 - 💄 Frontend
     - 이성오  김석준 윤소현
-- 💻 Backend - ([https://github.com/eungenie/SpringBoot-Project-Triport](https://github.com/eungenie/SpringBoot-Project-Triport))
+- 💻 Backend
     - 이성오 김지용
 - 😎 Design
     - 김지용 김석준 이성오 윤소현
