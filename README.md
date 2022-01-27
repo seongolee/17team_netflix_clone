@@ -36,7 +36,7 @@
 
 - :lipstick: Frontend
   - 이성오 김지용 김석준 윤소현
-- :computer: Backend - (https://github.com/eungenie/SpringBoot-Project-Triport)
+- :computer: Backend
   - 이성오 김지용 김석준 윤소현
 - 😎 Design
   - 이성오 김지용 김석준 윤소현
