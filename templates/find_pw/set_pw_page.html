@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block others %}
+    <link rel="stylesheet" href="{% static 'css/find_pw/set_pw_page.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% endblock %}
+
+{% block title %}인증번호 확인{% endblock %}
+
+{% block content %}
+<div class="bd">
+    <div class="responsive-account-container">
+        <form class="change-password-form" method="post" novalidate="">
+            <h2>비밀번호 변경</h2>
+            <p></p>
+            <ul class="simpleForm structural ui-grid">
+                <li class="nfFormSpace">
+                    <div class="nfInput">
+                        <div class="nfInputPlacement">
+                            <label class="input_id" placeholder="email">
+<!--                                autocomplete -> 자동완성기능 없앰-->
+                                <input type="text" name="email" class="nfTextField hasText" id="id_email" value="" autocomplete="off" disabled="">
+                                <label for="id_email" class="placeLabel">현재 이메일</label>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="nfFormSpace">
+                    <div class="nfInput">
+                        <div class="nfInputPlacement">
+                            <label class="input_id" placeholder="newPassword">
+                                <input type="password" name="newPassword" class="nfTextField error" id="id_newPassword" value="" tabindex="0" autocomplete="off">
+                                <label for="id_newPassword" class="placeLabel">새 비밀번호(6~60자)</label>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="nfFormSpace">
+                    <div class="nfInput">
+                        <div class="nfInputPlacement">
+                            <label class="input_id" placeholder="confirmNewPassword">
+                                <input type="password" name="confirmNewPassword" class="nfTextField error" id="id_confirmNewPassword" value="" tabindex="0" autocomplete="off">
+                                <label for="id_confirmNewPassword" class="placeLabel">새 비밀번호 재입력</label>
+                            </label>
+                        </div>
+                    </div>
+                </li>
+                <li class="nfFormSpace">
+                    <div class="ui-binary-input">
+                        <input type="checkbox" class="" name="requireAllDevicesSignIn" id="cb_requireAllDevicesSignIn"
+                               value="true" tabindex="0">
+                        <label for="cb_requireAllDevicesSignIn"><span>모든 디바이스에서 새로운 비밀번호로 다시 로그인하셔야 합니다.</span></label>
+                        <div class="helper"></div>
+                    </div>
+                </li>
+            </ul>
+            <div class="nf-btn-bar change-password-buttons">
+                <button id="btn-save" type="submit" class="save_btn">저장</button>
+                <button id="btn-cancel" class="cancel_btn">취소</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

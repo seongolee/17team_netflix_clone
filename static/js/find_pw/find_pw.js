@@ -24,7 +24,7 @@ function show_detail() {
 function checkIt() {
     var input_email = document.getElementById('send-email')
     var email = input_email.value;
-    var exptext = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+    var exptext = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 
     if (!email) {
         document.getElementById('error_email').innerHTML = ''

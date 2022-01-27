@@ -6,3 +6,6 @@ def find_user_view(request):
 
 def certi_num_view(request):
     return render(request,'find_pw/certi_num_page.html')
+
+def set_pw_view(request):
+    return render(request,'find_pw/set_pw_page.html')
