@@ -18,12 +18,12 @@
 </p>
 
 <p align='center'>
-  <img src="![image](https://user-images.githubusercontent.com/69658709/151285015-590f34d0-3e64-4a41-bc09-efff99c23c85.png)" width="350px height=350px" />
+  <img src="https://cdn5.vectorstock.com/i/1000x1000/31/89/34-3-4-number-logo-design-with-a-creative-cut-vector-29583189.jpg" width="350px height=350px" />
 </p>
 
 
 ### 🏠 소개
-Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=Trils)</b> & <b>블로그 서비스 (=Trilog)</b>를 제공하고 있는 여행 매니아들만의 서비스입니다.
+저희는 5명인 다른 조와 달리 3명아니면 4명이서 프로젝트를 시작하게 되어서 팀명을 3!4!로 짖게 되었습니다! 17조의 2배수인 34와 일맥상통한다는 점도 마음에 들었습니다. 이번 프로젝트를 통해 더블업 레벨업을 하겠다는 다짐으로 열심히 임하였습니다!
 
 ### ⏲️ 개발기간
 2022년 01월 26일 ~ 2022년 02월 09일
