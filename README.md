@@ -36,7 +36,7 @@
 
 - :lipstick: Frontend
   - 이성오 김지용 김석준 윤소현
-- :computer: Backend
+- :computer: Backend - (https://github.com/eungenie/SpringBoot-Project-Triport)
   - 이성오 김지용 김석준 윤소현
 - 😎 Design
   - 이성오 김지용 김석준 윤소현
@@ -47,7 +47,7 @@
 
 **✔**사용기술 백엔드 언어: HTML, JavaScript(ES6+), Python
 
-**✔**라이브러리 :    /   Flask ORM RDS bs4  requests  jsonify tensorflow
+**✔**라이브러리 : bs4  requests jsonify tensorflow
 
 **✔**데이터베이스: AWS S3, RDS, ORM
 
@@ -110,7 +110,9 @@
     로그아웃 버튼 활성화 / drop_down 창 내리고 프로필 창 및 프로필 변경, 로그아웃 section 구별
 
 
-### 📌 문제를 이렇게 해결했어요! - <a href="https://github.com/seongolee/17team_netflix_clone/wiki" >상세보기 - WIKI 이동</a>
+### 📌 끈기와 집념! 문제해결!
+##### 안되면 될때까지!! - <a href="https://github.com/seongolee/17team_netflix_clone/wiki" >상세보기 - WIKI 이동</a>
 
-### [Notion](https://www.notion.so/Netflix-Clone-17Team-Project-c5753c3e9b434085ac9e68f0a2a49007)
+### 📌[Notion](https://www.notion.so/Netflix-Clone-17Team-Project-c5753c3e9b434085ac9e68f0a2a49007)
+
 ### 📌AWS EC2 업로드 / [Link]
