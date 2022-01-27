@@ -1,0 +1,58 @@
+#appMountPoint{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow-x: hidden;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-image: url(https://assets.nflxext.com/ffe/siteui/acquisition/login/login-the-crown_2-1500x1000.jpg);
+}
+.total-certi-container {
+    margin: 0 auto;
+    width: 450px;
+    padding-bottom: 50px;
+
+}
+.lang-selection-container{
+    display: none !important;
+     margin-top: 20px;
+}
+
+
+.certi-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: column;
+    margin-top: 50px;
+    color: #333;
+    padding: 30px 50px;
+    background-color: #f3f3f3;
+
+}
+
+.certi_text {
+    font-size: 2em;
+}
+
+.notice_text {
+    font-size: 16px;
+}
+
+.certi-container input {
+    border: 0.5px solid gray;
+    outline: #B3B3B3;
+    font-size: 16px;
+    height: 45px;
+    padding-left: 20px;
+}
+
+.d-grid {
+    margin-top: 30px;
+    width: 95%;
+}
+.btn {
+    width: 93%;
+    height: 48px;
+}
