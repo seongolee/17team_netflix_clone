@@ -30,8 +30,6 @@ Triport 서비스는 여행이라는 테마 아래 영상 <b>릴스 서비스 (=
 ### ⏲️ 개발기간
 2022년 01월 26일 ~ 2022년 02월 09일
 
-##  🍎 iOS 커리큘럼
-
 | Week | PythonDjango, AI Machine-Learning | Netflix-Clone-Coding |팀프로젝트 내용 |
 | ------ | -- | -- |----------- |
 | 1주차 | ☑️ | ☑️ | PythonDjango 기초, 장르, 키워드 등을 벡터화해서 유사도를 측정 |
