@@ -29,9 +29,9 @@ class Video(models.Model):
     # star_point / 별점
     star_point = models.CharField(max_length=256)
     # total_like / 전체 좋아요 수
-    total_like = models.IntegerField(max_length=256)
+    total_like = models.IntegerField(default=0)
     # total_views / 조회수
-    total_views = models.IntegerField(max_length=256)
+    total_views = models.IntegerField(default=0)
 
 
 # VideoModal 테이블
