@@ -1,0 +1,577 @@
+video {
+    display: inline-block;
+}
+
+ul{
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+form {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 27px;
+    margin: 0 0 0.4em;
+}
+
+h2, h3, h4, h5 {
+    margin: 0.75em 0 0.25em;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.nmhp-cta:after {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    flex: 0 0 auto;
+}
+
+.nmhp-cta-extra-large:after {
+    min-height: 40px;
+}
+
+.our-story-cards {
+    margin: 0 auto;
+}
+
+.our-story-card {
+    position: relative;
+    border-bottom: 8px solid #222;
+    margin-bottom: 0;
+    background: 0 0;
+    color: #fff;
+    padding: 50px 5%;
+}
+
+.our-story-card-background {
+    position: absolute;
+    top: -70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.our-story-card-background .concord-img-wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.hero-card .concord-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+}
+
+.hero-card .concord-img-gradient {
+    position: absolute;
+    background-image: linear-gradient(to top, rgba(0,0,0.8) 0, rgba(0,0,0,0) 60%,
+    rgba(0,0,0,.8) 100%);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+.hero-card .our-story-card-title {
+    font-size: 1.75em;
+}
+
+.hero-card .our-story-card-text {
+    position: relative;
+    width: 100%;
+    padding: 75px 0;
+    max-width: 950px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero-card h1, .hero-card h2 {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.our-story-card-title {
+    font-size: 1.75rem;
+}
+
+.hero-card .our-story-card-subtitle {
+    font-size: 1.125rem;
+    margin: 1rem auto;
+}
+
+.email-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.email-form-title {
+    padding: 0 5%;
+    max-width: 450px;
+    margin: 0 auto;
+    font-weight: 400;
+}
+
+.email-form-lockup {
+    text-align: center;
+}
+
+ul.structural {
+    padding: 0;
+    margin: 0;
+}
+
+ul.simple-form {
+    padding: 0;
+}
+
+.nf-form-space {
+    margin-bottom: 50px;
+}
+
+ul.simple-form > li {
+    list-style: none;
+    margin-left: 0;
+}
+
+.nf-input {
+    max-width: 500px;
+    position: relative;
+}
+
+.email-form-lockup .nf-input {
+    margin: 10px auto;
+}
+
+.nf-text-field {
+    font-size: 16px;
+    border: solid 1px #8c8c8c;
+    border-radius: 2px;
+    appearance: none;
+    color: #000;
+}
+
+.nf-input .nf-input-placement {
+    position: relative;
+}
+
+.input-id {
+    width: 0;
+}
+
+.nf-input .nf-text-field {
+    height: 48px;
+    padding: 10px 10px 0;
+    width: 100%;
+}
+
+.nf-input .place-label {
+    position: absolute;
+    top: 38%;
+    left: 10px;
+    color: #8c8c8c;
+    font-size: 14px;
+    cursor: text;
+    transition: font .1s ease,top .1s ease,transform .1s ease;
+}
+
+.nf-text-field:focus~ .place-label {
+    top: 7px;
+    font-weight: 700;
+    font-size: 13px;
+    transform: translateY(0);
+}
+
+.nf-text-field.hasText+.place-label {
+    top: 7px;
+    font-weight: 700;
+    font-size: 13px;
+    transform: translateY(0);
+}
+
+.email-form .input-error {
+    color: #ffa00a;
+    text-align: left;
+    margin-bottom: -6px;
+    padding: 6px 3px;
+    font-size: 15px;
+    position: absolute;
+}
+
+.email-form .nf-text-field.error {
+    border-top: 0;
+    border-bottom: 2px solid #ffa00a;
+}
+
+.hero-card .our-story-card-text .our-story-cta-container {
+    float: none;
+}
+
+.nmhp-cta-extra-large {
+    font-size: 1rem;
+    min-height: 40px;
+    position: relative;
+    min-width: 74px;
+    background-color: #e50914;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #e50914, #db0510);
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 400;
+    text-align: center;
+    border: 0;
+}
+
+.nmhp-cta {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    margin: 0.25em auto;
+    padding: 0 1em;
+}
+
+.nmhp-cta .cta-btn-txt {
+    padding: 0.35rem 0;
+    flex: 1 1 auto;
+    text-align: center;
+}
+
+.nmhp-cta .chevron-right-arrow {
+    height: 0.75em;
+    width: 0.35em;
+    flex: 0 1 auto;
+    margin: 0 0 0 0.5em;
+    position: relative;
+}
+
+.nmhp-cta .chevron-right-arrow svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 1px 0;
+    height: 100%;
+}
+
+.animation-card .animation-card-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.animation-card.watch-on-tv .our-story-card-text {
+    margin: -5% 0;
+}
+
+.animation-card .our-story-card-text {
+    width: 52%;
+    height: 100%;
+    flex: 0 1 auto;
+    padding: 0 3rem 0 0;
+    font-size: 1.625rem;
+    font-weight: 400;
+}
+
+.animation-card .our-story-card-title {
+    font-size: 3.125rem;
+    margin-bottom: 0.5rem;
+}
+
+.our-story-card-subtitle, .our-story-card-text {
+    font-size: 1.625rem;
+    font-weight: 400;
+}
+
+.animation-card .our-story-card-img-container {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex: 0 1 auto;
+}
+
+.animation-card .our-story-card-animation-container {
+    margin: -6% -5% -5% 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.animation-card .our-story-card-img {
+    position: relative;
+}
+
+.animation-card.watch-on-tv .our-story-card-animation {
+    width: 100%;
+    height: 100%;
+    max-width: 73%;
+    max-height: 53%;
+    top: 21%;
+    left: 13%;
+    position: absolute;
+}
+
+.animation-card .our-story-card-video {
+    width: 100%;
+    height: 100%;
+}
+
+.animation-card.flipped .animation-card-container {
+    flex-flow: row-reverse;
+}
+
+.animation-card.flipped .animation-card-container .our-story-card-text {
+    padding: 0 0 0 3rem;
+}
+
+.animation-card.download-and-watch .our-story-card-animation-container {
+    margin: -8% 0 -4% -15%;
+    min-height: 100px;
+    width: 100%;
+}
+
+.animation-card.download-and-watch .our-story-card-animation {
+    position: absolute;
+    left: 20%;
+    bottom: 8%;
+    margin: 0 auto;
+    background: #000;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    min-width: 15em;
+    border: 2px solid rgba(255, 255, 255,.25);
+    border-radius: 0.75em;
+}
+
+.animation-card.download-and-watch .our-story-card-animation .our-story-card-animation-image {
+   margin: 0 1em 0 0;
+}
+
+.animation-card.download-and-watch .our-story-card-animation .our-story-card-animation-image img {
+    height: 3em;
+}
+
+.animation-card.download-and-watch .our-story-card-animation .our-story-card-animation-text {
+    margin-right: auto;
+}
+
+.animation-card.download-and-watch .our-story-card-animation .our-story-card-animation-text .text-0 {
+    color: #fff;
+    font-weight: 600;
+    font-size: .9em;
+}
+
+.animation-card.download-and-watch .our-story-card-animation .our-story-card-animation-text .text-1 {
+    color: #0071eb;
+    font-size: .75em;
+    font-weight: 400;
+}
+
+.animation-card.download-and-watch .our-story-card-animation:after {
+    height: 3.75em;
+    width: 3em;
+    outline: 2px solid #000;
+    outline-offset: -2px;
+    display: block;
+    content: '';
+    background: url(https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif) center center no-repeat;
+    background-size: 100%;
+
+}
+
+.animation-card.watch-on-device .our-story-card-img {
+    z-index: 2;
+}
+
+.animation-card.watch-on-device .our-story-card-animation {
+    width: 100%;
+    height: 100%;
+    max-width: 63%;
+    max-height: 47%;
+    position: absolute;
+    top: 10%;
+    left: 18%;
+}
+
+
+
+@media only screen and (min-width: 550px) and (max-width: 949px), only screen and (min-width: 950px) and (max-width: 1449px), only screen and (min-width: 1450px) {
+    .our-story-card {
+        padding: 70px 45px;
+    }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px), only screen and (min-width: 1450px) {
+    .our-story-card-background {
+        top: -100px;
+    }
+
+    .hero-card .our-story-card-title {
+        font-size: 4rem;
+    }
+
+    .hero-card .our-story-card-subtitle {
+        font-size: 1.625rem;
+    }
+
+    .email-form {
+        max-width: 950px;
+        padding-top: 0.85rem;
+    }
+
+    .email-form-title {
+        max-width: none;
+        padding-bottom: 20px;
+        font-size: 1.2rem;
+    }
+
+    .email-form-lockup {
+        display: flex;
+        margin: 0 auto;
+        flex-direction: row;
+    }
+
+    .email-form-lockup .simple-form {
+        vertical-align: top;
+        flex: 1 0 auto;
+        text-align: right;
+    }
+
+    .email-form-lockup .our-story-cta-container {
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+        flex: 1 0 auto;
+    }
+
+    .email-form-lockup .nmhp-cta {
+        margin: 0;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        border-left: 1px solid #333;
+        padding: 0 1em;
+    }
+
+    .nmhp-cta .cta-btn-txt {
+        padding: 0.5rem 0;
+    }
+
+    .email-form-lockup .nf-input {
+        margin: 0;
+        display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 550px) and (max-width: 949px) {
+    .hero-card .our-story-card-title {
+        font-size: 3.125rem;
+    }
+
+    .hero-card .our-story-card-subtitle {
+        font-size: 1.625rem;
+    }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 549px), only screen and (min-width: 550px) and (max-width: 949px) {
+    .email-form-title {
+        padding: 0 10%;
+    }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1449px) {
+    .hero-card .our-story-card-title {
+        font-size: 3.125rem;
+    }
+
+    .email-form-lockup .simpleForm {
+        vertical-align: top;
+        flex: 1 0 auto;
+        text-align: right;
+    }
+
+    .email-form-lockup .nf-input input {
+        min-width: 450px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .nmhp-cta-extra-large {
+        font-size: 1.625rem;
+        min-height: 60px;
+    }
+
+    .animation-card.download-and-watch .our-story-card-animation {
+        padding: 0.5em 0.75em;
+    }
+
+    .animation-card.download-and-watch .our-story-card-animation .our-story-card-animation-image img {
+        height: 4.5em;
+    }
+
+    .nmhp-cta-extra-large:after {
+        min-height: 60px;
+    }
+}
+
+@media screen and (min-width: 740px) {
+    .nf-input .place-label {
+        font-size: 16px;
+    }
+
+    .nf-input.nf-input-responsive .nf-text-field {
+        width: auto;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    h3 {
+        font-size: 23px;
+    }
+}
+
+@media only screen and (min-width:1450px) {
+    .email-form-lockup .nf-input input {
+        min-width: 478px;
+        height: 58px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .nmhp-cta-extra-large {
+        font-size: 1.875rem;
+        min-height: 70px;
+    }
+}
