@@ -12,7 +12,7 @@
     <img src="https://img.shields.io/badge/Tensorflow-v9.0.1-00E7C3?logo=Tensorflow"/>
     <img src="https://img.shields.io/badge/Lodash-v4.17.21-blue"/>
     <img src="https://img.shields.io/badge/ReduxToolkit-v1.5.1-purple"/>
-    <img src="https://img.shields.io/badge/StyledComponents-v5.2.3-pink?logo=styled-components"/>
+    <img src="https://img.shields.io/badge/Html5-v5.2.3-pink?logo=Html5"/>
     <img src="https://img.shields.io/badge/SpringBoot-v2.4.4-6db33f?logo=Spring"/>
     <img src="https://img.shields.io/badge/yarn-^1.22.10-yellow?logo=yarn" />
 </p>
