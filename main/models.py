@@ -24,14 +24,12 @@ class Video(models.Model):
     video_clip = models.URLField(max_length=256)
     # age_limit_logo / 관람등급
     age_limit_logo = models.ImageField(default='')
-    # series_section / 몇시즌 # 안씀
-    series_section = models.CharField(max_length=256)
     # star_point / 별점
     star_point = models.CharField(max_length=256)
     # total_like / 전체 좋아요 수
-    total_like = models.IntegerField(max_length=256)
+    total_like = models.IntegerField(default=0)
     # total_views / 조회수
-    total_views = models.IntegerField(max_length=256)
+    total_views = models.IntegerField(default=0)
 
 
 # VideoModal 테이블
@@ -41,8 +39,6 @@ class VideoModal(models.Model):
 
     # video_id / 비디오ID (채번값부여된)
     video_id = models.ForeignKey(Video, on_delete=models.CASCADE, db_column='video_id')
-    # video_title_logo / 제목 로고
-    video_title_logo = models.ImageField(default='')
     # how_many_seasons / 시리즈 수
     how_many_seasons = models.CharField(max_length=256)
     # video_description / 영상 소개
@@ -103,10 +99,10 @@ class Recommendation(models.Model):
     # video_id / 비디오ID (채번값부여된)
     video_id = models.ForeignKey(Video, on_delete=models.CASCADE, db_column='video_id')
     # thumbs / 좋아요 or 싫어요
-    thumbs = models.BooleanField(default=None)
+    thumbs = models.BooleanField(null=True)
     # my_list_or_not / 찜
-    my_list_or_not = models.BooleanField(default=None)
+    my_list_or_not = models.BooleanField(null=True)
     # streaming_info / 영상재생시간
-    streaming_info = models.CharField(max_length=256)
+    streaming_info = models.CharField(max_length=256, default='0s')
     # star_info / 별점
-    star_info = models.CharField(max_length=256)
+    star_info = models.CharField(max_length=256, default='0')
