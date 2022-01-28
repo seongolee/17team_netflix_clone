@@ -14,6 +14,7 @@ import json
 import os
 from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
+import pymysql
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -57,7 +58,6 @@ INSTALLED_APPS = [
     'find_user',
     'logout',
     'main',
-    'login',
 ]
 
 MIDDLEWARE = [
@@ -89,6 +89,9 @@ TEMPLATES = [
     },
 ]
 
+pymysql.version_info = (1, 4, 2, "final", 0)
+pymysql.install_as_MySQLdb()
+
 WSGI_APPLICATION = 'netflix_clone.wsgi.application'
 
 
@@ -97,10 +100,15 @@ WSGI_APPLICATION = 'netflix_clone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'netflix_clone',
+        'USER': 'admin',
+        'PASSWORD': 'qwer1234',
+        'HOST': 'netflix-clone.c9itpvsuzo0s.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
+
 
 
 # Password validation
@@ -127,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
