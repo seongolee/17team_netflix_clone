@@ -10,27 +10,27 @@ def login_view(request):
         # 아래 유저네임과 패스워드는 연결 된 html 파일 내부에 'name:  ' 과 같아야 함
         username = request.POST.get('username', None)
         password = request.POST.get('password', None)
-        phonenumber = request.POST.get('phonenumber', None)
+        # phonenumber = request.POST.get('phonenumber', None)
 
         # 유저네임뿐 아니라 폰넘버로도 로그인 가능하게 할 예정
         # phone_number = request.POST.get('phone_number', None)
 
-        # me = auth.authenticate(request, username=username, password=password)
+        me = auth.authenticate(request, username=username, password=password)
 
-        me_username = auth.authenticate(request, username=username , password=password)
-        me_phonenumber = auth.authenticate(request, phonenumber=phonenumber, password=password)
+        # me_username = auth.authenticate(request, username=username , password=password)
+        # me_phonenumber = auth.authenticate(request, phonenumber=phonenumber, password=password)
         # 주황색은 유저모델에 있는 유저네임 값이고, 옆에는 디비와 일치하는 사용자 이름
         # me = UserModel.objects.get(username=username)
 
-        if me_username or me_phonenumber is not None:
+        if me is not None:
 
             auth.login(request, me_username)
             print('이메일 로그인 인증')
             auth.login(request, me_phonenumber)
             print('폰번호 로그인 인증')
             # request.session['user'] = me.username
-            request.session['user'] = me_username.username
-            request.session['user'] = me_phonenumber.username
+            request.session['user'] = me.username
+
             return redirect('/main')
             print('main')
         else:
