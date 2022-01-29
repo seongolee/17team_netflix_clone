@@ -12,20 +12,20 @@
 
 <div class="login-body">
     <div>
-
         <div class="login-content login-form hybrid-login-form hybrid-login-form-signup"
              data-uia="login-page-container">
             <div class="hybrid-login-form-main"><h1 data-uia="login-page-title">로그인</h1>
-                <form method="post" class="login-form" action="">
+                <form method="post" class="login-form" action="/login/">
+                    {% csrf_token %}
                     <div data-uia="login-field+container"
                          class="nfInput nfEmailPhoneInput login-input login-input-email">
                         <div class="nfInputPlacement">
                             <div class="nfEmailPhoneControls"><label class="input_id" placeholder=""><input type="text"
                                                                                                             data-uia="login-field"
-                                                                                                            name="userLoginId"
+                                                                                                            name="username"
                                                                                                             class="nfTextField hasText"
                                                                                                             id="id_userLoginId"
-                                                                                                            value="kc137@naver.com"
+                                                                                                            value=""
                                                                                                             tabindex="0"
                                                                                                             autocomplete="email"
                                                                                                             dir="ltr">
@@ -423,6 +423,7 @@
                        </span>
                    </a>
                </button>
+
 
 
 
