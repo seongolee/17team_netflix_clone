@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {% block others %}
     {% endblock %}
     <title>{% block title %}{% endblock %}</title>
@@ -18,7 +19,7 @@
         <div class="our-story-container">
             <div class="our-story-header-wrapper">
                 <div class="our-story-header">
-                    <span class="our-story-logo">
+                    <span id="our-story-logo" class="our-story-logo">
                         <img class="logo-netflix-txt" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo_text">
                     </span>
                     <div class="lang-selection-container">

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block others %}
+    <link rel="stylesheet" href="{% static 'css/sign_up/sign_up_registration.css' %}?after">
+    <script defer src="{% static 'js/sign_up/sign_up_registration.js' %}"></script>
+
+{% endblock %}
+{% block content %}
+<div class="simple-container">
+    <div class="center-container context-step">
+        <div class="reg-container">
+            <div class="step-logo-container">
+                <span class="step-logo"></span>
+            </div>
+            <div class="step-header-container">
+                <div class="sgep-header">
+                    <span id class="step-indicator">
+                        <b>1</b>
+                        "/"
+                        <b>3단계</b>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
