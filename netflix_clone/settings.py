@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'find_user',
     'logout',
     'main',
+    'login',
 ]
 
 MIDDLEWARE = [
@@ -165,3 +166,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user.UserModel'
+LOGIN_URL = 'sign_up_check'

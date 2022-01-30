@@ -4,6 +4,7 @@
 {% block others %}
     <link rel="stylesheet" href="{% static 'css/sign_up/sign_up_check.css' %}?after">
     <script defer src="{% static 'js/sign_up/sign_up_check.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +19,9 @@
             <div class="our-story-card-text">
                 <h1 id class="our-story-card-title">영화와 시리즈를 무제한으로.</h1>
                 <h2 id class="our-story-card-subtitle">다양한 디바이스에서 시청하세요. 언제든 해지하실 수 있습니다.</h2>
-                <form class="email-form" onsubmit="return is_email_change()" action="sign_up_check.html">
+<!--                <form class="email-form" onsubmit="return is_email_change()" method="post" action="/kr/">-->
+                <form class="email-form" onsubmit="return is_email_change()" method="post" action="{% url 'sign_up_check' %}">
+                    {% csrf_token %}
                     <h3 class="email-form-title">시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</h3>
                     <div class="email-form-lockup">
                         <ul class="simple-form structural">
@@ -26,7 +29,7 @@
                                 <div class="nf-input nf-input-responsive">
                                     <div class="nf-input-placement">
                                         <label class="input-id">
-                                            <input class="nf-text-field" id="id-email" type="email" onchange="is_email_change(this)" name="email" maxlength="50" minlength="5">
+                                            <input class="nf-text-field" id="id-email" type="email" onchange="is_email_change()" name="email" maxlength="50" minlength="5">
                                             <label class="place-label" for="id-email">이메일 주소</label>
                                         </label>
                                         <div id class="input-error" hidden></div>
