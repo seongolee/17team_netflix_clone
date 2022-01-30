@@ -9,20 +9,65 @@
 {% block content %}
 <div class="simple-container">
     <div class="center-container context-step">
-        <div class="reg-container">
-            <div class="step-logo-container">
-                <span class="step-logo"></span>
-            </div>
-            <div class="step-header-container">
-                <div class="sgep-header">
-                    <span id class="step-indicator">
-                        <b>1</b>
-                        "/"
-                        <b>3단계</b>
-                    </span>
+        <form method="post">
+            <div class="reg-form-container">
+                <div class="step-header-container">
+                    <div class="step-header">
+                        <h1 class="step-title">
+                            비밀번호를 설정해 멤버십을 시작하세요.
+                        </h1>
+                    </div>
+                </div>
+                <div>
+                    <div class="context-row">
+                        몇 단계만 더 거치면 넷플릭스 가입 완료!
+                    </div>
+                    <div class="context-row">
+                        복잡한 단계는 모두 없앴습니다.
+                    </div>
+                    <ul class="simple-form structural ui-grid">
+                        <li class="nf-form-space">
+                            <div class="nf-input nf-input-oversize">
+                                <div class="nf-input-placement">
+                                    <label class="input-id">
+                                        <input type="email" name="email" class="nf-text-field"
+                                               id="id-email" autocomplete="off" minlength="5" maxlength="50">
+                                        <label for="id-email" class="place-label">이메일 주소</label>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nf-form-space">
+                            <div class="nf-input nf-input-oversize">
+                                <div class="nf-input-placement">
+                                    <label class="input-id">
+                                        <input type="password" name="password" class="nf-text-field"
+                                               id="id-password" autocomplete="off" minlength="6" maxlength="76">
+                                        <label for="id-password" class="place-label">비밀번호를 추가하세요</label>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nf-form-space">
+                            <div class="nf-input nf-input-oversize">
+                                <div class="nf-input-placement">
+                                    <label class="input-id">
+                                        <input type="text" name="username" class="nf-text-field"
+                                               id="id-username" autocomplete="off" minlength="2" maxlength="10">
+                                        <label for="id-username" class="place-label">이름을 입력하세요</label>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+            <div class="submit-btn-container">
+                <button type="submit" autocomplete="off" class="nf-btn nf-btn-primary nf-btn-solid nf-btn-oversize">
+                    동의하고 계속
+                </button>
+            </div>
+        </form>
     </div>
 </div>
 {% endblock %}

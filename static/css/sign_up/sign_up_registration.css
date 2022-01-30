@@ -38,7 +38,7 @@
     width: 168px;
 }
 
-.ui-select-wrapper .select-arrow {
+.our-story-header .ui-select-wrapper .select-arrow {
     display: none;
 }
 
@@ -49,31 +49,143 @@
     font-size: 20px;
 }
 
-.simple-container {
-    padding-bottom: 95px;
-}
-
 .center-container {
     --layout-container-side-padding: 32px;
     padding: 20px var(--layout-container-side-padding) 60px;
+    margin: 0 auto 15px;
+    max-width: 978px;
+    display: block;
 }
 
-.reg-container {
-    max-width: 340px;
-    text-align: center;
+.reg-form-container {
+    text-align: left;
+    max-width: 440px;
     margin: 0 auto;
 }
 
-.step-logo-container {
-    display: inline-block;
-}
-
-.step-logo {
-    margin: 100px 0 20px;
-    background: url(https://assets.nflxext.com/ffe/siteui/acquisition/simplicity/Devices.png) no-repeat 50% 50%;
-    height: 90px;
+.reg-form-container .step-header {
+    margin-top: 20px;
 }
 
 .step-header {
     display: inline-block;
+}
+
+.step-header h1 {
+    font-size: 32px;
+}
+
+.step-header .step-title {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.context-row {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.context-row+.context-row {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.reg-form-container .simple-form {
+    margin: 10px 0 20px;
+}
+
+ul.structural {
+    padding: 0;
+}
+
+ul.structural >li {
+    list-style: none;
+    margin-left: 0;
+}
+
+.nf-form-space {
+    margin-bottom: 10px;
+}
+
+.nf-input {
+    max-width: 500px;
+    position: relative;
+}
+
+.nf-input-placement label {
+    cursor: text;
+}
+
+.nf-input.nf-input-oversize .nf-text-field {
+    height: 60px;
+}
+
+.nf-input .nf-text-field {
+    width: 98%;
+}
+
+.nf-input .place-label {
+    position: absolute;
+    top: 34%;
+    left: 10px;
+    color: #8c8c8c;
+    font-size: 16px;
+    transition: font .1s ease, top .1s ease, transform .1s ease;
+}
+
+.nf-text-field:focus~ .place-label {
+    top: 7px;
+    font-weight: 700;
+    font-size: 13px;
+    transform: translateY(0);
+}
+
+.nf-text-field.hasText+.place-label {
+    top: 7px;
+    font-weight: 700;
+    font-size: 13px;
+    transform: translateY(0);
+}
+.simple-container .submit-btn-container {
+    margin: 24px auto 0;
+    text-align: center;
+    max-width: 440px;
+}
+
+.nf-btn-primary {
+    min-height: 64px;
+    font-weight: 300;
+    font-size: 24px;
+    border-radius: 4px;
+}
+
+.nf-btn.nf-btn-oversize {
+    padding: 0.75rem 25px;
+    min-width: 110px;
+    width: 100%;
+}
+
+.nf-btn-solid.nf-btn-primary {
+    color: #fff;
+    background-color: #e50914;
+    cursor: pointer;
+    border: none;
+}
+
+.footer {
+    border-top: 1px solid #e6e6e6;
+    background-color: #f3f3f3;
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+.footer .footer_links {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.lang-selection-container .ui-select-wrapper .ui-select {
+    background-color: #f3f3f3;
+    color: #757575;
 }
