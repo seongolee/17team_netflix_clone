@@ -118,7 +118,10 @@ DATABASES = {
         'USER': secrets['default']['USER'],
         'PASSWORD': secrets['default']['PASSWORD'],
         'HOST': secrets['default']['HOST'],
-        'PORT': secrets['default']['PORT']
+        'PORT': secrets['default']['PORT'],
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
     }
 }
 
