@@ -96,12 +96,13 @@
 
 .choose-email-result {
     width: 95%;
-    height: 95px;
+    height: 100px;
     font-size: 16px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .choose-email-result input{
@@ -166,7 +167,7 @@
 }
 
 .d-grid {
-    margin-top: 30px;
+    margin-top: 40px;
     width: 95%;
 }
 .btn {

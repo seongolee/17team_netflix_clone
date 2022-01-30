@@ -48,34 +48,38 @@
                 </div>
 
             </div>
-            <div class="choose-email-result" id="email_result">
-                <label for="send-email">비밀번호 재설정 안내 이메일을 보내드리겠습니다.</label>
-                <div class="correct_type">
-                    <input type="text" class="email-input" id="send-email" name="send-email" placeholder="name@example.com" onchange="checkIt()">
-                    <span id="error_email"></span>
-                </div>
-
-            </div>
-            <div class="choose-msg-result" id="msg_result">
-                <label for="send-msg">비밀번호 재설정 인증 코드를 문자로 보내드리겠습니다. 문자 또는 데이터 요금이 부과될 수 있습니다.</label>
-                <p></p>
-                <div class="msg-input">
-                    <select name="countryCode" id="">
-                        <option data-countryCode="KR" value="82" SELECTED>&#127472;&#127479; +82</option>
-                        <option data-countryCode="US" value="1">&#x1F1FA;&#x1F1F8; +1</option>
-
-                    </select>
-                    <div class="correct_type_msg">
-                       <input type="text" class="msg-input" id="send-msg" name="send-msg" onchange="checkPhone()">
-                        <span id="error_phone"></span>
+            <form class="form-area" method="post" action="">
+                {% csrf_token %}
+                <div class="choose-email-result" id="email_result">
+                    <label for="send-email">비밀번호 재설정 인증 코드를 이메일로 보내드리겠습니다.</label>
+                    <p></p>
+                    <div class="correct_type">
+                        <input type="text" class="email-input" id="send-email" name="send-info" placeholder="name@example.com" onchange="checkIt()">
+                        <span id="error_email"></span>
                     </div>
 
                 </div>
+                <div class="choose-msg-result" id="msg_result">
+                    <label for="send-msg">비밀번호 재설정 인증 코드를 문자로 보내드리겠습니다. 문자 또는 데이터 요금이 부과될 수 있습니다.</label>
+                    <p></p>
+                    <div class="msg-input">
+                        <select name="countryCode" id="">
+                            <option data-countryCode="KR" value="82" SELECTED>&#127472;&#127479; +82</option>
+                            <option data-countryCode="US" value="1">&#x1F1FA;&#x1F1F8; +1</option>
 
-            </div>
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" id="send-btn" type="button">이메일로 받기</button>
-            </div>
+                        </select>
+                        <div class="correct_type_msg">
+                           <input type="text" class="msg-input" id="send-msg" name="send-info" onchange="checkPhone()">
+                            <span id="error_phone"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" id="send-btn" type="submit">이메일로 받기</button>
+                </div>
+            </form>
         </div>
         <p></p>
         <p class="google-check">이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이  아님을 확인합니다.
