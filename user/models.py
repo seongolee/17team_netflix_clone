@@ -46,12 +46,12 @@ class FooterInfo(models.Model):
 
 
 
-# 전화번호인증 관련 모델
+# # 전화번호인증 관련 모델
 class AuthSms(models.Model):
-    phone_num = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='user_id')
-    auth_number  = models.IntegerField()
     class Meta:
         db_table = 'auth_numbers'
+
+    phone_num = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='user_id')
 
 
 
