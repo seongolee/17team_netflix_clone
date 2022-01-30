@@ -112,7 +112,14 @@ WSGI_APPLICATION = 'netflix_clone.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': secrets['default']
+    'default': {
+        'ENGINE': secrets['default']['ENGINE'],
+        'NAME': secrets['default']['NAME'],
+        'USER': secrets['default']['USER'],
+        'PASSWORD': secrets['default']['PASSWORD'],
+        'HOST': secrets['default']['HOST'],
+        'PORT': secrets['default']['PORT']
+    }
 }
 
 
