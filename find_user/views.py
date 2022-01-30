@@ -1,3 +1,11 @@
+import base64
+import hashlib
+import hmac
+import json
+import time
+import sys
+import os
+
 from django.shortcuts import render,redirect
 from user.models import UserModel
 from django.http import HttpResponse
@@ -16,55 +24,67 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode,urlsafe_base64_decode
 from django.core.mail import EmailMessage
-from user.tokens import account_activation_token
 from django.utils.encoding import force_bytes
 
 # 네이버클라우드 문자보내기 설정
 def send_sms(phone_number,auth_number):
+    timestamp = int(time.time() * 1000)
+    timestamp = str(timestamp)
+
+    access_key = "XC1t9TAJqeTcCNYlA8Vt"  # access key id (from portal or Sub Account)
+    secret_key = "i3pv3luHCavRPHhDGLiCR27w1joL7tTCRRf02w3z"  # secret key (from portal or Sub Account)
+    secret_key = bytes(secret_key, 'UTF-8')
+
+    method = "POST"
+    uri = "https://sens.apigw.ntruss.com/sms/v2/services/ncp:sms:kr:279677688555:17_netflix_clone/messages"
+
+    message = method + " " + uri + "\n" + timestamp + "\n" + access_key
+    message = bytes(message, 'UTF-8')
+    signingKey = base64.b64encode(hmac.new(secret_key, message, digestmod=hashlib.sha256).digest())
+
     headers = {
-        'Content-Type': 'application/json; charset=utf-8',
-        'x-ncp-auth-key': f'XC1t9TAJqeTcCNYlA8Vt',
-        'x-ncp-service-secret': f'i3pv3luHCavRPHhDGLiCR27w1joL7tTCRRf02w3z ',
+        "Content-Type": "application/json; charset=utf-8",
+        "x-ncp-apigw-timestamp": timestamp ,
+        "x-ncp-iam-access-key": "XC1t9TAJqeTcCNYlA8Vt",
+        "x-ncp-apigw-signature-v2": signingKey
     }
 
-    SMS_URL = 'https://api-sens.ncloud.com/v1/sms/services/ncp:sms:kr:279677688555:17_netflix_clone/messages/'
-
-    data = {
-        'type': 'SMS',
-        'contentType': 'COMM',
-        'countryCode': '82',
-        'from': f'01097590231',
-        'to': [
-            f'{phone_number}',
-        ],
-        'content': f'인증번호 [{auth_number}]'
+    body = {
+        "type":"SMS",
+        "contentType":"COMM",
+        "from":"01097590231",
+        "content":"[테스트] 인증번호 [{}]를 입력해주세요.".format(auth_number),
+        "messages":[{"to":phone_number}]
     }
 
-    requests.post(SMS_URL, headers=headers, json=data)
-
-
+    requests.post("https://sens.apigw.ntruss.com/sms/v2",data = body, headers= headers)
 
 # Create your views here.
 def find_user_view(request):
     if request.method == 'POST':
         user_info = request.POST.get('send-info', '')
         type_info = user_info.find('@')
+        print(user_info)
+        print(type_info)
 
         if type_info == -1:
             auth_num = randint(1000, 10000)
             exist_phone = UserModel.objects.filter(phone_number=user_info)
             model_phone = UserModel.objects.get(phone_number=user_info)
-            exist_auth = AuthSms.objects.filter(phone_num=user_info)
-            get_auth = AuthSms.objects.get(phone_num=user_info)
 
             if exist_phone:
+                exist_auth = AuthSms.objects.filter(phone_num=user_info)
                 if exist_auth:
+                    get_auth = AuthSms.objects.get(phone_num=user_info)
                     get_auth.auth_number = auth_num
                     get_auth.save()
-                else:
-                    AuthSms.objects.create(phone_num=model_phone.phone_number, auth_number=auth_num)
+                    send_sms(phone_number=user_info, auth_number=auth_num)
+                    print('발송 성공')
 
-                send_sms(phone_number=user_info, auth_number=auth_num)
+                else:
+                    AuthSms.objects.create(phone_num=model_phone, auth_number=auth_num)
+                    send_sms(phone_number=user_info, auth_number=auth_num)
+                    print('발송 성공')
 
                 return render(request, 'find_pw/certi_num_page.html')
             else:
@@ -72,17 +92,13 @@ def find_user_view(request):
 
 
         else:
-            user = get_user_model().objects.filter(username = user_info)
+            user = UserModel.objects.filter(email = user_info)
+            auth_num = randint(1000, 10000)
             if user:
                 current_site = get_current_site(request)
-                message = render_to_string('find_pw/user_certification_mail.html', {
-                    'user': user,
-                    'domain': current_site.domain,
-                    'uid': urlsafe_base64_encode(force_bytes(user.pk)).encode().decode(),
-                    'token': account_activation_token.make_token(user),
-                })
-                mail_title = "계정 활성화 확인 이메일"
-                mail_to = request.POST["user_info"]
+                message = f'인증번호 {auth_num}'
+                mail_title = "이메일 확인 인증번호 발송"
+                mail_to = request.POST["send-info"]
                 email = EmailMessage(mail_title, message, to=[mail_to])
                 email.send()
 

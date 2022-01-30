@@ -59,6 +59,6 @@ class AuthSms(models.Model):
         db_table = 'auth_numbers'
 
     phone_num = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='user_id')
-
+    auth_number = models.IntegerField()
 
 
