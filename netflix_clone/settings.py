@@ -112,14 +112,7 @@ WSGI_APPLICATION = 'netflix_clone.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'netflix_clone',
-        'USER': 'admin',
-        'PASSWORD': 'qwer1234',
-        'HOST': 'netflix-clone.c9itpvsuzo0s.ap-northeast-2.rds.amazonaws.com',
-        'PORT': '3306',
-    }
+    'default': secrets['default']
 }
 
 
@@ -167,3 +160,16 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user.UserModel'
 LOGIN_URL = 'sign_up_check'
+
+# 메일을 호스트하는 서버
+EMAIL_HOST = secrets['MAIL']['EMAIL_HOST']
+# gmail과의 통신하는 포트
+EMAIL_PORT = secrets['MAIL']['EMAIL_PORT']
+# 발신할 이메일
+EMAIL_HOST_USER = secrets['MAIL']['EMAIL_HOST_USER']
+# 발신할 메일의 비밀번호
+EMAIL_HOST_PASSWORD = secrets['MAIL']['EMAIL_HOST_PASSWORD']
+# TLS 보안 방법
+EMAIL_USE_TLS = secrets['MAIL']['EMAIL_USE_TLS']
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
