@@ -5,6 +5,11 @@ video {
 ul{
     display: block;
     list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
 }
 
 img {
@@ -15,6 +20,11 @@ img {
 
 form {
     margin-top: 0;
+}
+
+h1 {
+    font-size: 27px;
+    margin: 0 0 0.4em;
 }
 
 h2, h3, h4, h5 {
@@ -142,7 +152,7 @@ ul.simple-form {
 }
 
 .nf-form-space {
-    margin-bottom: 10px;
+    margin-bottom: 50px;
 }
 
 ul.simple-form > li {
@@ -171,6 +181,10 @@ ul.simple-form > li {
     position: relative;
 }
 
+.input-id {
+    width: 0;
+}
+
 .nf-input .nf-text-field {
     height: 48px;
     padding: 10px 10px 0;
@@ -187,10 +201,32 @@ ul.simple-form > li {
     transition: font .1s ease,top .1s ease,transform .1s ease;
 }
 
-.nf-text-field:focus +.place-label {
+.nf-text-field:focus~ .place-label {
     top: 7px;
     font-weight: 700;
     font-size: 13px;
+    transform: translateY(0);
+}
+
+.nf-text-field.hasText+.place-label {
+    top: 7px;
+    font-weight: 700;
+    font-size: 13px;
+    transform: translateY(0);
+}
+
+.email-form .input-error {
+    color: #ffa00a;
+    text-align: left;
+    margin-bottom: -6px;
+    padding: 6px 3px;
+    font-size: 15px;
+    position: absolute;
+}
+
+.email-form .nf-text-field.error {
+    border-top: 0;
+    border-bottom: 2px solid #ffa00a;
 }
 
 .hero-card .our-story-card-text .our-story-cta-container {
@@ -481,7 +517,7 @@ ul.simple-form > li {
     }
 
     .email-form-lockup .nf-input input {
-        min-width: 428px;
+        min-width: 450px;
         border-bottom-right-radius: 0;
         border-top-right-radius: 0;
     }
@@ -510,7 +546,15 @@ ul.simple-form > li {
     }
 
     .nf-input.nf-input-responsive .nf-text-field {
-        width: 100%;
+        width: auto;
+    }
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 20px;
     }
 
     h3 {

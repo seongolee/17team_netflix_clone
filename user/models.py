@@ -45,8 +45,12 @@ class FooterInfo(models.Model):
     Business_number = models.CharField(max_length=256)
 
 
+# # 전화번호인증 관련 모델
+class AuthSms(models.Model):
+    class Meta:
+        db_table = 'auth_numbers'
 
-
-
+    phone_num = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='user_id')
+    auth_number = models.IntegerField()
 
 
