@@ -57,7 +57,7 @@ class AuthSms(models.Model):
     class Meta:
         db_table = 'auth_numbers'
 
-    phone_num = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='user_id')
+    phone_number = models.CharField(max_length=256)
     auth_number = models.IntegerField()
 
 
