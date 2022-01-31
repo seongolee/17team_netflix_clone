@@ -4,17 +4,25 @@ from django.contrib.auth.decorators import login_required
 from user.models import UserModel
 
 
+
 # Create your views here.
 def login_view(request):
     if request.method == 'POST':
         # 아래 유저네임과 패스워드는 연결 된 html 파일 내부에 'name:  ' 과 같아야 함
         user_email = request.POST.get('username', None)
-        print(user_email)
         password = request.POST.get('password', None)
 
-        user_phone = UserModel.objects.get(phone_number=user_email).email
-        print(user_phone)
+        temp = user_email.find('@')
+        # 위의 find 결과값이 @가 있으면 1 없으면 -1이 반환 됨. 그래서 -1이면 폰번호이므로 폰번호와 매칭시켜 해당하는 email값을 반환
+        if temp == -1:
+            correct_id = UserModel.objects.filter(phone_number=user_email).values('email')
 
+            if correct_id:
+                user_email = list(correct_id)[0]['email']
+            else:
+                return redirect('/login')
+            # get --->>>  filter로 수정보완 요망 / get로 받으면 입력값이 없을 때 오류가 나고 리다이렉트 페이지 반환이 안 되기 때문임
+            # user_email = list(UserModel.objects.filter(phone_number=user_email).values('email'))[0]['email']
         # 유저네임뿐 아니라 폰넘버로도 로그인 가능하게 할 예정
         # phone_number = request.POST.get('phone_number', None)
 
@@ -24,17 +32,14 @@ def login_view(request):
         me_username = auth.authenticate(request, email=user_email, password=password)
         print(me_username)
         print('유저네임 로그인 권한 받았습니다')
-        me_phone_number = auth.authenticate(request, phone_number=user_phone, password=password)
-        print('로그인 권한 받았습니다')
-        print(me_phone_number)
+        # me_phone_number = auth.authenticate(request, phone_number=user_phone, password=password)
+        # print('로그인 권한 받았습니다')
         # 주황색은 유저모델에 있는 유저네임 값이고, 옆에는 디비와 일치하는 사용자 이름
         # me = UserModel.objects.get(username=username)
 
-        if me_username or me_phone_number is not None:
+        if me_username is not None:
             auth.login(request, me_username)
             print('이메일 로그인 인증')
-            auth.login(request, me_phone_number)
-            print('폰번호 로그인 인증')
             # auth.login(request, me)
             # request.session['user'] = me.username
             return redirect('/main')
@@ -57,7 +62,10 @@ def login_view(request):
             return render(request, 'login/login_page.html')
 
 
-@login_required
-def logout(request):
-    auth.logout(request)
-    return redirect('/')
+# @login_required
+# def logout(request):
+#     auth.logout(request)
+#     return redirect('/')
+
+# 카카오 로그인 연동
+# def kakao_callback:

@@ -9,7 +9,35 @@
 
 <!--base.html 에서 미리 정한 content 블록 위치에 넣어주기!-->
 {% block content %}
+<!--카카오톡 로그인js 불러오기-->
+<a href="javascript:kakaoLogin();"><img src="https://www.gb.go.kr/Main/Images/ko/member/certi_kakao_login.png" style="height: 60px;width:auto;"></a>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script>
+    // d4c7c114adb7e8a3b796b6d9843ff8e4
+    window.Kakao.init("d4c7c114adb7e8a3b796b6d9843ff8e4");
+    // 로그인 되게 하는 과정
+    function kakaoLogin() {
+        window.Kakao.Auth.login({
+            scope:'profile_nickname, profile_image, account_email, gender, age_range, friends',
+            success: function(authObj) {
+                console.log(authObj);
 
+                window.Kakao.API.request({
+                    url:'/v2/user/me',
+                    success: res => {
+                        const kakao_account = res.kakao_account;
+                        console.log(kakao_account);
+
+                    }
+                });
+            }
+            // error: function (xhr,errmsg,err){
+            //     console.log(xhr.status + ": " + xhr.responseText);
+            // }
+
+        });
+    }
+</script>
 <div class="login-body">
     <div>
         <div class="login-content login-form hybrid-login-form hybrid-login-form-signup"
