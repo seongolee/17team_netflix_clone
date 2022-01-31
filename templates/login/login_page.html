@@ -2,42 +2,20 @@
 {% load static %}
 
 {% block others %}
-    <link rel="stylesheet" href="{% static 'css/login/login.css' %}">
+<link rel="stylesheet" href="{% static 'css/login/login.css' %}">
 {% endblock %}
-
 
 
 <!--base.html 에서 미리 정한 content 블록 위치에 넣어주기!-->
 {% block content %}
-<!--카카오톡 로그인js 불러오기-->
-<a href="javascript:kakaoLogin();"><img src="https://www.gb.go.kr/Main/Images/ko/member/certi_kakao_login.png" style="height: 60px;width:auto;"></a>
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script>
-    // d4c7c114adb7e8a3b796b6d9843ff8e4
-    window.Kakao.init("d4c7c114adb7e8a3b796b6d9843ff8e4");
-    // 로그인 되게 하는 과정
-    function kakaoLogin() {
-        window.Kakao.Auth.login({
-            scope:'profile_nickname, profile_image, account_email, gender, age_range, friends',
-            success: function(authObj) {
-                console.log(authObj);
 
-                window.Kakao.API.request({
-                    url:'/v2/user/me',
-                    success: res => {
-                        const kakao_account = res.kakao_account;
-                        console.log(kakao_account);
 
-                    }
-                });
-            }
-            // error: function (xhr,errmsg,err){
-            //     console.log(xhr.status + ": " + xhr.responseText);
-            // }
+{% if check %}
+<div>
+    <a href="/login/kakaoLoginLogic"><img src="{% static 'img/login/kakao_login_medium_narrow.png' %}"></a>
+</div>
+{% endif %}
 
-        });
-    }
-</script>
 <div class="login-body">
     <div>
         <div class="login-content login-form hybrid-login-form hybrid-login-form-signup"
@@ -417,46 +395,48 @@
             </div>
             <div class="hybrid-login-form-other">
 
-<!--                기존 페이스북 로그인폼-->
-<!--                <form method="post" class="login-form" action="">-->
-<!--                    <div class="facebookForm regOption">-->
-<!--                        <div class="fb-minimal">-->
-<!--                            <hr>-->
-<!--                            <button class="btn minimal-login btn-submit btn-small" type="submit" autocomplete="off"-->
-<!--                                    tabindex="0" data-uia="">-->
-<!--                                <div class="fb-login" data-uia="fb-login"><img class="icon-facebook"-->
-<!--                                                                               src="https://assets.nflxext.com/ffe/siteui/login/images/FB-f-Logo__blue_57.png"><span-->
-<!--                                        class="fbBtnText">Facebook으로 로그인</span></div>-->
-<!--                            </button>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <input type="hidden" name="flow" value="websiteSignUp"><input type="hidden" name="mode"-->
-<!--                                                                                  value="login"><input type="hidden"-->
-<!--                                                                                                       name="action"-->
-<!--                                                                                                       value="facebookLoginAction"><input-->
-<!--                        type="hidden" name="withFields" value="rememberMe,nextPage,accessToken"><input type="hidden"-->
-<!--                                                                                                       name="authURL"-->
-<!--                                                                                                       value="1643012489360.qmgsM8XwKiP8BC7lA5RS9NksrLY="><input-->
-<!--                        type="hidden" name="nextPage" value=""><input type="hidden" name="showPassword" value=""><input-->
-<!--                        type="hidden" name="countryCode" value="+82"><input type="hidden" name="countryIsoCode"-->
-<!--                                                                            value="KR"><input type="hidden"-->
-<!--                                                                                              name="accessToken"-->
-<!--                                                                                              value=""></form>-->
-               <button class="facebook_button" type="button">
-                   <span class="facebook_icon">
-                   </span>
-                   <a href="#">
-                       <span class="facebook_login">
-                           Facebook으로 로그인
-                       </span>
-                   </a>
-               </button>
-
-
+                <!--                기존 페이스북 로그인폼-->
+                <!--                <form method="post" class="login-form" action="">-->
+                <!--                    <div class="facebookForm regOption">-->
+                <!--                        <div class="fb-minimal">-->
+                <!--                            <hr>-->
+                <!--                            <button class="btn minimal-login btn-submit btn-small" type="submit" autocomplete="off"-->
+                <!--                                    tabindex="0" data-uia="">-->
+                <!--                                <div class="fb-login" data-uia="fb-login"><img class="icon-facebook"-->
+                <!--                                                                               src="https://assets.nflxext.com/ffe/siteui/login/images/FB-f-Logo__blue_57.png"><span-->
+                <!--                                        class="fbBtnText">Facebook으로 로그인</span></div>-->
+                <!--                            </button>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                    <input type="hidden" name="flow" value="websiteSignUp"><input type="hidden" name="mode"-->
+                <!--                                                                                  value="login"><input type="hidden"-->
+                <!--                                                                                                       name="action"-->
+                <!--                                                                                                       value="facebookLoginAction"><input-->
+                <!--                        type="hidden" name="withFields" value="rememberMe,nextPage,accessToken"><input type="hidden"-->
+                <!--                                                                                                       name="authURL"-->
+                <!--                                                                                                       value="1643012489360.qmgsM8XwKiP8BC7lA5RS9NksrLY="><input-->
+                <!--                        type="hidden" name="nextPage" value=""><input type="hidden" name="showPassword" value=""><input-->
+                <!--                        type="hidden" name="countryCode" value="+82"><input type="hidden" name="countryIsoCode"-->
+                <!--                                                                            value="KR"><input type="hidden"-->
+                <!--                                                                                              name="accessToken"-->
+                <!--                                                                                              value=""></form>-->
+                {% if check %}
+                <div>
+                    <h1>카카오 로그아웃</h1>
+                    <form action="/login/kakaoLogout" method="GET" style="display: none;">
+                        <input type="submit" value="카카오로그아웃 및 연결 끊기"/>
+                    </form>
+                </div>
+                {% else %}
+                <div>
+                    <a href="/login/kakaoLoginLogic"><img src="{% static 'img/login/kakao_login_medium_narrow.png' %}"></a>
+                </div>
+                {% endif %}
 
 
                 <div class="login-signup-now" data-uia="login-signup-now">Netflix 회원이 아닌가요? <a class=" " target="_self"
-                                                                                               href="/sign_up">지금 가입하세요</a>.
+                                                                                               href="/sign_up">지금
+                    가입하세요</a>.
                 </div>
                 <div class="recaptcha-terms-of-use" data-uia="recaptcha-terms-of-use">
                     <p><span>이 페이지는 Google reCAPTCHA의 보호를 받아 사용자가 로봇이 아님을 확인합니다.</span>&nbsp;<button

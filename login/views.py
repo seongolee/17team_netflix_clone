@@ -68,4 +68,46 @@ def login_view(request):
 #     return redirect('/')
 
 # 카카오 로그인 연동
-# def kakao_callback:
+import requests
+import json
+from django.template import loader
+from django.http import HttpResponse, JsonResponse
+
+
+def index(request):
+    _context = {'check':False}
+    if request.session.get('access_token'):
+        _context['check'] = True
+    return render(request, 'sign_up_check.html', _context)
+def kakaoLoginLogic(request):
+    _restApiKey = '046d90e62bcc4496f71f0dbc804694f8'
+    _redirectUrl = 'http://127.0.0.1:8000/main/'
+    _url = f'https://kauth.kakao.com/oauth/authorize?client_id={_restApiKey}&redirect_uri={_redirectUrl}&response_type=code'
+    return redirect(_url)
+def kakaoLoginLogicRedirect(request):
+    _qs = request.GET['code']
+    _restApiKey = '046d90e62bcc4496f71f0dbc804694f8'
+    _redirect_uri = 'http://127.0.0.1:8000/main/'
+    _url = f'https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={_restApiKey}&redirect_uri={_redirect_uri}&code={_qs}'
+    _res = requests.post(_url)
+    _result = _res.json()
+    request.session['access_token'] = _result['access_token']
+    request.session.modified = True
+    return render(request, 'main.html')
+def kakaoLogout(request):
+    _token = request.session['access_token']
+    _url = 'https://kapi.kakao.com/v1/user/logout'
+    _header = {
+      'Authorization': f'bearer {_token}'
+    }
+    # _url = 'https://kapi.kakao.com/v1/user/unlink'
+    # _header = {
+    #   'Authorization': f'bearer {_token}',
+    # }
+    _res = requests.post(_url, headers=_header)
+    _result = _res.json()
+    if _result.get('id'):
+        del request.session['access_token']
+        return render(request, 'logout_page.html')
+    else:
+        return render(request, 'logoutError.html')
