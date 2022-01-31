@@ -14,6 +14,7 @@ import json
 import os
 from pathlib import Path
 from django.core.exceptions import ImproperlyConfigured
+import pymysql
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -101,6 +102,9 @@ TEMPLATES = [
     },
 ]
 
+pymysql.version_info = (1, 4, 2, "final", 0)
+pymysql.install_as_MySQLdb()
+
 WSGI_APPLICATION = 'netflix_clone.wsgi.application'
 
 
@@ -109,10 +113,18 @@ WSGI_APPLICATION = 'netflix_clone.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': secrets['default']['ENGINE'],
+        'NAME': secrets['default']['NAME'],
+        'USER': secrets['default']['USER'],
+        'PASSWORD': secrets['default']['PASSWORD'],
+        'HOST': secrets['default']['HOST'],
+        'PORT': secrets['default']['PORT'],
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        },
     }
 }
+
 
 
 # Password validation
@@ -139,7 +151,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
@@ -157,3 +169,17 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user.UserModel'
+LOGIN_URL = 'sign_up_check'
+
+# 메일을 호스트하는 서버
+EMAIL_HOST = secrets['MAIL']['EMAIL_HOST']
+# gmail과의 통신하는 포트
+EMAIL_PORT = secrets['MAIL']['EMAIL_PORT']
+# 발신할 이메일
+EMAIL_HOST_USER = secrets['MAIL']['EMAIL_HOST_USER']
+# 발신할 메일의 비밀번호
+EMAIL_HOST_PASSWORD = secrets['MAIL']['EMAIL_HOST_PASSWORD']
+# TLS 보안 방법
+EMAIL_USE_TLS = secrets['MAIL']['EMAIL_USE_TLS']
+
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

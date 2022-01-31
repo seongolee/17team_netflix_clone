@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.conf import settings
 
 
@@ -8,8 +8,15 @@ class UserModel(AbstractUser):
     class Meta:
         db_table = "user_model"
 
+    email = models.EmailField(verbose_name="email", max_length=255, unique=True)
+    username = models.CharField(max_length=30)
     phone_number = models.CharField(max_length=30, default='')
     country_code = models.CharField(max_length=256, default='ko')
+
+    objects = UserManager()
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
 
 
 class ProfileId(models.Model):
@@ -45,8 +52,12 @@ class FooterInfo(models.Model):
     Business_number = models.CharField(max_length=256)
 
 
+# # 전화번호인증 관련 모델
+class AuthSms(models.Model):
+    class Meta:
+        db_table = 'auth_numbers'
 
-
-
+    phone_number = models.CharField(max_length=256)
+    auth_number = models.IntegerField()
 
 
