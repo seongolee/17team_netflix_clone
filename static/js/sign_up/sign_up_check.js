@@ -12,8 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         is_email(email)
     });
-
-
 });
 
 

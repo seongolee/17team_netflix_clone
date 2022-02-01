@@ -10,6 +10,7 @@
 <div class="simple-container">
     <div class="center-container context-step">
         <form method="post">
+            {% csrf_token %}
             <div class="reg-form-container">
                 <div class="step-header-container">
                     <div class="step-header">
@@ -35,6 +36,7 @@
                                         <label for="id-email" class="place-label">이메일 주소</label>
                                     </label>
                                 </div>
+                                <div id class="input-error" hidden></div>
                             </div>
                         </li>
                         <li class="nf-form-space">
@@ -46,6 +48,7 @@
                                         <label for="id-password" class="place-label">비밀번호를 추가하세요</label>
                                     </label>
                                 </div>
+                                <div id class="input-error" hidden></div>
                             </div>
                         </li>
                         <li class="nf-form-space">
@@ -57,6 +60,7 @@
                                         <label for="id-username" class="place-label">이름을 입력하세요</label>
                                     </label>
                                 </div>
+                                <div id class="input-error" hidden></div>
                             </div>
                         </li>
                     </ul>
@@ -64,7 +68,7 @@
             </div>
             <div class="submit-btn-container">
                 <button type="submit" autocomplete="off" class="nf-btn nf-btn-primary nf-btn-solid nf-btn-oversize">
-                    동의하고 계속
+                    회원가입
                 </button>
             </div>
         </form>
