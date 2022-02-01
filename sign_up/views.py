@@ -8,26 +8,33 @@ import json
 # Create your views here.
 def sign_up_check(request):
     if request.method == 'GET':
-        return render(request, 'sign_up/sign_up_check.html', {'test': 'hi'})
+        return render(request, 'sign_up/sign_up_check.html')
     elif request.method == 'POST':
-        email = request.POST.get('email')
-        is_email = UserModel.objects.filter(username=email)
+        email_phone = request.POST.get('email_phone')
 
-        if is_email:
+        email_phone_check = email_phone.find('@')
+
+        if email_phone_check == -1:
+            email_phone_check = UserModel.objects.filter(phone_number=email_phone)
+        else:
+            email_phone_check = UserModel.objects.filter(email=email_phone)
+
+        if email_phone_check:
             site = '/login'
         else:
             site = '/kr/signup'
 
-        request.session['email'] = email
+        request.session['email_phone'] = email_phone
 
         return redirect(site)
 
 
-@login_required
 def sign_up_registration(request):
-    # email = request.session['email']
-    #
-    # del request.session['email']
+    email_phone = ''
 
-    return render(request, 'sign_up/sign_up_registration.html')
+    if 'email_phone' in request.session:
+        email_phone = request.session['email_phone']
+        # del request.session['email_phone']
+
+    return render(request, 'sign_up/sign_up_registration.html', {'email_phone': email_phone})
 
