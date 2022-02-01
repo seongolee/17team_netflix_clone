@@ -14,12 +14,15 @@
         <div class="certi-container">
             <span class="certi_text">인증번호</span>
             <p></p>
-            <span class="notice_text">인증번호 4자리 숫자를 입력해주세요.</span>
-            <p></p>
-            <input type="text" class="certi_input" id="certi_num">
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" id="send-btn" type="button">확인</button>
-            </div>
+            <form method="post" action="">
+                {% csrf_token %}
+                <span class="notice_text">인증번호 4자리 숫자를 입력해주세요.</span>
+                <p></p>
+                <input type="text" class="certi_input" id="certi_num" name="certi_num">
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" id="send-btn" type="submit">확인</button>
+                </div>
+            </form>
         </div>
 
 

@@ -6,7 +6,6 @@ function which_show() {
         document.getElementById('email_result').style.display = "flex";
         document.getElementById('msg_result').style.display = "none";
         document.getElementById('send-btn').innerText = '이메일로 받기';
-        // document.getElementById('send-msg').value = null;
         document.getElementById('send-msg').disabled = true;
         document.getElementById('send-email').disabled = false;
 
@@ -15,7 +14,6 @@ function which_show() {
         document.getElementById('email_result').style.display = "none";
         document.getElementById('msg_result').style.display = "flex";
         document.getElementById('send-btn').innerText = '문자로 받기';
-        // document.getElementById('send-email').value = null;
         document.getElementById('send-email').disabled = true;
         document.getElementById('send-msg').disabled = false;
 
@@ -94,5 +92,9 @@ function checkPhone() {
             document.getElementById('send-btn').disabled = false;
         }
     }
+
+}
+
+function to_url(){
 
 }

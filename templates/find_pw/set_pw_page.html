@@ -12,7 +12,8 @@
 {% block content %}
 <div class="bd">
     <div class="responsive-account-container">
-        <form class="change-password-form" method="post" novalidate="">
+        <form class="change-password-form" method="post" action="">
+            {% csrf_token %}
             <h2>비밀번호 변경</h2>
             <p></p>
             <ul class="simpleForm structural ui-grid">
@@ -22,7 +23,7 @@
                             <label class="input_id" placeholder="email">
 <!--                                autocomplete -> 자동완성기능 없앰-->
                                 <input type="text" name="email" class="nfTextField hasText" id="id_email" value="" autocomplete="off" disabled="">
-                                <label for="id_email" class="placeLabel">현재 이메일</label>
+                                <label for="id_email" class="placeLabel_email">{{email}}</label>
                             </label>
                         </div>
                     </div>

@@ -60,6 +60,18 @@
     margin: 5px 0 15px;
 }
 
+.none-phone {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 16px;
+    border-radius: 2px;
+    width: 100%;
+    background-color: #ffa00a;
+    color: white;
+    margin: 5px 0 15px;
+}
+
 .ui-msg-icon {
     padding-left: 20px;
     height: inherit;
