@@ -1,8 +1,8 @@
 // 라디오버튼 클릭후 보여지는부분 알려주는 함수
 
 function which_show() {
-    let checked = document.querySelector("input[name='choice']:checked")
-    if (checked.value == 'email'){
+    let checked = document.querySelector("input[name='type_choice']:checked")
+    if (checked.value == 'EMAIL'){
         document.getElementById('email_result').style.display = "flex";
         document.getElementById('msg_result').style.display = "none";
         document.getElementById('send-btn').innerText = '이메일로 받기';
@@ -37,7 +37,7 @@ function checkIt() {
     if (!email) {
         document.getElementById('error_email').innerHTML = ''
         document.getElementById('send-email').style.borderColor = 'gray'
-        document.getElementById('send-btn').disabled = false;
+        document.getElementById('send-btn').disabled = true;
         input_email.focus();
 
 
@@ -71,12 +71,11 @@ function checkPhone() {
     if (!num) {
         document.getElementById('error_phone').innerHTML = ''
         document.getElementById('send-msg').style.borderColor = 'gray'
-        document.getElementById('send-btn').disabled = false;
-      input_num.focus();
+        document.getElementById('send-btn').disabled = true;
 
 
    } else {
-        if (exptext.test(num) == false) {
+        if (exptext.test(num) == false ) {
             document.getElementById('error_phone').innerHTML = '정확한 전화번호를 입력하세요.'
             document.getElementById('error_phone').style.color = '#b00500'
             document.getElementById('error_phone').style.fontSize = '8px'
@@ -95,6 +94,44 @@ function checkPhone() {
 
 }
 
-function to_url(){
+function radio_check(){
+    let radio_value = document.querySelector("input[name='type_choice']:checked").value;
+    return radio_value;
+}
 
+function auth_user_check(){
+    let radio_value = radio_check()
+    var input_value = '';
+
+    if (radio_value === 'EMAIL') {
+        input_value = document.getElementById('send-email').value;
+    } else {
+        input_value = document.getElementById('send-msg').value;
+    }
+    alert(input_value);
+
+    $.ajax({
+        url: 'auth-user/',
+        type: 'GET',
+        data: {
+            'input_type':radio_value,
+            'input_val':input_value
+        },
+        datatype: 'json', // 서버에서 반환되는 데이터 json 형식
+        success: function(data){ // AJAX 통신이 성공하면 해당 과일의 영어 단어가 출려되도록
+            if (!data.result) {
+                if (radio_value === 'EMAIL') {
+                    document.querySelector('.none-email').hidden = false;
+
+                } else {
+                    document.querySelector('.none-phone').hidden = false;
+                }
+                return false;
+            } else {
+                return true;
+            }
+
+        }
+
+    });
 }
