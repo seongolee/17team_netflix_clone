@@ -88,6 +88,9 @@ function is_username(obj) {
       document.querySelector("."+ obj.id +".input-error").hidden = false;
       document.querySelector("."+ obj.id +".input-error").innerText = "이름을 입력해주세요.";
       is_username = false;
+   } else {
+      obj.classList.remove("error");
+      document.querySelector("." + obj.id + ".input-error").hidden = true;
    }
 
    return is_username;
