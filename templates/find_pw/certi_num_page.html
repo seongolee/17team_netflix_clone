@@ -15,7 +15,7 @@
         <div class="certi-container">
             <span class="certi_text">인증번호</span>
             <p></p>
-            <form method="post" action="{% url 'auth-num' %}" onsubmit="return check_auth()">
+            <form method="get" action="{% url 'set-pw' %}" onsubmit="return check_auth()">
                 {% csrf_token %}
                 <span class="notice_text">인증번호 4자리 숫자를 입력해주세요.</span>
                 <p></p>

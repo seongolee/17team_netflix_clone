@@ -7,7 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     {% block others %}
     {% endblock %}
     <title>{% block title %}{% endblock %}</title>
@@ -139,7 +140,6 @@
         </div>
     </div>
 </div>
-</body>
 
 <script>
     function getCookie(name) {
@@ -173,4 +173,7 @@
         }
     });
 </script>
+
+</body>
+
 </html>
