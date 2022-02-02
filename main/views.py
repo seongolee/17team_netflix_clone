@@ -22,4 +22,5 @@ def main_view(request):
 @login_required
 def logout(request):
     auth.logout(request)
+    print('로그아웃 이상무')
     return redirect('/')
