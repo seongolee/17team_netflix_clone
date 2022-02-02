@@ -58,6 +58,7 @@ def send_sms(phone_number, auth_number):
 
     requests.post(url, headers=headers, data=encoded_data)
 
+
 # find-user
 def find_user_view(request):
     if request.method == 'GET':
@@ -67,7 +68,7 @@ def find_user_view(request):
         user_radio = request.POST.get('type_choice')
 
         auth_num = randint(1000, 10000)
-
+        request.session['auth_number'] = auth_num
         # ridao 버튼이 MSG인 경우
         if user_radio == 'MSG':
             user_msg = request.POST.get('send-msg')
@@ -87,68 +88,24 @@ def find_user_view(request):
             exist_sms = UserModel.objects.get(email=user_email)
             AuthSms.objects.update_or_create(phone_number=exist_sms.phone_number, defaults={"auth_number": auth_num})
 
-            message = f'인증번호 {auth_num}'
-            mail_title = "이메일 확인 인증번호 발송"
-            mail_to = user_email
-            email = EmailMessage(mail_title, message, to=[mail_to])
-            email.send()
-
-            request.session['user_info'] = user_email
             return redirect('/find-user/certi')
 
 
-            # exist_auth = AuthSms.objects.filter(phone_number=user_msg)
-            # print(exist_phone)
-            # if exist_auth:
-            #     get_auth = AuthSms.objects.get(phone_number=user_msg)
-            #     get_auth.auth_number = auth_num
-            #     get_auth.save()
-            #     send_sms(phone_number=user_msg, auth_number=auth_num)
-            #     print('발송 성공1')
-            #
-            # else:
-            #     AuthSms.objects.create(phone_number=user_msg, auth_number=auth_num)
-            #     print(user_msg, auth_num)
-            #     send_sms(phone_number=user_msg, auth_number=auth_num)
-            #     print('발송 성공2')
+# send-email
+def send_email(request):
+    user_info = request.session['user_info']
+    phone_email_check = user_info.find('@')
+    auth_number = request.session['auth_number']
 
+    if not (phone_email_check == -1):
+        message = f'인증번호 {auth_number}'
+        mail_title = "이메일 확인 인증번호 발송"
+        mail_to = user_info
+        email = EmailMessage(mail_title, message, to=[mail_to])
+        email.send()
+    print('인증번호 확인 페이지', auth_number)
 
-        #     else:
-        #         return redirect('/find-user')
-        #
-        #
-        # else:
-        #     user_email = request.POST.get('send-email')
-        #     user = UserModel.objects.filter(email=user_email)
-        #     auth_num = randint(1000, 10000)
-        #     if user:
-        #         exist_sms = UserModel.objects.get(email=user_email)
-        #         find_info = AuthSms.objects.filter(phone_number=exist_sms.phone_number)
-        #         if find_info:
-        #             get_auth = AuthSms.objects.get(phone_number=exist_sms.phone_number)
-        #             get_auth.auth_number = auth_num
-        #             get_auth.save()
-        #             current_site = get_current_site(request)
-        #             message = f'인증번호 {auth_num}'
-        #             mail_title = "이메일 확인 인증번호 발송"
-        #             mail_to = request.POST["send-email"]
-        #             email = EmailMessage(mail_title, message, to=[mail_to])
-        #             email.send()
-        #
-        #         else:
-        #             AuthSms.objects.create(phone_number=exist_sms.phone_number, auth_number=auth_num)
-        #             current_site = get_current_site(request)
-        #             message = f'인증번호 {auth_num}'
-        #             mail_title = "이메일 확인 인증번호 발송"
-        #             mail_to = request.POST["send-email"]
-        #             email = EmailMessage(mail_title, message, to=[mail_to])
-        #             email.send()
-        #
-        #         request.session['user_info'] = user_email
-        #         return redirect('/find-user/certi')
-        #     else:
-        #         print('문자 전송 실패')
-        #         return render(request, 'find_pw/find_pw_page.html')
+    return HttpResponse()
 
 
 # auth-user
@@ -172,32 +129,9 @@ def auth_user(request):
 
 # 인증 번호 체크
 def auth_num(request):
-    # auth_num = request.GET.get('auth_number')
-
-    # auth_num = str(request.session['auth_num'])
-
-    # user_info = request.session['user_info']
-
-    # type_info = user_info.find('@')
-
-    # if not (type_info == -1):
-    #     exist_user = UserModel.objects.get(email=user_info)
-
-    # if type_info == -1:
-    #     exist_auth = AuthSms.objects.filter(phone_number=user_info)
-    # else:
-    #     exist_user = UserModel.objects.get(email=user_info)
-    #     exist_auth = AuthSms.objects.filter(phone_number=exist_user.phone_number)
-
-    # exist_auth_num = list(exist_auth.values('auth_number'))[0]
-
-    # result = False
-    # if exist_auth_num['auth_number'] == int(auth_num):
-    #     result = True
 
     user_auth_num = request.GET.get('auth_number')
     user_info = request.session['user_info']
-
     phone_email_check = user_info.find('@')
 
     if not (phone_email_check == -1):
@@ -216,39 +150,10 @@ def auth_num(request):
 
 # certi-num
 def certi_num_view(request):
-    user_info = request.session['user_info']
+
 
     if request.method == 'GET':
         return render(request, 'find_pw/certi_num_page.html')
-
-
-    # 밑에 로직은 사용안하는 듯.
-    elif request.method == 'POST':
-        type_info = user_info.find('@')
-        print(type_info)
-        if type_info == -1:
-            auth_num = request.POST.get('certi_num', '')
-            get_auth = AuthSms.objects.get(phone_number=user_info)
-
-            if get_auth.auth_number == int(auth_num):
-                print('일치')
-                return redirect('/find-user/set-pw')
-            else:
-                print('불일치')
-                return redirect('/find-user/certi')
-
-        else:
-            auth_num = request.POST.get('certi_num', '')
-            get_phone = UserModel.objects.get(email=user_info)
-            get_auth = AuthSms.objects.get(phone_number=get_phone.phone_number)
-            print(auth_num)
-            print(get_phone.phone_number)
-            if get_auth.auth_number == int(auth_num):
-                print('일치')
-                return redirect('/find-user/set-pw')
-            else:
-                print('불일치')
-                return redirect('/find-user/certi')
 
 
 # 비밀번호 변경
