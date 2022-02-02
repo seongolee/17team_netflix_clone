@@ -13,27 +13,21 @@
 {% block title %}비밀번호 찾기{% endblock %}
 
 {% block content %}
-
     <div class="total-find-container">
         <div class="find-container">
             <span class="find_id_pw_text">이메일/비밀번호를 잊으셨나요?</span>
-
             <div class="none-phone" hidden>
                 <div class="ui-msg-icon"><i class="fas fa-times-circle fa-2x"></i></div>
                 <div class="ui-msg-content">
                     계정과 연결되지 않은 전화번호입니다. 이메일 주소를 대신 입력하여 로그인해 주세요.
                 </div>
             </div>
-
-
             <div class="none-email" hidden>
                 <div class="ui-msg-icon"><i class="fas fa-times-circle fa-2x"></i></div>
                 <div class="ui-msg-content">
                     이 이메일 주소와 연결된 계정을 찾을 수 없습니다.
                 </div>
             </div>
-
-
             <form class="form-area" method="post" action="{% url 'find-user' %}" onsubmit="return auth_user_check()" >
                 {% csrf_token %}
                 <span class="choose-notice">비밀번호 재설정 안내를 받을 방법을 선택하세요.</span>
@@ -48,9 +42,7 @@
                                onchange="which_show()">
                         <label for="choose_msg">문자 메시지(SMS)</label>
                     </div>
-
                 </div>
-
                 <div class="choose-email-result" id="email_result">
                     <label for="send-email">비밀번호 재설정 인증 코드를 이메일로 보내드리겠습니다.</label>
                     <p></p>
@@ -93,8 +85,6 @@
                         href="https://policies.google.com/terms"><span class="link">서비스 약관</span></a>이 적용되며, 해당 정보는 reCAPTCHA 서비스 제공, 관리 및 개선과 일반적인 보안 유지에
                 사용됩니다(Google의 개인 맞춤 광고에 사용 안 함).</span>
         </div>
-
-
     </div>
 {% endblock %}
 

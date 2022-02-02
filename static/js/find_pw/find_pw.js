@@ -1,5 +1,4 @@
 // 라디오버튼 클릭후 보여지는부분 알려주는 함수
-
 function which_show() {
     let checked = document.querySelector("input[name='type_choice']:checked")
     if (checked.value == 'EMAIL'){
@@ -101,14 +100,14 @@ function radio_check(){
 
 function auth_user_check(){
     let radio_value = radio_check()
-    var input_value = '';
+    let input_value = '';
+    let temp = false;
 
     if (radio_value === 'EMAIL') {
         input_value = document.getElementById('send-email').value;
     } else {
         input_value = document.getElementById('send-msg').value;
     }
-    alert(input_value);
 
     $.ajax({
         url: 'auth-user/',
@@ -117,21 +116,21 @@ function auth_user_check(){
             'input_type':radio_value,
             'input_val':input_value
         },
+        async: false,
         datatype: 'json', // 서버에서 반환되는 데이터 json 형식
         success: function(data){ // AJAX 통신이 성공하면 해당 과일의 영어 단어가 출려되도록
-            if (!data.result) {
+            if (data.result === false) {
                 if (radio_value === 'EMAIL') {
                     document.querySelector('.none-email').hidden = false;
 
                 } else {
                     document.querySelector('.none-phone').hidden = false;
                 }
-                return false;
+                temp = false;
             } else {
-                return true;
+                temp = true;
             }
-
         }
-
     });
+    return temp;
 }
