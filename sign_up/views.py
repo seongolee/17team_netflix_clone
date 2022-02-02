@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from user.models import UserModel
+from user.models import UserModel, ProfileId
 from django.contrib.auth.decorators import login_required
 import json
 
@@ -30,11 +30,24 @@ def sign_up_check(request):
 
 
 def sign_up_registration(request):
-    email_phone = ''
+    email_phone = request.session['email_phone']
+    if request.method == 'GET':
+        return render(request, 'sign_up/sign_up_registration.html', {'email_phone': email_phone})
+    elif request.method == 'POST':
+        email_phone = request.POST.get('email-phone')
+        password = request.POST.get('password')
+        username = request.POST.get('username')
+        user_id = ''
 
-    if 'email_phone' in request.session:
-        email_phone = request.session['email_phone']
-        # del request.session['email_phone']
+        email_phone_check = email_phone.find('@')
+        if email_phone_check == -1:
+            user_id = UserModel.objects.create_user(phone_number=email_phone, username=username, password=password)
+        else:
+            user_id = UserModel.objects.create_user(email=email_phone, username=username, password=password)
 
-    return render(request, 'sign_up/sign_up_registration.html', {'email_phone': email_phone})
+        ProfileId.objects.create(user_id=user_id)
+
+        return redirect('/login')
+
+
 

@@ -24,11 +24,11 @@ class ProfileId(models.Model):
         db_table = "profile_id"
 
     user_id = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='user_id')
-    profile_id = models.CharField(max_length=256)
-    profile_name = models.CharField(max_length=256)
+    profile_id = models.AutoField(primary_key=True)
+    profile_name = models.CharField(max_length=256, )
     # profile_image = models.ImageField(upload_to='static/bookimages',default='None.jpg')
     profile_image = models.ImageField(upload_to='', default='')
-    profile_can_use = models.BooleanField(default=None)
+    profile_can_use = models.BooleanField(default=True)
     kids_or_not = models.BooleanField(default=False)
 
 
