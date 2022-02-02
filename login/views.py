@@ -80,9 +80,9 @@ def index(request):
         _context['check'] = True
     return render(request, 'sign_up_check.html', _context)
 def kakaoLoginLogic(request):
-    _restApiKey = '046d90e62bcc4496f71f0dbc804694f8'
+    _restApi = '046d90e62bcc4496f71f0dbc804694f8'
     _redirectUrl = 'http://127.0.0.1:8000/main/'
-    _url = f'https://kauth.kakao.com/oauth/authorize?client_id={_restApiKey}&redirect_uri={_redirectUrl}&response_type=code'
+    _url = f'https://kauth.kakao.com/oauth/authorize?client_id={_restApi}&redirect_uri={_redirectUrl}&response_type=code'
     return redirect(_url)
 def kakaoLoginLogicRedirect(request):
     _qs = request.GET['code']
