@@ -19,17 +19,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 function is_email_change() {
-    let email_bool = false;
+    let email_bool;
     let email = document.getElementById("id-email-phone");
-    let temp = is_email(email);
+    email_bool = is_email(email);
 
-    if(temp) {
-        email_bool = true;
-    } else {
+    if(email_bool === false) {
         email.classList.add("error")
         document.querySelector(".input-error").hidden = false;
         email.focus();
     }
+
     return email_bool
 }
 

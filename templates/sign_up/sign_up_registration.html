@@ -9,7 +9,7 @@
 {% block content %}
 <div class="simple-container">
     <div class="center-container context-step">
-        <form method="post">
+        <form method="post" onsubmit="return signUp()">
             {% csrf_token %}
             <div class="reg-form-container">
                 <div class="step-header-container">
@@ -31,12 +31,12 @@
                             <div class="nf-input nf-input-oversize">
                                 <div class="nf-input-placement">
                                     <label class="input-id">
-                                        <input type="email" name="email" class="nf-text-field"
-                                               id="id-email" autocomplete="off" minlength="5" maxlength="50" value="{{ email_phone }}">
-                                        <label for="id-email" class="place-label">이메일 주소</label>
+                                        <input type="text" name="email-phone" class="nf-text-field"
+                                               id="id-email-phone" autocomplete="off" maxlength="50" value="{{ email_phone }}">
+                                        <label for="id-email-phone" class="place-label">이메일 주소</label>
                                     </label>
                                 </div>
-                                <div id class="input-error" hidden></div>
+                                <div id class="id-email-phone input-error" hidden></div>
                             </div>
                         </li>
                         <li class="nf-form-space">
@@ -44,11 +44,11 @@
                                 <div class="nf-input-placement">
                                     <label class="input-id">
                                         <input type="password" name="password" class="nf-text-field"
-                                               id="id-password" autocomplete="off" minlength="6" maxlength="76">
+                                               id="id-password" autocomplete="off" maxlength="60">
                                         <label for="id-password" class="place-label">비밀번호를 추가하세요</label>
                                     </label>
                                 </div>
-                                <div id class="input-error" hidden></div>
+                                <div id class="id-password input-error" hidden></div>
                             </div>
                         </li>
                         <li class="nf-form-space">
@@ -56,12 +56,12 @@
                                 <div class="nf-input-placement">
                                     <label class="input-id">
                                         <input type="text" name="username" class="nf-text-field"
-                                               id="id-username" autocomplete="off" minlength="2" maxlength="10">
+                                               id="id-username" autocomplete="off" maxlength="10">
                                         <label for="id-username" class="place-label">이름을 입력하세요</label>
                                     </label>
                                 </div>
-                                <div id class="input-error" hidden></div>
                             </div>
+                            <div id class="id-username input-error" hidden></div>
                         </li>
                     </ul>
                 </div>
