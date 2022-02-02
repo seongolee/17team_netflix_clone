@@ -3,6 +3,7 @@
 
 {% block others %}
 <link rel="stylesheet" href="{% static 'css/login/login.css' %}">
+<script type="text/javascript" src="{% static 'js/login/checkbox_save.js' %}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://unpkg.com/feather-icons"></script>
 {% endblock %}
@@ -87,7 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn login-button btn-submit btn-small" type="submit" autocomplete="off" tabindex="0"
+                    <button id="btn_login" class="btn login-button btn-submit btn-small" type="submit" autocomplete="off" tabindex="0"
                             data-uia="login-submit-button">로그인
                     </button>
                     <div class="hybrid-login-form-help">
