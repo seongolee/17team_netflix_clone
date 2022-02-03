@@ -52,6 +52,7 @@ class FooterInfo(models.Model):
     Business_number = models.CharField(max_length=256)
 
 
+
 # # 전화번호인증 관련 모델
 class AuthSms(models.Model):
     class Meta:
