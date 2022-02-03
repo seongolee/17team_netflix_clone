@@ -7,14 +7,14 @@
 
 
 <p align='center'>
+    <img src="https://img.shields.io/badge/Html5-v5.2.3-pink?logo=Html5"/>
+    <img src="https://img.shields.io/badge/CSS-Level 3-6db33f?logo=CSS"/>
+    <img src="https://img.shields.io/badge/Javascript-ES6-blue?logo=Javascript"/>
     <img src="https://img.shields.io/badge/Python-v3.9.8-blue?logo=Python"/>
     <img src="https://img.shields.io/badge/PythonDjango-v4.1.0-purple?logo=Django"/>
     <img src="https://img.shields.io/badge/Tensorflow-v9.0.1-00E7C3?logo=Tensorflow"/>
-    <img src="https://img.shields.io/badge/Lodash-v4.17.21-blue"/>
-    <img src="https://img.shields.io/badge/ReduxToolkit-v1.5.1-purple"/>
-    <img src="https://img.shields.io/badge/Html5-v5.2.3-pink?logo=Html5"/>
-    <img src="https://img.shields.io/badge/SpringBoot-v2.4.4-6db33f?logo=Spring"/>
-    <img src="https://img.shields.io/badge/yarn-^1.22.10-yellow?logo=yarn" />
+    <img src="https://img.shields.io/badge/MySQL-v8.0.21-purple?logo=MySQL"/>
+    <img src="https://img.shields.io/badge/AWS-^2.1.29-yellow?logo=AWS" />
 </p>
 
 <p align='center'>
