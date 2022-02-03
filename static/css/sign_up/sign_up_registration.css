@@ -105,12 +105,20 @@ ul.structural >li {
 }
 
 .nf-form-space {
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .nf-input {
     max-width: 500px;
     position: relative;
+}
+
+.input-error {
+    color: #ff0a0a;
+    text-align: left;
+    padding: 3px 3px;
+    font-size: 15px;
+    position: absolute;
 }
 
 .nf-input-placement label {
@@ -122,7 +130,7 @@ ul.structural >li {
 }
 
 .nf-input .nf-text-field {
-    width: 98%;
+    width: 96%;
 }
 
 .nf-input .place-label {
@@ -183,6 +191,10 @@ ul.structural >li {
 .footer .footer_links {
     font-size: 12px;
     margin-bottom: 0;
+}
+
+.nf-text-field {
+    padding-left: 10px;
 }
 
 .lang-selection-container .ui-select-wrapper .ui-select {
