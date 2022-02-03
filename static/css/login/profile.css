@@ -1,0 +1,306 @@
+body, html {
+    background: #141414;
+    color: #fff;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    line-height: 1.2;
+    user-select: none;
+    cursor: default;
+}
+
+.extended-diacritics-language {
+    line-height: 1.4;
+}
+
+
+/* 언어설정부분인 거 같은데 우선 넷플릭스처럼 해봄
+div[Attributes Style] {
+    direction: ltr;
+    unicode-bidi: isolate;
+}
+div[Attributes Style] {
+    -webkit-locale: "ko-KR";
+} */
+
+.bd {
+    z-index: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+
+/* 헤더 */
+.pinning-header {
+    height: 70px;
+}
+
+.pinning-header .pinning-header-container {
+    left: 0;
+    right: 0;
+    top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.pinning-header .main-header.on-profiles-gate:not(.solid) {
+    background-color: transparent;
+}
+
+.pinning-header .pinning-header-container .main-header {
+    z-index: 2;
+    height: 41px;
+}
+
+.pinning-header .main-header.menu-navigation {
+    background-image: linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0));
+}
+
+.pinning-header .main-header {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0 4%;
+    z-index: 2;
+    font-size: 1.2rem;
+    transition: background-color .4s;
+}
+
+.pinning-header .main-header .logo {
+    text-decoration: none;
+    font-size: 1.8em;
+    color: #e50914;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+[class*=" icon-"], [class^=icon-] {
+    font-family: nf-icon;
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* 좌측상단 넷플릭스 로고 콘텐트로 불러오는 곳 */
+.icon-logoUpdate:before {
+    content: '\e5d0';
+}
+
+.pinning-header .main-header .logo {
+    text-decoration: none;
+    font-size: 1.8em;
+    color: #e50914;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.profiles-gate-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background: #141414;
+    z-index: 0;
+}
+
+.profiles-gate-container .centered-div.list-profiles-container:not(.js-transition-node) {
+    animation: animateProfileGate 450ms forwards;
+}
+
+.profiles-gate-container .centered-div {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.list-profiles {
+    max-width: 80%;
+    background: #141414;
+}
+
+.list-profiles .profile-gate-label {
+    width: 100%;
+    color: #fff;
+    font-size: 3.5vw;
+    font-weight: unset;
+}
+
+.list-profiles .choose-profile, .list-profiles .profile-gate-label {
+    opacity: 1;
+    transition: opacity .4s ease-out;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+.list-profiles .choose-profile {
+    margin: 2em 0;
+}
+
+.profiles-gate-container ul {
+    padding: 0;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.profiles-gate-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    background: #141414;
+    z-index: 0;
+}
+
+.profiles-gate-container li.profile:not(:last-child) {
+    margin: 0 2vw 0 0;
+}
+
+.profiles-gate-container li.profile {
+    width: 10vw;
+    max-width: 200px;
+    min-width: 84px;
+}
+
+.profiles-gate-container li {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+.profiles-gate-container li a {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+a {
+    background-color: transparent;
+}
+
+.list-profiles .avatar-wrapper {
+    position: relative;
+}
+
+.profiles-gate-container .profile-icon {
+    height: 10vw;
+    width: 10vw;
+    max-height: 200px;
+    max-width: 200px;
+    min-height: 84px;
+    min-width: 84px;
+    box-sizing: border-box;
+    position: relative;
+    text-decoration: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #333;
+    border-radius: 4px;
+    border: none;
+}
+
+.profiles-gate-container .profile-icon:hover {
+    content: '';
+    display: block;
+    border-radius: 4px;
+    border: 0.3em solid white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* 프로필 이름 부분 */
+.extended-diacritics-language .profiles-gate-container .profile-name {
+    line-height: 1.5;
+}
+
+.profiles-gate-container .profile-name {
+    min-height: 1.8em;
+    color: grey;
+    display: block;
+    text-align: center;
+    margin: 0.6em 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.profile-button {
+    display: block;
+    margin: 2em 0 1em 0;
+    font-size: 1.2vw;
+    border: 1px solid grey;
+    color: grey;
+    padding: 0.5em 1.5em;
+    letter-spacing: 2px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+
+/* 뭔가 이미지 미리 땡겨오는 트리거 같은데 마진 으로 옆으로 쭈~~~욱 빼놓은 게 특이해서 따라해봄 */
+.image-preloaders {
+    margin-left: -9999px;
+}
+.jawbone-images {
+    background: url(https://assets.nflxext.com/en_us/akira/jawBone/nav-shadow.png) no-repeat -9999px -9999px;
+}
+
+
+/* 청각장애인을 위한 음성설명 페이지 같은데 소외계층을 향한 배려가 멋있어서 우선 넣어둠. */
+.visually-hidden {
+    clip: rect(1px,1px,1px,1px)!important;
+    height: 1px!important;
+    overflow: hidden!important;
+    position: absolute!important;
+    white-space: nowrap!important;
+    width: 1px!important;
+}
