@@ -22,8 +22,8 @@
                         <div class="nfInputPlacement">
                             <label class="input_id" placeholder="email">
 <!--                                autocomplete -> 자동완성기능 없앰-->
-                                <input type="text" name="email" class="nfTextField hasText" id="id_email" value="" autocomplete="off" disabled="">
-                                <label for="id_email" class="placeLabel_email">{{email}}</label>
+                                <input type="text" name="email" class="nfTextField hasText" id="id_email" value="" autocomplete="off" disabled="" placeholder="{{email}}">
+                                <label for="id_email" class="placeLabel_email">현재 이메일</label>
                             </label>
                         </div>
                     </div>
@@ -52,7 +52,10 @@
             </ul>
             <div class="nf-btn-bar change-password-buttons">
                 <button id="btn-save" type="submit" class="save_btn">저장</button>
-                <button id="btn-cancel" class="cancel_btn">취소</button>
+                <a href="/kr">
+                    <button id="btn-cancel" class="cancel_btn" >취소</button>
+                </a>
+
             </div>
         </form>
     </div>
