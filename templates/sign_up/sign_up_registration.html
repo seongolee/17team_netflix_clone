@@ -9,7 +9,7 @@
 {% block content %}
 <div class="simple-container">
     <div class="center-container context-step">
-        <form method="post" onsubmit="return signUp()">
+        <form method="post" action="{% url 'sign_up_registration' %}" onsubmit="return signUp()">
             {% csrf_token %}
             <div class="reg-form-container">
                 <div class="step-header-container">
@@ -31,12 +31,12 @@
                             <div class="nf-input nf-input-oversize">
                                 <div class="nf-input-placement">
                                     <label class="input-id">
-                                        <input type="text" name="email-phone" class="nf-text-field"
-                                               id="id-email-phone" autocomplete="off" maxlength="50" value="{{ email_phone }}">
-                                        <label for="id-email-phone" class="place-label">이메일 주소</label>
+                                        <input type="text" name="email" class="nf-text-field"
+                                               id="id-email" autocomplete="off" maxlength="50" value="{{ email }}">
+                                        <label for="id-email" class="place-label">이메일 주소</label>
                                     </label>
                                 </div>
-                                <div id class="id-email-phone input-error" hidden></div>
+                                <div id class="id-email input-error" hidden></div>
                             </div>
                         </li>
                         <li class="nf-form-space">
@@ -62,6 +62,18 @@
                                 </div>
                             </div>
                             <div id class="id-username input-error" hidden></div>
+                        </li>
+                        <li class="nf-form-space">
+                            <div class="nf-input nf-input-oversize">
+                                <div class="nf-input-placement">
+                                    <label class="input-id">
+                                        <input type="text" name="phone-number" class="nf-text-field"
+                                               id="id-phone-number" autocomplete="off" maxlength="13" value="{{ phone_number }}">
+                                        <label for="id-phone-number" class="place-label">핸드폰 번호를 입력해주세요</label>
+                                    </label>
+                                </div>
+                            </div>
+                            <div id class="id-phone-number input-error" hidden></div>
                         </li>
                     </ul>
                 </div>
