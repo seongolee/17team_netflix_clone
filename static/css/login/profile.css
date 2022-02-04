@@ -93,15 +93,22 @@ div[Attributes Style] {
     content: '\e5d0';
 }
 
-.pinning-header .main-header .logo {
-    text-decoration: none;
-    font-size: 1.8em;
-    color: #e50914;
-    display: inline-block;
-    vertical-align: middle;
-    cursor: pointer;
-    margin-right: 5px;
+.logo-netflix-txt {
+    width: 8.375rem;
+    height: 2.25rem;
+    padding-top: 0;
 }
+
+/*로고 감싸는 a태그 자체로 넷플릭스 콘텐트 만들려 했을 때 쓰건 css*/
+/*.pinning-header .main-header .logo {*/
+/*    text-decoration: none;*/
+/*    font-size: 1.8em;*/
+/*    color: #e50914;*/
+/*    display: inline-block;*/
+/*    vertical-align: middle;*/
+/*    cursor: pointer;*/
+/*    margin-right: 5px;*/
+/*}*/
 
 .profiles-gate-container {
     position: fixed;
