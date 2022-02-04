@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+{% load static %}
+
+{# block_list: others, title, content #}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    {% block others %}
+    <script type="text/javascript" src="{% static 'js/mainpage_js/search.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/mainpage_js/main.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/base_main.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+<div id="appMountPoint">
+    <div class="basicLayout">
+        <div class="our-story-container">
+            <div class="pinning-header">
+                <div class="pinning-header-container" style="top: 0px; position: relative; background: transparent;">
+                    <div class="main-header has-billboard menu-navigation" role="navigation"><a aria-label="넷플릭스"
+                                                                                                class="logo icon-logoUpdate active"
+                                                                                                href="/browse"><img class="logo-netflix-txt" src="https://i.ibb.co/r5krrdz/logo.png" alt="logo_text"></a>
+                        <ul class="tabbed-primary-navigation">
+                            <li class="navigation-menu"><a class="menu-trigger" role="button" aria-haspopup="true"
+                                                           tabindex="0">메뉴</a></li>
+                            <li class="navigation-tab"><a href="/browse" class="current active">홈</a></li>
+                            <li class="navigation-tab"><a href="/browse/genre/83">시리즈</a></li>
+                            <li class="navigation-tab"><a href="/browse/genre/34399">영화</a></li>
+                            <li class="navigation-tab"><a href="/latest">NEW! 요즘 대세 콘텐츠</a></li>
+                            <li class="navigation-tab"><a href="/browse/my-list">내가 찜한 콘텐츠</a></li>
+                        </ul>
+                        <div class="secondary-navigation">
+                            <div class="nav-element">
+<!--                                기존 검색박스-->
+<!--                                <div class="searchBox">-->
+<!--                                    <button class="searchTab" tabindex="0" aria-label="검색"-->
+<!--                                            data-uia="search-box-launcher"><span class="icon-search"></span></button>-->
+<!--                                </div>-->
+                                <div class="search-box">
+                                    <input class="search-input" type="text" name="" placeholder="Pesquise">
+                                    <a href="/search" class="search-btn">
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="nav-element">
+                                <div class="account-menu-item">
+                                    <div class="account-dropdown-button">
+                                    <a href="javascript:dropdownshow()">
+                                        <span class="profile-link" role="presentation">
+                                            <img class="profile-icon" src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABW6CcyxMhswxsXLwQIU0aOSE3fbpOWawb9JenXFNMJgF5uXHTW2eG_gqqoTnw6CYl6XPW60UvrQnjsE8hPKwQMU.png?r=552" alt="">
+                                        </span>
+                                    </a>
+                                    <span class="caret" role="presentation"></span></div>
+                                    <div id="dropdown" role="menu" tabindex="0" class="account-drop-down sub-menu theme-lakira"
+                                         style="opacity: 1; transition-duration: 150ms;">
+                                        <div class="ptrack-content"
+                                             data-ui-tracking-context="%7B%22appView%22:%22accountDropdownPanel%22%7D"
+                                             data-tracking-uuid="8ae535ba-cbb2-4db9-a60e-247eb5dfdec7">
+                                            <div class="topbar"></div>
+                                            <ul class="sub-menu-list profiles" role="list" aria-label="프로필">
+                                                <li class="sub-menu-item profile" role="listitem">
+                                                    <div><a class="profile-link" tabindex="0"
+                                                            href="/SwitchProfile?tkn=XYQMPBXLEBAWTCAR6ZGHFI6GXA"
+                                                            data-uia="action-select-profile+primary">
+                                                        <div class="avatar-wrapper"><img class="profile-icon"
+                                                                                         src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABW6CcyxMhswxsXLwQIU0aOSE3fbpOWawb9JenXFNMJgF5uXHTW2eG_gqqoTnw6CYl6XPW60UvrQnjsE8hPKwQMU.png?r=552"
+                                                                                         alt=""></div>
+                                                        <span class="profile-name">김지용</span></a>
+                                                        <div class="profile-children"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="sub-menu-item profile" role="listitem">
+                                                    <div><a class="profile-link" tabindex="0"
+                                                            href="/SwitchProfile?tkn=SLXQHUKPMVE2PMISJS5QGZ4RXU"
+                                                            data-uia="action-select-profile+secondary">
+                                                        <div class="avatar-wrapper"><img class="profile-icon"
+                                                                                         src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABXywvdPHBhL7h0TOuNr2uURK28yBKhjImyfjzYLWmUOB3qbQLUsIIYd9maV-kCAB2CqWulEzCApnRtm09vQoD6M.png?r=6f4"
+                                                                                         alt=""></div>
+                                                        <span class="profile-name">김지연</span></a>
+                                                        <div class="profile-children"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="sub-menu-item profile-link" role="listitem"><a
+                                                        aria-label="프로필 관리" class="sub-menu-link"
+                                                        href="/profiles/manage">프로필 관리</a></li>
+                                            </ul>
+                                            <ul class="sub-menu-list responsive-links"></ul>
+                                            <ul class="account-links sub-menu-list" aria-label="계정">
+                                                <li class="sub-menu-item"><a class="sub-menu-link" href="/YourAccount">계정</a>
+                                                </li>
+                                                <li class="sub-menu-item"><a class="sub-menu-link"
+                                                                             href="https://help.netflix.com/">고객 센터</a>
+                                                </li>
+                                                <li class="sub-menu-item"><a class="sub-menu-link"
+                                                                             href="/logout">넷플릭스에서 로그아웃</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% block content %}
+
+            {% endblock %}
+            <div class="footer">
+
+                <div class="footer-container">
+                    <p class="footer_question">질문이 있으신가요?</p>
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#"><span class="footer_label">자주 묻는 질문</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">고객 센터</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">계정</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">미디어 센터</span></a>
+                        </li>
+                    </ul>
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#"><span class="footer_label">투자 정보(IR)</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">입사 정보</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">넷플릭스 지원 디바이스</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">이용 약관</span></a>
+                        </li>
+                    </ul>
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#"><span class="footer_label">개인정보</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">쿠키 설정</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">회사 정보</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">문의하기</span></a>
+                        </li>
+                    </ul>
+                    <ul class="footer_links">
+                        <li>
+                            <a href="#"><span class="footer_label">속도 테스트</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">법적 고지</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label">오직 넷플릭스에서</span></a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="footer_label"> </span></a>
+                        </li>
+                    </ul>
+                    <div class="lang-selection-container" id="lang-switcher">
+                        <div data-uia="language-picker+container" class="ui-select-wrapper">
+                            <label for="lang-switcher-select" class="ui-label">
+                              <span class="ui-label-text">
+                                언어 선택
+                              </span>
+                            </label>
+                            <div class="select-arrow medium prefix globe">
+
+                                <select data-uia="language-picker" class="ui-select medium" id="lang-switcher-select"
+                                        tabindex="0" placeholder="lang-switcher">
+                                    <option selected="" lang="ko" value="/kr/" data-language="ko" data-country="KR">
+                                        한국어
+                                    </option>
+                                    <option lang="en" value="/kr-en/" data-language="en" data-country="KR">
+                                        English
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="footer_nbk">넷플릭스 내일배움캠프</p>
+                    <div class="copy_text">
+                        <div class="copy-text-block">넷플릭스 클론 코딩 팀스파르타(주) 통신판매업신고번호: 2020-서울강남-02300 전화번호: 080-001-9587
+                        </div>
+                        <div class="copy-text-block">대표: 이 범 규</div>
+                        <div class="copy-text-block">이메일 주소: 17team3!4!@netflix.com</div>
+                        <div class="copy-text-block">주소: 서울특별시 강남구 논현로 425, 501호</div>
+                        <div class="copy-text-block">사업자등록번호: 783-86-01715</div>
+                        <div class="copy-text-block">클라우드 호스팅: Amazon Web Services Inc.</div>
+                        <div id="" class="copy-text-block" data-uia="">
+                            <a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2018300016930200431&amp;pageUnit=10&amp;searchCnd=bup_nm&amp;searchKrwd=%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4&amp;pageIndex=1"><span class="footer_label">공정거래위원회 웹사이트</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    let csrftoken = getCookie('csrftoken');
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+
+    $.ajaxSetup({
+        beforeSend: function (xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+</script>
+</html>
