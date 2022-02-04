@@ -13,41 +13,32 @@ def sign_up_check(request):
         email_phone = request.POST.get('email_phone')
 
         email_phone_check = email_phone.find('@')
+        email = ''
+        phone_number = ''
 
         if email_phone_check == -1:
             email_phone_check = UserModel.objects.filter(phone_number=email_phone)
+            phone_number = email_phone
         else:
             email_phone_check = UserModel.objects.filter(email=email_phone)
+            email = email_phone
 
         if email_phone_check:
-            site = '/login'
+            return redirect('/login')
         else:
-            site = '/kr/signup'
-
-        request.session['email_phone'] = email_phone
-
-        return redirect(site)
+            return render(request, 'sign_up/sign_up_registration.html', {'email': email, 'phone_number': phone_number})
 
 
 def sign_up_registration(request):
-    email_phone = request.session['email_phone']
-    if request.method == 'GET':
-        return render(request, 'sign_up/sign_up_registration.html', {'email_phone': email_phone})
-    elif request.method == 'POST':
-        email_phone = request.POST.get('email-phone')
+    if request.method == 'POST':
+        email = request.POST.get('email')
         password = request.POST.get('password')
         username = request.POST.get('username')
-        user_id = ''
+        phone_number = str(request.POST.get('phone-number'))
+        phone_number = phone_number.replace('-', '')
 
-        email_phone_check = email_phone.find('@')
-        if email_phone_check == -1:
-            user_id = UserModel.objects.create_user(phone_number=email_phone, username=username, password=password)
-        else:
-            user_id = UserModel.objects.create_user(email=email_phone, username=username, password=password)
-
+        user_id = UserModel.objects.create_user(email=email, phone_number=phone_number, username=username,
+                                                password=password)
         ProfileId.objects.create(user_id=user_id)
 
         return redirect('/login')
-
-
-
