@@ -8,9 +8,9 @@ class UserModel(AbstractUser):
     class Meta:
         db_table = "user_model"
 
-    email = models.EmailField(verbose_name="email", max_length=255, unique=True, blank=False)
+    email = models.EmailField(verbose_name="email", max_length=255, unique=True)
     username = models.CharField(max_length=30)
-    phone_number = models.CharField(max_length=30, blank=False, unique=True)
+    phone_number = models.CharField(max_length=30, unique=True)
     country_code = models.CharField(max_length=256, default='ko')
 
     objects = UserManager()
