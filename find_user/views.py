@@ -22,7 +22,7 @@ from django.core.mail import EmailMessage
 
 
 def make_signatures(timestamp):
-    secret_key = "ewrEcW9qG7mQTfoV2yJCTkXjwMVeqN8FS7WW5bc2"  # secret key (from portal or Sub Account)
+    secret_key = secrets['SMS'][SECRET_KEY] # secret key (from portal or Sub Account)
     secret_key = bytes(secret_key, 'UTF-8')
     uri = '/sms/v2/services/ncp:sms:kr:279717467536:test/messages'
     message = "POST" + " " + uri + "\n" + timestamp + "\n" + 'g5Zmd1j2xKyAdx391t4p'
