@@ -60,6 +60,18 @@
     margin: 5px 0 15px;
 }
 
+.none-phone {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    font-size: 16px;
+    border-radius: 2px;
+    width: 100%;
+    background-color: #ffa00a;
+    color: white;
+    margin: 5px 0 15px;
+}
+
 .ui-msg-icon {
     padding-left: 20px;
     height: inherit;
@@ -96,12 +108,13 @@
 
 .choose-email-result {
     width: 95%;
-    height: 95px;
+    height: 100px;
     font-size: 16px;
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .choose-email-result input{
@@ -166,7 +179,7 @@
 }
 
 .d-grid {
-    margin-top: 30px;
+    margin-top: 40px;
     width: 95%;
 }
 .btn {

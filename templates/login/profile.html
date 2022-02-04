@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+{% load static %}
+
+{# block_list: others, title, content #}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="{% static 'css/login/profile.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- 넷플릭스 아이콘 (content 들어가는 부분)로드해오는 건줄 알았는데 적용이 안 되는거 보니 아닌가 봄 ㅠㅠ -->
+    <link rel="shortcut icon" href="https://assets.nflxext.com/ffe/siteui/common/icons/nficon2016.ico">
+    {% block others %}
+    {% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div id="appMountPoint">
+    <div class="netflix-sans-font-loaded">
+        <div dir="ltr" class="extended-diacritics-language">
+            <div>
+                <div class="bd dark-background" lang="ko-KR" data-uia="container-adult">
+                    <div class="pinning-header on-profiles-gate">
+                        <div class="pinning-header-container"
+                             style="top: 0px; position: relative; background: transparent;">
+                            <div class="main-header on-profiles-gate menu-navigation" role="navigation"><a
+                                    aria-label="넷플릭스" class="logo icon-logoUpdate active" href="/browse"></a></div>
+                        </div>
+                    </div>
+                    <div class="profiles-gate-container">
+                        <div class="centered-div list-profiles-container">
+                            <div class="list-profiles"><h1 class="profile-gate-label">넷플릭스를 시청할 프로필을 선택하세요.</h1>
+                                <ul class="choose-profile">
+                                    <li class="profile">
+                                        <div><a class="profile-link" tabindex="0"
+                                                href="/main"
+                                                data-uia="action-select-profile+primary">
+                                            <div class="avatar-wrapper">
+                                                <div class="profile-icon" data-profile-guid="XYQMPBXLEBAWTCAR6ZGHFI6GXA"
+                                                     style="background-image:url(https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABblaqFlXX2IW8zOeb6a7h7w8W1wXJI6XeqvfqWA3HsBylJjOucB_L01cj1sHzjYOF3-AzNbq5lJ4RaBOzvoRDo5i3EzT.png?r=552)"></div>
+                                            </div>
+                                            <span class="profile-name">김지용</span></a>
+                                            <div class="profile-children"></div>
+                                        </div>
+                                    </li>
+                                    <li class="profile">
+                                        <div><a class="profile-link" tabindex="0"
+                                                href="/main"
+                                                data-uia="action-select-profile+secondary">
+                                            <div class="avatar-wrapper">
+                                                <div class="profile-icon" data-profile-guid="SLXQHUKPMVE2PMISJS5QGZ4RXU"
+                                                     style="background-image:url(https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABTo0mOO5W5wCU7dkVoMjlKNR-G6hvXY3RvQ7QCtJoa4wXjMGAzPzlx4i6vUmeYjnXPwE05eIj_2rfd5qiEdIVJFf-nXj.png?r=6f4)"></div>
+                                            </div>
+                                            <span class="profile-name">이성오</span></a>
+                                            <div class="profile-children"></div>
+                                        </div>
+                                    </li>
+                                    <li class="profile">
+                                        <div><a class="profile-link" tabindex="0"
+                                                href="/main"
+                                                data-uia="action-select-profile+secondary">
+                                            <div class="avatar-wrapper">
+                                                <div class="profile-icon" data-profile-guid="A7AQDABDTZHJDD6PNFYQ642SDY"
+                                                     style="background-image:url(https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABeUqbfriC_pGWtwTa1KOx-ZSiQYa7ltLkOuduGxY_GRRc41ugYJNGYHe4LNcmshST4qkRSENvcs2xFomPc0rtX8wq2NG.png?r=b97)"></div>
+                                            </div>
+                                            <span class="profile-name">윤소현</span></a>
+                                            <div class="profile-children"></div>
+                                        </div>
+                                    </li>
+                                    <li class="profile">
+                                        <div><a class="profile-link" tabindex="0"
+                                                href="/main"
+                                                data-uia="action-select-profile+secondary">
+                                            <div class="avatar-wrapper">
+                                                <div class="profile-icon" data-profile-guid="KW6JFH3T3ZECPPJTKPAOH56ZEE"
+                                                     style="background-image:url(https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABWu33TcylnaLZwSdtgKR6mr0O63afqQLxZbzHYQZLkCJ9bgMTtsf6tzs_ua2BuTpAVPbhxnroiEA-_bqJmKWiXblO9h-.png?r=f71)"></div>
+                                            </div>
+                                            <span class="profile-name">김석준</span></a>
+                                            <div class="profile-children"></div>
+                                        </div>
+                                    </li>
+                                    <li class="profile">
+                                        <div><a class="profile-link" tabindex="0"
+                                                href="/main"
+                                                data-uia="action-select-profile+kids">
+                                            <div class="avatar-wrapper">
+                                                <div class="profile-icon" data-profile-guid="K4BLIMBSYVAX7OV77T2UA44IM4"
+                                                     style="background-image:url(https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABYhiXQV-hAgUwuVu5dAcjPe0XIxFW31x9skftI5k3hoaF4XLJ89LqQ0jy9l9FuRI3NjD_eKWVmiipYAIAU2XjsbXTFEd_zy2uWsEPZ-OVCHZ1SL0EvRWXC-J6hPJmEc15Ttv1DXY0xQ.png?r=a41)"></div>
+                                            </div>
+                                            <span class="profile-name">KIDS</span></a>
+                                            <div class="profile-children"></div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <span data-uia="profile-button"><a aria-label="프로필 관리" href="/ManageProfiles"
+                                                               class="profile-button">프로필 관리</a></span></div>
+                    </div>
+                    <div class="image-preloaders"><span class="jawbone-images"></span></div>
+                </div>
+                <div class="visually-hidden screenReaderMessage" role="alert" aria-live="assertive"><span></span></div>
+            </div>
+            <div class="visually-hidden" style="display:none">
+                <div id="standaloneAudioDescriptionAvailable">음성 설명이 제공됩니다</div>
+                <div id="episodesAudioDescriptionAvailable">일부 에피소드에 음성 설명이 제공됩니다</div>
+                <div id="playWithAudioDescription">음설 설명을 켠 채로 시작합니다</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -169,6 +169,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'user.UserModel'
+
 LOGIN_URL = 'sign_up_check'
 
 # 메일을 호스트하는 서버
@@ -183,3 +184,4 @@ EMAIL_HOST_PASSWORD = secrets['MAIL']['EMAIL_HOST_PASSWORD']
 EMAIL_USE_TLS = secrets['MAIL']['EMAIL_USE_TLS']
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
