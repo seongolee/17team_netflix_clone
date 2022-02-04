@@ -20,6 +20,8 @@ from user.models import UserModel
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 
+from main.models import Video,VideoModal
+import csv
 
 def make_signatures(timestamp):
     secret_key = "ewrEcW9qG7mQTfoV2yJCTkXjwMVeqN8FS7WW5bc2"  # secret key (from portal or Sub Account)
@@ -185,3 +187,8 @@ def set_pw_view(request):
             response = redirect('/login')
             return response
 
+def add_data(request):
+    path = "C:/Users/Administrator/Downloads/video_table_data.csv"
+    file = open(path)
+    reader = csv.reader(file)
+    for row in reader:
