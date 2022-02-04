@@ -56,6 +56,14 @@
     width: 500px;
 }
 
+.placeLabel_email {
+    position: absolute;
+    left: 10px;
+    color: #8c8c8c;
+    top: 6px;
+    font-size: 11px;
+}
+
 .placeLabel {
     position: absolute;
     left: 10px;

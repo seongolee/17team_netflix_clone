@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
    let parent = document.getElementById("our-story-logo");
    let logo_a = document.createElement('a');
-   let email = document.getElementById("id-email-phone");
+   let email = document.getElementById("id-email");
    let password = document.getElementById("id-password");
    let username = document.getElementById("id-username");
+   let phone_number = document.getElementById("id-phone-number");
 
    logo_a.setAttribute('href', '/kr');
    logo_a.setAttribute('class', 'logo-a');
@@ -14,9 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
       email.classList.add("hasText");
    }
 
+   if (!(phone_number.value === "")) {
+      phone_number.classList.add("hasText");
+   }
+
    keyUpEvent(email);
    keyUpEvent(password);
    keyUpEvent(username);
+   keyUpEvent(phone_number)
 
 
 });
@@ -30,10 +36,12 @@ function keyUpEvent(id) {
          id.classList.add("hasText", "error");
          document.querySelector("."+ id.id +".input-error").hidden = false;
       }
-      if (id.id === "id-email-phone") {
+      if (id.id === "id-email") {
          is_email(id);
       } else if (id.id === "id-password") {
          is_password(id);
+      } else if (id.id === "id-phone-number") {
+         is_phone_number(id);
       } else {
          is_username(id);
       }
@@ -53,11 +61,12 @@ function is_email(obj) {
        let regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
        let regPhone = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
 
-       if (obj.value.match(regExp) != null || obj.value.match(regPhone) != null) {
+       if (obj.value.match(regExp) != null) {
           obj.classList.remove("error");
           document.querySelector("." + obj.id + ".input-error").hidden = true;
        } else {
-          document.querySelector("." + obj.id + ".input-error").innerText = "이메일 주소 또는 핸드폰 번호를 정확하게 입력하세요.";
+          document.querySelector("."+ obj.id +".input-error").hidden = false;
+          document.querySelector("." + obj.id + ".input-error").innerText = "이메일 주소를 정확하게 입력하세요.";
           email_bool = false;
        }
     }
@@ -81,6 +90,24 @@ function is_password(obj) {
    return password_bool;
 }
 
+function is_phone_number(obj) {
+   let phone_number_bool = true;
+   let regExp = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+
+   console.log('check')
+
+   if (obj.value.match(regExp) != null) {
+          obj.classList.remove("error");
+          document.querySelector("." + obj.id + ".input-error").hidden = true;
+       } else {
+          document.querySelector("."+ obj.id +".input-error").hidden = false;
+          document.querySelector("." + obj.id + ".input-error").innerText = "휴대폰 번호를 정확하게 입력하세요.";
+          phone_number_bool = false;
+       }
+
+   return phone_number_bool;
+}
+
 function is_username(obj) {
    let is_username = true;
    if (obj.value.length < 2) {
@@ -95,23 +122,22 @@ function is_username(obj) {
 
    return is_username;
 }
-
 function signUp() {
-   let email = document.getElementById("id-email-phone");
+   let email = document.getElementById("id-email");
    let password = document.getElementById("id-password");
    let username = document.getElementById("id-username");
-   let is_sign_up;
+   let phone_number = document.getElementById("id-phone-number");
 
-   is_sign_up = is_email(email);
-   if (is_sign_up === false) {
+   if (is_email(email) === false) {
       return false
    }
-   is_sign_up = is_password(password);
-   if (is_sign_up === false) {
+   if (is_password(password) === false) {
       return false
    }
-   is_sign_up = is_username(username);
-   if (is_sign_up === false) {
+   if (is_username(username) === false) {
+      return false
+   }
+   if (is_phone_number(phone_number) === false) {
       return false
    }
 
