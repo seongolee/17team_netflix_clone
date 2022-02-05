@@ -9,6 +9,8 @@ fetch("https://baconipsum.com/api/?type=all-meat&paras=200&format=html")
 
 // const modal = document.getElementById("modal")
 
+
+
 function modalOn() {
     const modal = document.getElementById("modal")
     modal.style.display = "flex"
@@ -52,3 +54,16 @@ window.addEventListener("keyup", e => {
         modalOff()
     }
 })
+
+// base_main.html 헤더 우측상단 2번째 네비 리스트 열고 닫기 기능
+function dropdownshow(){
+     let drop =  document.getElementById("dropdown");
+     if(drop.style.display=='block'){
+		drop.style.display = 'none';
+        console.log('나는빡빡이다!')
+	}else{
+		drop.style.display = 'block';
+        console.log('나의 모발은 빽빽이다!')
+	}
+}
+('#foot3').append(temp_html)
