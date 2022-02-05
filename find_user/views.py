@@ -20,11 +20,13 @@ from user.models import UserModel
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 
+
 with open(os.path.join(BASE_DIR, 'aws.json')) as f:
     secrets = json.loads(f.read())
 
+
 def make_signatures(timestamp):
-    secret_key = secrets['SMS'][SECRET_KEY] # secret key (from portal or Sub Account)
+    secret_key = secrets['SMS']['SECRET_KEY'] # secret key (from portal or Sub Account)
     secret_key = bytes(secret_key, 'UTF-8')
     uri = '/sms/v2/services/ncp:sms:kr:279717467536:test/messages'
     message = "POST" + " " + uri + "\n" + timestamp + "\n" + 'g5Zmd1j2xKyAdx391t4p'
@@ -187,3 +189,78 @@ def set_pw_view(request):
             response = redirect('/login')
             return response
 
+
+#데이터셋 만드는 함수
+
+# def add_data(request):
+#     path = "C:/Users/Administrator/Downloads/video_table_data.csv"
+#     file = open(path)
+#     reader = csv.reader(file)
+#     total_actor = []
+#     total_creator = []
+#     total_genre = []
+#     for row in reader:
+#         videos = Video.objects.get(video_title=row[0],video_clip =row[1],age_limit_logo =row[2])
+#
+#         # actor 테이블 생성
+#         actor = row[4]
+#         actors = actor.split('/')
+#         del actors[-1]
+#         if len(actors)> 5:
+#             actors = actors[:6]
+#         # for i in actors:
+#         #     if i not in total_actor:
+#         #         total_actor.append(i)
+#         #     else:
+#         #         pass
+#
+#
+#         # creator 테이블 생성
+#         # creator = row[5]
+#         # creators = creator.split('/')
+#         # del creators[-1]
+#         # for i in creators:
+#         #     if i not in total_creator:
+#         #         total_creator.append(i)
+#         #     else:
+#         #         pass
+#
+#
+#         # for i in range(len(creators)):
+#         #     total_creat = Creator.objects.get(creator_name=creators[i])
+#         #     print(total_creat.id)
+#         #     videos.creators.add(total_creat.id)
+#         #
+#         for i in range(len(actors)):
+#             total_act = Actor.objects.get(actor_name=actors[i])
+#             print(total_act.id)
+#             videos.actors.add(total_act.id)
+#
+#         #장르테이블 생성
+#         # genre = row[6]
+#         # genres = genre.split('/')
+#         # del genres[-1]
+#         # for i in genres:
+#         #     if i not in total_genre:
+#         #         total_genre.append(i)
+#         #     else:
+#         #         pass
+#
+#         #many to many field 생성 및 videomodal 데이터 생성
+#         # for i in range(len(genres)):
+#         #     total_genre = Genre.objects.get(genre_name=genres[i])
+#         #     print(total_genre.id)
+#         #     videos.genre.add(total_genre.id)
+#
+#         # VideoModal.objects.create(video_id=videos, video_description= row[3])
+#
+#     # for act in total_actor:
+#     #     Actor.objects.create(actor_name=act)
+#     #
+#     # for cre in total_creator:
+#     #     Creator.objects.create(creator_name=cre)
+#     #
+#     #
+#     # for gen in total_genre:
+#     #     Genre.objects.create(genre_name=gen)
+#     return HttpResponse('create data')
