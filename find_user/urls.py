@@ -8,6 +8,6 @@ urlpatterns = [
     path('set-pw/', views.set_pw_view, name='set-pw'),
     path('auth-num/', views.auth_num, name='auth-num'),
     path('send-email/', views.send_email, name='send-email'),
-    path('add-data/', views.add_data, name='add-data'),
+    # path('add-data/', views.add_data, name='add-data'),
 
 ]
