@@ -20,11 +20,11 @@ from user.models import UserModel
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 
-from main.models import Video,VideoModal
+from main.models import Video,VideoModal,Genre
 import csv
 
 def make_signatures(timestamp):
-    secret_key = secrets['SMS'][SECRET_KEY] # secret key (from portal or Sub Account)
+    secret_key = secrets['SMS']['SECRET_KEY'] # secret key (from portal or Sub Account)
     secret_key = bytes(secret_key, 'UTF-8')
     uri = '/sms/v2/services/ncp:sms:kr:279717467536:test/messages'
     message = "POST" + " " + uri + "\n" + timestamp + "\n" + 'g5Zmd1j2xKyAdx391t4p'
@@ -192,3 +192,14 @@ def add_data(request):
     file = open(path)
     reader = csv.reader(file)
     for row in reader:
+        videos = Video.objects.create(video_title=row[0],video_clip =row[1],age_limit_logo =row[2])
+
+        genre = row[6]
+        genres = genre.split('/')
+        del genres[-1]
+        for i in range(len(genres)):
+            total_genre = Genre.objects.get(genre=genres[i])
+            videos.genre_id.add(*total_genre)
+
+        VideoModal.objects.create(video_id=videos.id, video_description= row[3])
+    return HttpResponse('create data')
