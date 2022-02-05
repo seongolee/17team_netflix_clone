@@ -21,6 +21,11 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 
 
+import os
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+
 with open(os.path.join(BASE_DIR, 'aws.json')) as f:
     secrets = json.loads(f.read())
 
