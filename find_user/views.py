@@ -20,6 +20,8 @@ from user.models import UserModel
 from django.contrib.sites.shortcuts import get_current_site
 from django.core.mail import EmailMessage
 
+with open(os.path.join(BASE_DIR, 'aws.json')) as f:
+    secrets = json.loads(f.read())
 
 def make_signatures(timestamp):
     secret_key = secrets['SMS'][SECRET_KEY] # secret key (from portal or Sub Account)

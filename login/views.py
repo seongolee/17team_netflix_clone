@@ -3,7 +3,8 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from user.models import UserModel
 
-
+with open(os.path.join(BASE_DIR, 'aws.json')) as f:
+    secrets = json.loads(f.read())
 
 # Create your views here.
 def login_view(request):
