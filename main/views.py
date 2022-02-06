@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from login.views import login_required
 from django.contrib import auth
-
+from .models import Video, VideoModal
+from django.http import HttpResponse
+import json
+from django.core import serializers
 
 
 # Create your views here.
@@ -100,3 +103,25 @@ from django.views import View
 # def showColumn():
 #     product = list(db.columns.find({}, {'_id': False}).limit(3))
 #     return jsonify({'products': product})
+
+
+
+def showColumn(request):
+
+    video_title = []
+    video_url = []
+    video_explain = []
+    video = Video.objects.all()
+    explain = VideoModal.objects.all()
+    print(video)
+    for i in range(6):
+        video_title.append(video[i].video_title)
+        video_url.append(video[i].video_clip)
+        video_explain.append(explain[i].video_description)
+
+    print('success')
+    print(video_url)
+    context = {'video_title': video_title ,
+               'video_url':video_url,
+               'explain':video_explain}
+    return HttpResponse(json.dumps(context), content_type="application/json")
