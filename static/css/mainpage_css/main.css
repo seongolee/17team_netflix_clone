@@ -270,13 +270,26 @@
     height: 200px;
     display: flex;
     align-items: center;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
     scroll-behavior: smooth;
 }
 
 .movie-container::-webkit-scrollbar {
-    display: none;
+    display: flex;
+}
+
+.movie-container::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+.movie-container::-webkit-scrollbar-track {
+    background-color: darkslategrey;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px black;
 }
 
 .movie {
@@ -328,7 +341,7 @@
 }
 
 .nxt-btn {
-    right: -2.5vw;
+    right: -0.5vw;
     margin-right: 6rem;
 }
 
@@ -655,8 +668,6 @@
 }
 
 
-
-
 /*편집자 지용 css 추가 및 수정 부분*/
 
 /*상단 헤더 새로 main용으로 뜯어 고침*/
@@ -672,7 +683,7 @@
 body, html {
     background: #141414;
     color: #fff;
-    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     line-height: 1.2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -708,7 +719,7 @@ body, html {
 }
 
 .pinning-header .main-header.menu-navigation {
-    background-image: linear-gradient(to bottom,rgba(0,0,0,.7) 10%,rgba(0,0,0,0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7) 10%, rgba(0, 0, 0, 0));
 }
 
 .main-header {
@@ -828,60 +839,59 @@ button, input, optgroup, select, textarea {
 
 /*서치박스 적용*/
 * {
-  margin: 0;
-  padding: 0;
-  /*background: #6C7A86;*/
-  font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    /*background: #6C7A86;*/
+    font-family: sans-serif;
 }
 
 .search-box {
-background: #6C7A86;
-  /*position: absolute;*/
-  top: 50%;
-  left: 50%;
-  display: flex;
-    transform: translate(-3%,10%);
-  height: 20px;
-  border-radius: 50px;
-  padding: 10px;
+    background: #6C7A86;
+    /*position: absolute;*/
+    top: 50%;
+    left: 50%;
+    display: flex;
+    transform: translate(-3%, 10%);
+    height: 20px;
+    border-radius: 50px;
+    padding: 10px;
 }
 
 .search-btn {
-  color: white;
-  float: right;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 2s;
+    color: white;
+    float: right;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 2s;
 }
 
 .fa-search {
-  background: black;
-  font-size: 24px;
+    background: black;
+    font-size: 24px;
 }
 
 .search-input {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  padding: 0;
-  color: white;
-  font-size: 20px;
-  transition: 0.4s;
-  line-height: 50px;
-  width: 0;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    transition: 0.4s;
+    line-height: 50px;
+    width: 0;
 }
 
 .search-box:hover > .search-input {
-  width: 250px;
-  padding: 0 7px;
+    width: 250px;
+    padding: 0 7px;
 }
-
 
 
 .pinning-header .secondary-navigation:not(.menu-navigation) .icon-search {
@@ -917,6 +927,7 @@ background: #6C7A86;
     -moz-transform: translateZ(0);
     transform: translateZ(0);
 }
+
 /*검색 아이콘*/
 .icon-search:before {
     content: '\e636';
@@ -956,6 +967,7 @@ background: #6C7A86;
     -moz-transform: translateZ(0);
     transform: translateZ(0);
 }
+
 /*알림 아이콘*/
 .icon-button-notification:before {
     content: '\e663';
@@ -1010,11 +1022,10 @@ img {
     border-style: solid;
     border-width: 5px 5px 0 5px;
     border-color: #fff transparent transparent transparent;
-    transition:
-            transform 367ms cubic-bezier(.21,0,.07,1),
-            -webkit-transform 367ms cubic-bezier(.21,0,.07,1),
-            -moz-transform 367ms cubic-bezier(.21,0,.07,1),
-            -o-transform 367ms cubic-bezier(.21,0,.07,1);
+    transition: transform 367ms cubic-bezier(.21, 0, .07, 1),
+    -webkit-transform 367ms cubic-bezier(.21, 0, .07, 1),
+    -moz-transform 367ms cubic-bezier(.21, 0, .07, 1),
+    -o-transform 367ms cubic-bezier(.21, 0, .07, 1);
 }
 
 .akira-header .account-drop-down, .pinning-header .account-drop-down {
@@ -1032,11 +1043,11 @@ img {
     box-sizing: border-box;
     top: 71px;
     position: absolute;
-    background-color: rgba(0,0,0,.9);
+    background-color: rgba(0, 0, 0, .9);
     color: #fff;
     font-size: 13px;
     line-height: 21px;
-    border: solid 1px rgba(255,255,255,.15);
+    border: solid 1px rgba(255, 255, 255, .15);
     cursor: default;
     opacity: 0;
 }
@@ -1096,7 +1107,7 @@ ul {
     display: block;
 }
 
-.akira-header .account-drop-down .profiles .sub-menu-item>div, .pinning-header .account-drop-down .profiles .sub-menu-item>div {
+.akira-header .account-drop-down .profiles .sub-menu-item > div, .pinning-header .account-drop-down .profiles .sub-menu-item > div {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -1125,7 +1136,7 @@ ul {
 .akira-header .account-drop-down .responsive-links, .pinning-header .account-drop-down .responsive-links {
     display: none;
     padding: 10px 0;
-    border-top: solid 1px rgba(255,255,255,.25);
+    border-top: solid 1px rgba(255, 255, 255, .25);
 }
 
 .akira-header .account-drop-down .sub-menu-list, .pinning-header .account-drop-down .sub-menu-list {
@@ -1146,24 +1157,24 @@ ul {
     box-sizing: border-box;
     top: 71px;
     position: absolute;
-    background-color: rgba(0,0,0,.9);
+    background-color: rgba(0, 0, 0, .9);
     color: #fff;
     font-size: 13px;
     line-height: 21px;
-    border: solid 1px rgba(255,255,255,.15);
+    border: solid 1px rgba(255, 255, 255, .15);
     opacity: 0;
 }
 
 .pinning-header .account-drop-down .account-links {
     padding: 10px 0;
-    border-top: solid 1px rgba(255,255,255,.25);
+    border-top: solid 1px rgba(255, 255, 255, .25);
 }
 
 .akira-header .account-drop-down .account-links .sub-menu-link, .pinning-header .account-drop-down .account-links .sub-menu-link {
     font-weight: 700;
 }
 
-.pinning-header .account-drop-down .sub-menu-item>a {
+.pinning-header .account-drop-down .sub-menu-item > a {
     text-transform: none;
     display: inline-block;
     width: 100%;
@@ -1184,41 +1195,42 @@ ul {
     display: block;
 }
 
-.akira-header .account-drop-down .sub-menu-item>a, .pinning-header .account-drop-down .sub-menu-item>a {
+.akira-header .account-drop-down .sub-menu-item > a, .pinning-header .account-drop-down .sub-menu-item > a {
     text-transform: none;
     display: inline-block;
     width: 100%;
 }
 
-@media screen and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape){
+@media screen and (min-width: 841px) and (max-width: 1280px) and (orientation: landscape) {
     body, html {
-    font-size: .85vw;
-}
-}
-
-@media screen and (min-width: 841px) and (max-width: 1280px) and (max-aspect-ratio: 4 / 3){
-  body, html {
-    font-size: .75vw;
-}
+        font-size: .85vw;
+    }
 }
 
-@media screen and (min-width: 950px){
+@media screen and (min-width: 841px) and (max-width: 1280px) and (max-aspect-ratio: 4 / 3) {
+    body, html {
+        font-size: .75vw;
+    }
+}
+
+@media screen and (min-width: 950px) {
     .pinning-header .pinning-header-container .main-header {
-    height: 68px;
-}
+        height: 68px;
+    }
 }
 
-@media screen and (min-width: 885px){
+@media screen and (min-width: 885px) {
     .pinning-header .tabbed-primary-navigation:not(.has-dropdown-menu) .navigation-menu {
-    display: none;
-}
+        display: none;
+    }
+
     .pinning-header .tabbed-primary-navigation:not(.has-dropdown-menu) .navigation-tab {
-    display: block;
-}
+        display: block;
+    }
 }
 
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1100px) {
     .pinning-header .secondary-navigation:not(.menu-navigation) .show-dvd, .pinning-header .secondary-navigation:not(.menu-navigation) .show-kids, .pinning-header .secondary-navigation:not(.menu-navigation) .show-linear-feed {
-    display: none;
-}
+        display: none;
+    }
 }
