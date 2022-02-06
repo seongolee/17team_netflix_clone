@@ -66,4 +66,49 @@ function dropdownshow(){
         console.log('나의 모발은 빽빽이다!')
 	}
 }
-('#foot3').append(temp_html)
+
+function showColumn() {
+    $.ajax({
+        type: 'GET',
+        url: '/show-col',
+        data: {},
+        async: false,
+        datatype: 'json',
+        success: function (data) {
+            let video_title = data.video_title
+            let video_url = data.video_url
+            let detail = data.explain
+            for (let i = 0; i < video_title.length; i++) {
+                let title = video_title[i]
+                let url = video_url[i]
+                let explain = detail[i]
+                let temp_html = `<figure class="snip1273">
+                                    <iframe src=${url}
+                                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                                         alt="sample72"/>
+                                    <figcaption>
+                                        <h3>${title}</h3>
+                                        <p>${explain}</p>
+                                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
+                                             alt="play_icon">
+                                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
+                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
+                                             alt="plus_icon">
+                                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
+                                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
+                                             alt="thumbup_icon">
+                                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
+                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
+                                             alt="thumbdown_icon">
+                                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}"
+                                             style="width: 30px; height: 30px; z-index: 2;"
+                                             onclick="modalOn()" alt="arrow_icon">
+                                        <a href="#"></a>
+                                    </figcaption>
+                                </figure>`
+                $('.movie-container').append(temp_html)
+            }
+        }
+    });
+}
