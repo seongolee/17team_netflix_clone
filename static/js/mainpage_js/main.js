@@ -85,24 +85,25 @@ function showColumn() {
                 let temp_html = `<figure class="snip1273">
                                     <img src=${img} style="background-size: cover;"
                                          alt="sample72"/>
-                                    <figcaption>
+                                    <figcaption onclick="modalOn()">
                                         <h3>${title}</h3>
                                         <p>${explain}</p>
-                                        <img src="../../img/mainpage_img/play-3-64.png"
-                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
-                                             alt="play_icon">
-                                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
-                                             alt="plus_icon">
-                                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
-                                             alt="thumbup_icon">
-                                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
-                                             alt="thumbdown_icon">
-                                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}"
-                                             style="width: 30px; height: 30px; z-index: 2;"
-                                             onclick="modalOn()" alt="arrow_icon">
+<!--                                        <button class="temp">Detail</button>-->
+<!--                                        <img src="../../img/mainpage_img/play-3-64.png"-->
+<!--                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""-->
+<!--                                             alt="play_icon">-->
+<!--                                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"-->
+<!--                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""-->
+<!--                                             alt="plus_icon">-->
+<!--                                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"-->
+<!--                                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""-->
+<!--                                             alt="thumbup_icon">-->
+<!--                                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"-->
+<!--                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""-->
+<!--                                             alt="thumbdown_icon">-->
+<!--                                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}"-->
+<!--                                             style="width: 30px; height: 30px; z-index: 2;"-->
+<!--                                             onclick="modalOn()" alt="arrow_icon">-->
                                         <a href="#"></a>
                                     </figcaption>
                                 </figure>`
