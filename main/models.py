@@ -34,6 +34,8 @@ class Video(models.Model):
     total_like = models.IntegerField(default=0)
     # total_views / 조회수
     total_views = models.IntegerField(default=0)
+    # video_image / 썸네일
+    video_image = models.CharField(max_length=1000)
 
 
 
