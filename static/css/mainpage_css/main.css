@@ -188,7 +188,7 @@
 }
 
 .box {
-    margin-top: 43rem;
+    margin-top: 33rem;
 }
 
 .main {
@@ -263,7 +263,6 @@
     font-weight: 500;
     margin-bottom: 20px;
     text-transform: capitalize;
-    padding-top: 10rem;
 }
 
 .movie-container {
@@ -328,7 +327,7 @@
 .nxt-btn {
     position: absolute;
     height: 160px;
-    top: 60%;
+    top: 76%;
     transform: translateY(-50%);
     width: 2.5vw;
     background: #181818;
@@ -587,7 +586,7 @@
 /*modal*/
 #modal.modal-overlay {
     width: 60%;
-    height: 21%;
+    height: 30%;
     position: absolute;
     left: 20rem;
     top: 1rem;
