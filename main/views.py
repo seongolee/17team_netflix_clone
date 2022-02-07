@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from login.views import login_required
 from django.contrib import auth
-from .models import Video, VideoModal
+from .models import Video, VideoModal, Genre
 from django.http import HttpResponse
 import json
 from django.core import serializers
@@ -113,15 +113,99 @@ def showColumn(request):
     video_explain = []
     video = Video.objects.all()
     explain = VideoModal.objects.all()
-    print(video)
     for i in range(6):
         video_title.append(video[i].video_title)
         video_image.append(video[i].video_image)
         video_explain.append(explain[i].video_description)
 
+    #별점 순
+    star_title = []
+    star_image = []
+    star_explain = []
+    stars = Video.objects.all().order_by('-star_point')
+    for i in range(8):
+        star_title.append(stars[i].video_title)
+        star_image.append(stars[i].video_image)
+        explain = VideoModal.objects.get(video_id=stars[i].id)
+        star_explain.append(explain.video_description)
+
+    # 로맨스 장르
+    romance_title = []
+    romance_image = []
+    romance_explain = []
+    romances = Genre.objects.get(genre_name="로맨스").genre.all()
+    for i in range(8):
+        romance_title.append(romances[i].video_title)
+        romance_image.append(romances[i].video_image)
+        explain = VideoModal.objects.get(video_id=romances[i].id)
+        romance_explain.append(explain.video_description)
+    # 액션 장르
+    action_title = []
+    action_image = []
+    action_explain = []
+    actions = Genre.objects.get(genre_name="액션").genre.all()
+    for i in range(8):
+        action_title.append(actions[i].video_title)
+        action_image.append(actions[i].video_image)
+        explain = VideoModal.objects.get(video_id=actions[i].id)
+        action_explain.append(explain.video_description)
+
+    # 공포 장르
+    horror_title = []
+    horror_image = []
+    horror_explain = []
+    horrors = Genre.objects.get(genre_name="공포").genre.all()
+    for i in range(len(horrors)):
+        horror_title.append(horrors[i].video_title)
+        horror_image.append(horrors[i].video_image)
+        explain = VideoModal.objects.get(video_id=horrors[i].id)
+        horror_explain.append(explain.video_description)
+
+    # 코미디 장르
+    comedy_title = []
+    comedy_image = []
+    comedy_explain = []
+    comedys = Genre.objects.get(genre_name="코미디").genre.all()
+    for i in range(8):
+        comedy_title.append(comedys[i].video_title)
+        comedy_image.append(comedys[i].video_image)
+        explain = VideoModal.objects.get(video_id=comedys[i].id)
+        comedy_explain.append(explain.video_description)
+
+    # 판타지 장르
+    fantasy_title = []
+    fantasy_image = []
+    fantasy_explain = []
+    fantasys = Genre.objects.get(genre_name="판타지").genre.all()
+    for i in range(8):
+        fantasy_title.append(fantasys[i].video_title)
+        fantasy_image.append(fantasys[i].video_image)
+        explain = VideoModal.objects.get(video_id=fantasys[i].id)
+        fantasy_explain.append(explain.video_description)
+
     print('success')
-    print(video_image)
+    print(star_title)
     context = {'video_title': video_title ,
                'video_image':video_image,
-               'explain':video_explain}
+               'explain':video_explain,
+               'romance_title': romance_title,
+               'romance_image': romance_image,
+               'romance_explain': romance_explain,
+               'horror_title': horror_title,
+               'horror_image': horror_image,
+               'horror_explain': horror_explain,
+               'comedy_title': comedy_title,
+               'comedy_image': comedy_image,
+               'comedy_explain': comedy_explain,
+               'action_title': action_title,
+               'action_image': action_image,
+               'action_explain': action_explain,
+               'fantasy_title': fantasy_title,
+               'fantasy_image': fantasy_image,
+               'fantasy_explain': fantasy_explain,
+               'star_title': star_title,
+               'star_image': star_image,
+               'star_explain': star_explain
+               }
     return HttpResponse(json.dumps(context), content_type="application/json")
+

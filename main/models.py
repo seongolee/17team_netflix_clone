@@ -29,7 +29,7 @@ class Video(models.Model):
     # age_limit_logo / 관람등급
     age_limit_logo = models.CharField(max_length=256, default='')
     # star_point / 별점
-    star_point = models.CharField(max_length=256)
+    star_point = models.DecimalField(max_digits = 5, decimal_places = 3)
     # total_like / 전체 좋아요 수
     total_like = models.IntegerField(default=0)
     # total_views / 조회수

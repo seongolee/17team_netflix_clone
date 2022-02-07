@@ -1,3 +1,158 @@
+window.onload = function() {
+    $.ajax({
+        type: 'GET',
+        url: '/show-col',
+        data: {},
+        async: false,
+        datatype: 'json',
+        success: function (data) {
+            let video_title = data.video_title
+            let video_image = data.video_image
+            let detail = data.explain
+            for (let i = 0; i < video_title.length; i++) {
+                let title = video_title[i]
+                let img = video_image[i]
+                let explain = detail[i]
+                let temp_html = `<figure class="snip1273">
+                                    <img src=${img} style="background-size: cover;"
+                                         alt="sample72"/>
+                                    <figcaption onclick="modalOn()">
+                                        <h3>${title}</h3>
+                                        <p>${explain}</p>
+                                        <a href="#"></a>
+                                    </figcaption>
+                                </figure>`
+                $('.popular').append(temp_html)
+                //별점 높은순
+            let star_title = data.star_title
+            let star_image = data.star_image
+            let star_explain = data.star_explain
+
+            for (let i = 0; i < star_title.length; i++) {
+                let title = star_title[i]
+                let img = star_image[i]
+                let explain = star_explain[i]
+                let temp_html = `<figure class="snip1273">
+                                <img src=${img} style="background-size: cover;"
+                                     alt="sample72"/>
+                                <figcaption onclick="modalOn()">
+                                    <h3>${title}</h3>
+                                    <p>${explain}</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>`
+                $('.star_rank').append(temp_html)
+            }
+
+            // 장르 로맨스
+            let romance_title = data.romance_title
+            let romance_image = data.romance_image
+            let romance_explain = data.romance_explain
+
+            for (let i = 0; i < romance_title.length; i++) {
+                let title = romance_title[i]
+                let img = romance_image[i]
+                let explain = romance_explain[i]
+                let temp_html = `<figure class="snip1273">
+                                <img src=${img} style="background-size: cover;"
+                                     alt="sample72"/>
+                                <figcaption onclick="modalOn()">
+                                    <h3>${title}</h3>
+                                    <p>${explain}</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>`
+                $('.Romance').append(temp_html)
+            }
+
+            //장르 액션
+            let action_title = data.action_title
+            let action_image = data.action_image
+            let action_explain = data.action_explain
+
+            for (let i = 0; i < action_title.length; i++) {
+                let title = action_title[i]
+                let img = action_image[i]
+                let explain = action_explain[i]
+                let temp_html = `<figure class="snip1273">
+                                <img src=${img} style="background-size: cover;"
+                                     alt="sample72"/>
+                                <figcaption onclick="modalOn()">
+                                    <h3>${title}</h3>
+                                    <p>${explain}</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>`
+                $('.Action').append(temp_html)
+            }
+            // 장르 공포
+            let horror_title = data.horror_title
+            let horror_image = data.horror_image
+            let horror_explain = data.horror_explain
+
+            for (let i = 0; i < horror_title.length; i++) {
+                let title = horror_title[i]
+                let img = horror_image[i]
+                let explain = horror_explain[i]
+                let temp_html = `<figure class="snip1273">
+                                <img src=${img} style="background-size: cover;"
+                                     alt="sample72"/>
+                                <figcaption onclick="modalOn()">
+                                    <h3>${title}</h3>
+                                    <p>${explain}</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>`
+                $('.Horror').append(temp_html)
+            }
+            // 장르 코미디
+            let comedy_title = data.comedy_title
+            let comedy_image = data.comedy_image
+            let comedy_explain = data.comedy_explain
+
+            for (let i = 0; i < comedy_title.length; i++) {
+                let title = comedy_title[i]
+                let img = comedy_image[i]
+                let explain = comedy_explain[i]
+                let temp_html = `<figure class="snip1273">
+                                <img src=${img} style="background-size: cover;"
+                                     alt="sample72"/>
+                                <figcaption onclick="modalOn()">
+                                    <h3>${title}</h3>
+                                    <p>${explain}</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>`
+                $('.Comedy').append(temp_html)
+            }
+            // 장르 판타지
+            let fantasy_title = data.fantasy_title
+            let fantasy_image = data.fantasy_image
+            let fantasy_explain = data.fantasy_explain
+
+            for (let i = 0; i < fantasy_title.length; i++) {
+                let title = fantasy_title[i]
+                let img = fantasy_image[i]
+                let explain = fantasy_explain[i]
+                let temp_html = `<figure class="snip1273">
+                                <img src=${img} style="background-size: cover;"
+                                     alt="sample72"/>
+                                <figcaption onclick="modalOn()">
+                                    <h3>${title}</h3>
+                                    <p>${explain}</p>
+                                    <a href="#"></a>
+                                </figcaption>
+                            </figure>`
+                $('.Fantasy').append(temp_html)
+            }
+            }
+        }
+    });
+}
+
+
+
+
 const loremIpsum = document.getElementById("lorem-ipsum")
 
 fetch("https://baconipsum.com/api/?type=all-meat&paras=200&format=html")
@@ -67,51 +222,7 @@ function dropdownshow(){
 	}
 }
 
-function showColumn() {
-    $.ajax({
-        type: 'GET',
-        url: '/show-col',
-        data: {},
-        async: false,
-        datatype: 'json',
-        success: function (data) {
-            let video_title = data.video_title
-            let video_image = data.video_image
-            let detail = data.explain
-            for (let i = 0; i < video_title.length; i++) {
-                let title = video_title[i]
-                let img = video_image[i]
-                let explain = detail[i]
-                let temp_html = `<figure class="snip1273">
-                                    <img src=${img} style="background-size: cover;"
-                                         alt="sample72"/>
-                                    <figcaption onclick="modalOn()">
-                                        <h3>${title}</h3>
-                                        <p>${explain}</p>
-<!--                                        <button class="temp">Detail</button>-->
-<!--                                        <img src="../../img/mainpage_img/play-3-64.png"-->
-<!--                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""-->
-<!--                                             alt="play_icon">-->
-<!--                                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"-->
-<!--                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""-->
-<!--                                             alt="plus_icon">-->
-<!--                                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"-->
-<!--                                             style=" width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""-->
-<!--                                             alt="thumbup_icon">-->
-<!--                                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"-->
-<!--                                             style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""-->
-<!--                                             alt="thumbdown_icon">-->
-<!--                                        <img src="{% static 'img/mainpage_img/arrow-206-64.png' %}"-->
-<!--                                             style="width: 30px; height: 30px; z-index: 2;"-->
-<!--                                             onclick="modalOn()" alt="arrow_icon">-->
-                                        <a href="#"></a>
-                                    </figcaption>
-                                </figure>`
-                $('.movie-container').append(temp_html)
-            }
-        }
-    });
-}
+
 
 
 // function moveScrollLeft(){
