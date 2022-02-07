@@ -188,7 +188,7 @@
 }
 
 .box {
-    margin-top: 30rem;
+    margin-top: 43rem;
 }
 
 .main {
@@ -254,7 +254,7 @@
 .movie-list {
     width: 100%;
     height: 250px;
-    margin-top: 40px;
+    margin-top: 50px;
     position: relative;
 }
 
@@ -263,6 +263,7 @@
     font-weight: 500;
     margin-bottom: 20px;
     text-transform: capitalize;
+    padding-top: 10rem;
 }
 
 .movie-container {
@@ -390,7 +391,7 @@
 
 .des {
     width: 90%;
-    line-height: 20px;
+    line-height: 3rem;
     margin-bottom: 30px;
 }
 
@@ -1233,4 +1234,16 @@ ul {
     .pinning-header .secondary-navigation:not(.menu-navigation) .show-dvd, .pinning-header .secondary-navigation:not(.menu-navigation) .show-kids, .pinning-header .secondary-navigation:not(.menu-navigation) .show-linear-feed {
         display: none;
     }
+}
+
+.temp{
+    margin: auto;
+    display:block;
+    background-color: #333333;
+    color: white;
+    border: none;
+    border-radius: 20%;
+    font-weight: lighter;
+    opacity: 0.5;
+    z-index: 2;
 }
