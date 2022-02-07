@@ -14,16 +14,17 @@
 <!--base.html 에서 미리 정한 content 블록 위치에 넣어주기!-->
 {% block content %}
 
-<iframe width="1500" height="1000"
+<iframe width="1530" height="1000"
         src="https://www.youtube.com/embed/b96oSVw75lA?autoplay=1&mute=1&controls=0&loop=1&playlist=b96oSVw75lA"
-        title="YouTube video player" frameborder="0" style="position: absolute; top: 0"></iframe>
+        title="YouTube video player" frameborder="0" style="position: absolute; top: -120px;"></iframe>
 
 
 <header class="main">
     <div class="movie_page">
         <div class="box">
-            <h1 class="heading" >오징어 게임</h1>
-            <p class="info" style="line-height: 4rem;">빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두 승자가 될 순 없는 법. 탈락하는 이들은 치명적인
+            <h1 class="heading">오징어 게임</h1>
+            <p class="info" style="line-height: 3rem;">빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두
+                승자가 될 순 없는 법. 탈락하는 이들은 치명적인
                 결과를 각오해야 한다.
             </p>
             <button class="first_btn"
@@ -33,11 +34,14 @@
             <button class="second_btn" onclick="modalOn()">상세 정보</button>
             <div id="modal" class="modal-overlay">
                 <div class="modal-window">
-                    <div class="tmp_box">
-                    </div>
+                    <iframe width="500" height="300"
+                            src="https://www.youtube.com/embed/TmwKKvEwmGU?&autoplay=1&mute=1&controls=0&loop=1&playlist=TmwKKvEwmGU"
+                            title="YouTube video player" frameborder="0"></iframe>
+                    <!--                    <div class="tmp_box">-->
+                    <!--                    </div>-->
                     <div class="close-area" onclick="modalOff()">X</div>
                     <div class="title">
-                        <h2 style="margin-right: 30px;">Movie</h2>
+                        <h2 style="margin-right: 30px;">그 해 우리는</h2>
                         <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
                              style="width: 30px; height: 30px; margin-right: 15px; padding-top: 20px;"
                              onclick="location.href='https://www.youtube.com/embed/TmwKKvEwmGU?&autoplay=1&controls=0';"
@@ -53,10 +57,10 @@
                              alt="thumbdown_icon">
                     </div>
                     <div class="content">
-                        <p class="genres">장르 ex) Comedy </p>
-                        <p class="des">영화 설명
-                            ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ </p>
-                        <p class="starring"><span>Starring:</span></p>
+                        <p class="genres">장르 : Comedy </p>
+                        <p class="des">헤어진 연인이 고등학교 시절 촬영한 다큐멘터리의 역주행 인기로 강제 소환되면서 펼쳐지는 청춘들의 첫사랑 역주행 로맨스</p>
+                        <p class="starring"><span>Starring: Choi Woo-shik, Kim Da-mi, Kim Sung-cheol, Roh Jeong-eui, Ahn Dong-goo
+                        </span></p>
                     </div>
                 </div>
             </div>
@@ -65,6 +69,7 @@
     </div>
 
     <div class="movie-list">
+        <div style="width: 100%; height: 50px;"></div>
 
         <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}"
                                      alt=""></button>
@@ -207,92 +212,103 @@
     </div>
 
     <div class="movie-list">
+        <div style="padding-top: 50px;">
 
-        <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
+            <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
 
-        <h1 class="movie-category">별점 높은 콘텐츠</h1>
+            <h1 class="movie-category">별점 높은 콘텐츠</h1>
 
-        <div class="movie-container star_rank">
+            <div class="movie-container star_rank">
 
 
+            </div>
+
+            <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
         </div>
-
-        <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
-
     </div>
 
     <div class="movie-list">
 
-        <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
+        <div style="padding-top: 50px;">
 
-        <h1 class="movie-category">로맨스</h1>
+            <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
 
-        <div class="movie-container Romance">
+            <h1 class="movie-category">로맨스</h1>
+
+            <div class="movie-container Romance">
+
+            </div>
+
+            <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
 
         </div>
-
-        <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
-
     </div>
 
     <div class="movie-list">
 
-        <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
+        <div style="padding-top: 50px;">
 
-        <h1 class="movie-category">액션 SF</h1>
+            <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
 
-        <div class="movie-container Action">
+            <h1 class="movie-category">액션 SF</h1>
+
+            <div class="movie-container Action">
+
+            </div>
+
+            <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
 
         </div>
-
-        <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
-
     </div>
 
     <div class="movie-list">
 
-        <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
+        <div style="padding-top: 50px;">
 
-        <h1 class="movie-category">공포</h1>
+            <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
 
-        <div class="movie-container Horror">
+            <h1 class="movie-category">공포</h1>
 
+            <div class="movie-container Horror">
+
+
+            </div>
+
+            <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
 
         </div>
-
-        <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
-
     </div>
 
     <div class="movie-list">
+        <div style="padding-top: 50px;">
 
-        <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
+            <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
 
-        <h1 class="movie-category">코미디</h1>
+            <h1 class="movie-category">코미디</h1>
 
-        <div class="movie-container Comedy">
+            <div class="movie-container Comedy">
 
 
+            </div>
+
+            <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
         </div>
-
-        <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
-
     </div>
 
     <div class="movie-list">
+        <div style="padding-top: 50px;">
 
-        <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
+            <button class="pre-btn"><img src="{% static 'img/mainpage_img/arrow-88-64.png' %}" alt=""></button>
 
-        <h1 class="movie-category">판타지</h1>
+            <h1 class="movie-category">판타지</h1>
 
-        <div class="movie-container Fantasy">
+            <div class="movie-container Fantasy">
 
+            </div>
+
+            <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
         </div>
-
-        <button class="nxt-btn"><img src="{% static 'img/mainpage_img/arrow-30-64.png' %}" alt=""></button>
-
     </div>
-
 
 
     <!-- movie info -->
