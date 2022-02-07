@@ -76,20 +76,19 @@ function showColumn() {
         datatype: 'json',
         success: function (data) {
             let video_title = data.video_title
-            let video_url = data.video_url
+            let video_image = data.video_image
             let detail = data.explain
             for (let i = 0; i < video_title.length; i++) {
                 let title = video_title[i]
-                let url = video_url[i]
+                let img = video_image[i]
                 let explain = detail[i]
                 let temp_html = `<figure class="snip1273">
-                                    <iframe src=${url}
-                                    <img src="{% static 'img/mainpage_img/오징어%20게임.jpg' %}" style="background-size: cover;"
+                                    <img src=${img} style="background-size: cover;"
                                          alt="sample72"/>
                                     <figcaption>
                                         <h3>${title}</h3>
                                         <p>${explain}</p>
-                                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
+                                        <img src="../../img/mainpage_img/play-3-64.png"
                                              style="width: 30px; height: 30px; margin-right: 10px; z-index: 2" onclick=""
                                              alt="play_icon">
                                         <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"

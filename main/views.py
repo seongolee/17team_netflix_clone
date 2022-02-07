@@ -109,19 +109,19 @@ from django.views import View
 def showColumn(request):
 
     video_title = []
-    video_url = []
+    video_image = []
     video_explain = []
     video = Video.objects.all()
     explain = VideoModal.objects.all()
     print(video)
     for i in range(6):
         video_title.append(video[i].video_title)
-        video_url.append(video[i].video_clip)
+        video_image.append(video[i].video_image)
         video_explain.append(explain[i].video_description)
 
     print('success')
-    print(video_url)
+    print(video_image)
     context = {'video_title': video_title ,
-               'video_url':video_url,
+               'video_image':video_image,
                'explain':video_explain}
     return HttpResponse(json.dumps(context), content_type="application/json")
