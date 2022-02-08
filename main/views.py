@@ -65,8 +65,6 @@ def showvideo(request):
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 
-
-
 # like 해당하는 제목찾아서 그 제목의 like 쌓는 기능
 # 좋아요 기능 구현  POST 방식
 # def like_star():
@@ -201,6 +199,25 @@ def showColumn(request):
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 
+
+#모델 부분
+
+import h5py
+import os
+from keras.models import load_model
+import tensorflow as tf
+from .models import Recommendation
+
+
+model = load_model('static/model/final.h5')
+def predict(user):
+
+    pred = model.predict(user)
+
+def User(request):
+    user=request.user
+    data = Recommendation.objects.filter()
+
 # 장고 검색기능 재도전!
 def search(request):
     if request.method == 'GET':
@@ -221,9 +238,6 @@ def search(request):
                 else:
                     title = []
 
-
-
-
         # genre = Video.genre.all()
         # video = Video.objects.get(video_title__contains=query)
         # title = video.video_title
@@ -232,16 +246,15 @@ def search(request):
         # genre = Genre.objects.filter(genre_name__contains=query)
         # selectmovie = title.union(genre)
 
-
         #
         # video = Video.objects.all()
         # explain = VideoModal.objects.all()
         # print(video)
         # for i in range(40):
-            # video_title.append(video[i].video_title)
-            # video_image.append(video[i].video_image)
-            # video_explain.append(explain[i].video_description)
-            # video_clip.append(video[i].video_clip)
+        # video_title.append(video[i].video_title)
+        # video_image.append(video[i].video_image)
+        # video_explain.append(explain[i].video_description)
+        # video_clip.append(video[i].video_clip)
         #
         # print(video_clip)
         # print('success')
@@ -251,10 +264,7 @@ def search(request):
             "query": query,
             "title": title,
 
-
         }
-
-
 
         return render(request, 'mainpage_html/search.html', context)
     elif request.method == 'POST':
@@ -262,3 +272,31 @@ def search(request):
     #
     # else:
     #     return render(request, 'mainpage_html/search.html')
+
+
+def modal(request):
+    title = request.GET.get('title')
+    video = Video.objects.get(video_title=title)
+    description = VideoModal.objects.get(video_id=video.id)
+    genre = video.genre.all()
+    actor = video.actors.all()
+    total_genre = ''
+    total_actor = ''
+    for gen in range(len(genre)):
+        total_genre += genre[gen].genre_name + ','
+    final_genre = total_genre[:-1]
+
+    for act in range(len(actor)):
+        total_actor += actor[act].actor_name + ','
+    print(actor)
+    final_actor = total_actor[:-1]
+    context = {'video_title': video.video_title,
+               'description': description.video_description,
+               'genre': final_genre,
+               'video_clip': video.video_clip,
+               'actor': final_actor,
+               'rating': video.age_limit_logo
+
+               }
+    return HttpResponse(json.dumps(context), content_type="application/json")
+

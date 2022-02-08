@@ -1,5 +1,5 @@
 from django.db import models
-from user.models import ProfileId
+from user.models import UserModel
 # Create your models here.
 
 
@@ -104,7 +104,7 @@ class Recommendation(models.Model):
         db_table = "recommendation"
 
     # profile_id
-    profile_id = models.ForeignKey(ProfileId, on_delete=models.CASCADE, db_column='profile_id')
+    user_id = models.ForeignKey(UserModel, on_delete=models.CASCADE, db_column='user_id')
     # video_id / 비디오ID (채번값부여된)
     video_id = models.ForeignKey(Video, on_delete=models.CASCADE, db_column='video_id')
     # thumbs / 좋아요 or 싫어요

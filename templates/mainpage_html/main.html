@@ -4,8 +4,9 @@
 {# block_list: others, title, content #}
 {% block others %}
 <link rel="stylesheet" href="{% static 'css/mainpage_css/main.css' %}">
-<script type="text/javascript" src="{% static 'js/mainpage_js/main.js' %}"></script>
 <link rel="stylesheet" href="{% static 'css/base_main.css' %}">
+<link rel="stylesheet" href="{% static 'css/mainpage_css/search.css' %}">
+<script type="text/javascript" src="{% static 'js/mainpage_js/main.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {% endblock %}
 <title>{% block title %}{% endblock %}</title>
@@ -22,17 +23,6 @@
 
 <header class="main">
     <div class="movie_page">
-        <section id="search">
-                                    <h1>모든 검색 결과를 보여준다 <span>"{{query}}"</span></h1>
-                                    <div class="cards-results">
-                                        {% for movie in title %}
-                                        <a href="{{video_clip}}" target="_blank">
-                                            <img src="{{video.video_image}}">
-                                            <h2>{{video.video_title}}</h2>
-                                        </a>
-                                        {% endfor %}
-                                    </div>
-                                </section>
         <div class="box">
             <h1 class="heading">오징어 게임</h1>
             <p class="info" style="line-height: 3rem;">빚에 쫓기는 수백 명의 사람들이 서바이벌 게임에 뛰어든다. 거액의 상금으로 새로운 삶을 시작하기 위해. 하지만 모두
@@ -45,38 +35,39 @@
             </button>
             <button class="second_btn" onclick="modalOn()">상세 정보</button>
             <div id="modal" class="modal-overlay">
-                <div class="modal-window">
-                    <iframe width="500" height="300"
-                            src="https://www.youtube.com/embed/TmwKKvEwmGU?&autoplay=1&mute=1&controls=0&loop=1&playlist=TmwKKvEwmGU"
-                            title="YouTube video player" frameborder="0"></iframe>
-                    <!--                    <div class="tmp_box">-->
-                    <!--                    </div>-->
-                    <div class="close-area" onclick="modalOff()">X</div>
-                    <div class="title">
-                        <h2 style="margin-right: 30px;">그 해 우리는</h2>
-                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 15px; padding-top: 20px;"
-                             onclick="location.href='https://www.youtube.com/embed/TmwKKvEwmGU?&autoplay=1&controls=0';"
-                             alt="play_icon">
-                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 15px; " onclick=""
-                             alt="plus_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"
-                             style=" width: 30px; height: 30px; margin-right: 15px; " onclick=""
-                             alt="thumbup_icon">
-                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"
-                             style="width: 30px; height: 30px; margin-right: 15px; " onclick=""
-                             alt="thumbdown_icon">
-                    </div>
-                    <div class="content">
-                        <p class="genres">장르 : Comedy </p>
-                        <p class="des">헤어진 연인이 고등학교 시절 촬영한 다큐멘터리의 역주행 인기로 강제 소환되면서 펼쳐지는 청춘들의 첫사랑 역주행 로맨스</p>
-                        <p class="starring"><span>Starring: Choi Woo-shik, Kim Da-mi, Kim Sung-cheol, Roh Jeong-eui, Ahn Dong-goo
-                        </span></p>
-                    </div>
-                </div>
-            </div>
+<!--                <div class="modal-window">-->
+<!--                    <iframe width="500" height="300"-->
+<!--                            src="https://www.youtube.com/embed/TmwKKvEwmGU?&autoplay=1&mute=1&controls=0&loop=1&playlist=TmwKKvEwmGU"-->
+<!--                            title="YouTube video player" frameborder="0"></iframe>-->
+<!--                    &lt;!&ndash;                    <div class="tmp_box">&ndash;&gt;-->
+<!--                    &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--                    <div class="close-area" onclick="modalOff()">X</div>-->
+<!--                    <div class="title">-->
+<!--                        <h2 style="margin-right: 30px;">그 해 우리는</h2>-->
+<!--                        <img src="{% static 'img/mainpage_img/play-3-64.png' %}"-->
+<!--                             style="width: 30px; height: 30px; margin-right: 15px; padding-top: 20px;"-->
+<!--                             onclick="location.href='https://www.youtube.com/embed/TmwKKvEwmGU?&autoplay=1&controls=0';"-->
+<!--                             alt="play_icon">-->
+<!--                        <img src="{% static 'img/mainpage_img/plus-5-64.png' %}"-->
+<!--                             style="width: 30px; height: 30px; margin-right: 15px; " onclick=""-->
+<!--                             alt="plus_icon">-->
+<!--                        <img src="{% static 'img/mainpage_img/thumb-up-64.png' %}"-->
+<!--                             style=" width: 30px; height: 30px; margin-right: 15px; " onclick=""-->
+<!--                             alt="thumbup_icon">-->
+<!--                        <img src="{% static 'img/mainpage_img/thumb-down-64.png' %}"-->
+<!--                             style="width: 30px; height: 30px; margin-right: 15px; " onclick=""-->
+<!--                             alt="thumbdown_icon">-->
+<!--                    </div>-->
+<!--                    <div class="content">-->
+<!--                        <p class="genres">장르 : Comedy </p>-->
+<!--                        <p class="des">헤어진 연인이 고등학교 시절 촬영한 다큐멘터리의 역주행 인기로 강제 소환되면서 펼쳐지는 청춘들의 첫사랑 역주행 로맨스</p>-->
+<!--                        <p class="starring"><span>Starring: Choi Woo-shik, Kim Da-mi, Kim Sung-cheol, Roh Jeong-eui, Ahn Dong-goo-->
+<!--                        </span></p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
 
+            </div>
         </div>
     </div>
 
