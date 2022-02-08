@@ -241,8 +241,8 @@ function modalOn(clicked_id) {
         </button>
     </div>
     <div class="ltr-79elbk">
-        <button aria-label="'맘에 안 들어요'로 평가하기" style="background-color: black" onclick="dislikeheart(${title})"
-                class="color-supplementary hasIcon round ltr-1knzl35" id="dislike"
+        <button aria-label="'맘에 안 들어요'로 평가하기" style="background-color: black" onclick="dislikeheart(this.name)"
+                class="color-supplementary hasIcon round ltr-1knzl35" name =${title} id="dislike"
                 data-uia="thumbsDown-button" type="button">
             <div class="ltr-1ksxkn9">
                 <div class="small ltr-18dhnor" role="presentation">
@@ -364,6 +364,15 @@ function dislikeheart(title) {
         final_like = 0;
 
     }
+    $.ajax({
+        type: 'POST',
+        url: '/thumbs/',
+        data: {'title_give': title,
+                'final_like':final_like},
+        dataType: "json",
+        success: function (response) {
 
+        }
+    });
 }
 

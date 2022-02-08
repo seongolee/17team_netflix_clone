@@ -326,7 +326,8 @@ def thumbs(request):
     title_give = request.POST.get('title_give')
     like = request.POST.get('final_like')
     video = Video.objects.get(video_title=title_give)
-    # Recommendation.objects.create(user_id=users,video_id=video,thumbs=like)
+
+    Recommendation.objects.update_or_create(user_id=users,video_id=video,defaults={"thumbs":like})
     video.total_like += int(like)
     video.save()
     print(video.total_like)
