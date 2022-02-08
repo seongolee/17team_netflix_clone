@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from login.views import login_required
 from django.contrib import auth
-from .models import Video, VideoModal, Genre
+from .models import Video, VideoModal, Genre, Actor
 from django.http import HttpResponse
 import json
 from django.core import serializers
@@ -208,23 +208,22 @@ def search(request):
         query = request.GET['query']
 
         title = Video.objects.filter(video_title__contains=query)
-        video_title = []
-        image = []
-        # video_explain = []
-        clip = []
+        actor = Actor.objects.filter(actor_name__contains=query)
+        genre = Genre.objects.filter(genre_name__contains=query)
+        if title:
+            title = Video.objects.filter(video_title__contains=query)
+        else:
+            if actor:
+                title = Actor.objects.get(actor_name__contains=query).actor.all()
+            else:
+                if genre:
+                    title = Genre.objects.get(genre_name__contains=query).genre.all()
+                else:
+                    title = []
 
-        for i in range(len(title)):
 
 
-            doc =
 
-            video_image = Video.objects.filter(video_title__contains=query).values('video_image')[i]
-            video_clip = Video.objects.filter(video_title__contains=query).values('video_clip')[i]
-            image.append(video_image)
-            clip.append(video_clip)
-        print(title)
-        print(image)
-        print(clip)
         # genre = Video.genre.all()
         # video = Video.objects.get(video_title__contains=query)
         # title = video.video_title
@@ -251,15 +250,10 @@ def search(request):
             # 'selectmovie': selectmovie,
             "query": query,
             "title": title,
-            # 'video_title': video_title,
-            'video_image': image,
-            # 'explain':video_explain,
-            'video_clip': clip,
+
+
         }
-        # context = {'video_title': title,
-        #            'video_image': video_image,
-        #            # 'explain':video_explain,
-        #            'video_clip': video_clip}
+
 
 
         return render(request, 'mainpage_html/search.html', context)
