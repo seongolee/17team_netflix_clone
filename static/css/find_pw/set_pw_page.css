@@ -82,9 +82,6 @@
     width: 500px;
 }
 
-.error:focus {
-    outline: 0.5px solid dodgerblue;
-}
 
 .ui-binary-input {
     height: 40px;

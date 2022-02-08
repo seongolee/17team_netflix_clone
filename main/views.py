@@ -199,6 +199,25 @@ def showColumn(request):
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 
+
+#모델 부분
+
+import h5py
+import os
+from keras.models import load_model
+import tensorflow as tf
+from .models import Recommendation
+
+
+model = load_model('static/model/final.h5')
+def predict(user):
+
+    pred = model.predict(user)
+
+def User(request):
+    user=request.user
+    data = Recommendation.objects.filter()
+
 # 장고 검색기능 재도전!
 def search(request):
     if request.method == 'GET':
@@ -280,3 +299,4 @@ def modal(request):
 
                }
     return HttpResponse(json.dumps(context), content_type="application/json")
+
