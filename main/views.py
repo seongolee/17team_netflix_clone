@@ -209,3 +209,11 @@ def showColumn(request):
                }
     return HttpResponse(json.dumps(context), content_type="application/json")
 
+
+#모델 부분
+import pandas as pd
+import numpy as np
+from .models import Recommendation
+def predict(request):
+    movie_ratings = Recommendation.objects.all().values()
+    data = pd.DataFrame(movie_ratings)
