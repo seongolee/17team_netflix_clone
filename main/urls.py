@@ -9,4 +9,5 @@ urlpatterns = [
     # path('show-genre/', views.show_genre, name='show-genre'),
     path('search_enter/', views.showvideo, name='search_enter'),
     path('search_page/', views.search_page, name='search_page'),
+    path('modal/', views.modal, name='modal'),
 ]
