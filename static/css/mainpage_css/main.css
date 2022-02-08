@@ -187,6 +187,10 @@
     height: 20rem;;
 }
 
+iframe {
+    width: 100%;
+}
+
 .box {
     margin-top: 33rem;
 }
