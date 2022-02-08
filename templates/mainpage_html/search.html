@@ -17,7 +17,16 @@
 
 <!--base.html 에서 미리 정한 content 블록 위치에 넣어주기!-->
 {% block content %}
-
+<style>
+    .search-box {
+    height: 40px; !important;
+}
+    a {
+        text-decoration: none;!important: ;
+        cursor: pointer;!important: ;
+        color: #fff;!important: ;
+    }
+</style>
 <div class="mainView" id="main-view" role="main">
     <div class="">
         <div class="search">
@@ -37,14 +46,13 @@
                                                 <div class="ptrack-content"
                                                      data-ui-tracking-context="%7B%22parentReferenceId%22:%22ae1f96763a5caeffc97977838fb125a43fd80711:7040bcb77729fbf1ae00c7570e1f44e1fa9fde87%22,%22trackId%22:13752290,%22entityId%22:%2280020129_video%22,%22row%22:0,%22rank%22:0,%22appView%22:%22suggestionItem%22,%22usePresentedEvent%22:true%7D"
                                                      data-tracking-uuid="7365178b-e727-48e0-9d8a-15496115af35"><a
-                                                        href="/search?q=%ED%98%BC&amp;suggestionId=80020129_video">호날두:
-                                                    세상은 그의 발 아래에</a></div>
+                                                        href="/search?q=%ED%98%BC&amp;suggestionId=80020129_video">{{query}}</a></div>
                                             </li>
                                             <li class="">
                                                 <div class="ptrack-content"
                                                      data-ui-tracking-context="%7B%22parentReferenceId%22:%22ae1f96763a5caeffc97977838fb125a43fd80711:7040bcb77729fbf1ae00c7570e1f44e1fa9fde87%22,%22trackId%22:13752290,%22entityId%22:%2280083753_video%22,%22row%22:0,%22rank%22:1,%22appView%22:%22suggestionItem%22,%22usePresentedEvent%22:true%7D"
                                                      data-tracking-uuid="310bfb36-891e-4d6e-8735-44188c956403"><a
-                                                        href="/search?q=%ED%98%BC&amp;suggestionId=80083753_video">호날두</a>
+                                                        href="/search?q=%ED%98%BC&amp;suggestionId=80083753_video">지금 우리 학교는</a>
                                                 </div>
                                             </li>
                                             <li class="">
@@ -61,7 +69,7 @@
                         </div>
                     </div>
                     <div class="suggestionHeader">
-                        <div class="title">${searchText}</div>
+                        <div class="title">검색 리스트</div>
                     </div>
                 </div>
                 <div class="galleryContent">
@@ -70,7 +78,7 @@
 
 
                             <section id="search">
-                                    <h1>모든 검색 결과를 보여준다 <span>"{{query}}"</span></h1>
+                                    <h1>소현님 께서는<span>"{{query}}"</span>을(를) 검색하셨습니다.</h1>
                                     <div id="fullPage" class="row row-cols-1 row-cols-md-6 g-4">
                                         {% for movie in title %}
                                         <div class="slider-item slider-item-0" aria-label="${title}">
