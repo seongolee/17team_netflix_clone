@@ -29,7 +29,7 @@ def logout(request):
     return redirect('/')
 
 
-def search(request):
+def search_page(request):
     return render(request, 'mainpage_html/search.html')
 
 
@@ -37,42 +37,34 @@ from main.models import Video
 from django.http import JsonResponse
 from django.views import View
 
+
 # # 장고 검색기능 구현
-# class SearchView(View):
-#     def get(self, request):
-#         try:
-#             word = request.GET.get('word', '')
-#             results = []
-#
-#             ko_name = Video.objects.filter(korean_name__icontains=word).exists()
-#             en_name = Video.objects.filter(english_name__icontains=word).exists()
-#             # category_name = Category.objects.filter(name__icontains=word).exists()
-#
-#             if ko_name:
-#                 videos = Video.objects.filter(korean_name__icontains=word)
-#                 for video in videos:
-#                     results.append({
-#                         'word': video.korean_name
-#                     })
-#
-#             if en_name:
-#                 videos = Video.objects.filter(english_name__icontains=word)
-#                 for video in videos:
-#                     results.append({
-#                         'word': video.english_name
-#                     })
-#
-#             # if category_name:
-#             #     categories = Category.objects.filter(name__icontains=word)
-#             #     for category in categories:
-#             #         results.append({
-#             #             'word': category.name
-#             #         })
-#
-#             return JsonResponse({'results': results}, status=201)
-#
-#         except Exception as error:
-#             return JsonResponse({'message': error}, status=400)
+
+def showvideo(request):
+    video_title = []
+    video_image = []
+    # video_explain = []
+    video_clip = []
+
+    video = Video.objects.all()
+    # explain = VideoModal.objects.all()
+    print(video)
+    for i in range(40):
+        video_title.append(video[i].video_title)
+        video_image.append(video[i].video_image)
+        # video_explain.append(explain[i].video_description)
+        video_clip.append(video[i].video_clip)
+
+    print(video_clip)
+    print('success')
+    print(video_image)
+    context = {'video_title': video_title,
+               'video_image': video_image,
+               # 'explain':video_explain,
+               'video_clip': video_clip}
+    return HttpResponse(json.dumps(context), content_type="application/json")
+
+
 #
 #
 # # like 해당하는 제목찾아서 그 제목의 like 쌓는 기능
@@ -105,9 +97,7 @@ from django.views import View
 #     return jsonify({'products': product})
 
 
-
 def showColumn(request):
-
     video_title = []
     video_image = []
     video_explain = []
@@ -118,7 +108,7 @@ def showColumn(request):
         video_image.append(video[i].video_image)
         video_explain.append(explain[i].video_description)
 
-    #별점 순
+    # 별점 순
     star_title = []
     star_image = []
     star_explain = []
@@ -185,9 +175,9 @@ def showColumn(request):
 
     print('success')
     print(star_title)
-    context = {'video_title': video_title ,
-               'video_image':video_image,
-               'explain':video_explain,
+    context = {'video_title': video_title,
+               'video_image': video_image,
+               'explain': video_explain,
                'romance_title': romance_title,
                'romance_image': romance_image,
                'romance_explain': romance_explain,
@@ -209,3 +199,49 @@ def showColumn(request):
                }
     return HttpResponse(json.dumps(context), content_type="application/json")
 
+
+# 장고 검색기능 재도전!
+def search(request):
+    # if request.method == 'GET':
+
+    query = request.GET.get['query']
+    # genre = Genre.objects.filter(genre_name__contains=query)
+    # selectmovie = title.union(genre)
+
+
+
+    video_title = []
+    video_image = []
+    video_explain = []
+    video_clip = []
+
+    video = Video.objects.filter(video_title__contains=query)
+    # explain = VideoModal.objects.all()
+    print(video)
+    for i in range(len(video)):
+        video_title.append(video[i].video_title)
+        video_image.append(video[i].video_image)
+        # video_explain.append(explain[i].video_description)
+        video_clip.append(video[i].video_clip)
+
+    print(video_clip)
+    print('success')
+    print(video_image)
+    context = {
+        # 'selectmovie': selectmovie,
+        "query": query,
+        # "title": title,
+        'video_title': video_title,
+        'video_image': video_image,
+        # 'explain':video_explain,
+        'video_clip': video_clip,
+    }
+    # context = {'video_title': video_title,
+    #            'video_image': video_image,
+    #            # 'explain':video_explain,
+    #            'video_clip': video_clip}
+
+    return HttpResponse(json.dumps(context), content_type="application/json")
+    # return render(request, 'mainpage_html/search.html', context)
+# elif request.method == 'POST':
+#     return render(request, 'mainpage_html/search.html')

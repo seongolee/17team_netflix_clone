@@ -7,8 +7,6 @@
 <head>
     <meta charset="UTF-8">
     {% block others %}
-    <script type="text/javascript" src="{% static 'js/mainpage_js/search.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/mainpage_js/main.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/base_main.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {% endblock %}
@@ -23,7 +21,9 @@
                 <div class="pinning-header-container" style="top: 0px; position: relative; background: transparent;">
                     <div class="main-header has-billboard menu-navigation" role="navigation"><a aria-label="넷플릭스"
                                                                                                 class="logo icon-logoUpdate active"
-                                                                                                href="/browse"><img class="logo-netflix-txt" src="https://i.ibb.co/r5krrdz/logo.png" style="width: 13rem; height: 3.5rem; margin-top: 2rem;" alt="logo_text"></a>
+                                                                                                href="/browse"><img
+                            class="logo-netflix-txt" src="https://i.ibb.co/r5krrdz/logo.png"
+                            style="width: 13rem; height: 3.5rem; margin-top: 2rem;" alt="logo_text"></a>
                         <ul class="tabbed-primary-navigation" style="font-size: 1.5rem; margin-top: 2rem;">
                             <li class="navigation-menu"><a class="menu-trigger" role="button" aria-haspopup="true"
                                                            tabindex="0">메뉴</a></li>
@@ -35,29 +35,43 @@
                         </ul>
                         <div class="secondary-navigation">
                             <div class="nav-element">
-<!--                                기존 검색박스-->
-<!--                                <div class="searchBox">-->
-<!--                                    <button class="searchTab" tabindex="0" aria-label="검색"-->
-<!--                                            data-uia="search-box-launcher"><span class="icon-search"></span></button>-->
-<!--                                </div>-->
+                                <!--                                기존 검색박스-->
+                                <!--                                <div class="searchBox">-->
+                                <!--                                    <button class="searchTab" tabindex="0" aria-label="검색"-->
+                                <!--                                            data-uia="search-box-launcher"><span class="icon-search"></span></button>-->
+                                <!--                                </div>-->
+
+<!--                                <form action="/search/" class="search-form"> {% csrf_token %}-->
+<!--                                    <div class="search-bar"><input type="text" name="query" id="query"-->
+<!--                                                                   placeholder="당신의 술을 검색해주세요" class="input-search">-->
+<!--                                        <button type="submit" class="search-icon"><i class="fas fa-search"-->
+<!--                                                                                     aria-hidden="true"></i></button>-->
+<!--                                    </div>-->
+<!--                                </form>-->
+
+<!--                            <form action="/search" class="search-form"> {% csrf_token %}-->
                                 <div class="search-box" style="margin-top: 1.5rem; margin-right: 1rem;">
-                                    <input class="search-input" type="text" name="" placeholder="Pesquise">
-                                    <a href="/search" class="search-btn">
-                                        <i class="fas fa-search"></i>
+                                    <input class="search-input" type="text" name="query" id="query" placeholder="Pesquise">
+                                    <a class="search-btn">
+                                        <button onclick="showvideo()" type="submit" class="search-icon" style="display: none;"><i class="fas fa-search"></i></button>
                                     </a>
                                 </div>
+<!--                            </form>-->
                             </div>
-
                             <div class="nav-element">
                                 <div class="account-menu-item">
-                                    <div class="account-dropdown-button" style="margin-top: 2rem;" onclick="dropdownshow()">
-                                    <a href="">
+                                    <div class="account-dropdown-button" style="margin-top: 2rem;"
+                                         onclick="dropdownshow()">
+                                        <a href="">
                                         <span class="profile-link" role="presentation">
-                                            <img class="profile-icon" src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABW6CcyxMhswxsXLwQIU0aOSE3fbpOWawb9JenXFNMJgF5uXHTW2eG_gqqoTnw6CYl6XPW60UvrQnjsE8hPKwQMU.png?r=552" alt="">
+                                            <img class="profile-icon"
+                                                 src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABW6CcyxMhswxsXLwQIU0aOSE3fbpOWawb9JenXFNMJgF5uXHTW2eG_gqqoTnw6CYl6XPW60UvrQnjsE8hPKwQMU.png?r=552"
+                                                 alt="">
                                         </span>
-                                    </a>
-                                    <span class="caret" role="presentation"></span></div>
-                                    <div id="dropdown" role="menu" tabindex="0" class="account-drop-down sub-menu theme-lakira"
+                                        </a>
+                                        <span class="caret" role="presentation"></span></div>
+                                    <div id="dropdown" role="menu" tabindex="0"
+                                         class="account-drop-down sub-menu theme-lakira"
                                          style="opacity: 1; transition-duration: 150ms;">
                                         <div class="ptrack-content"
                                              data-ui-tracking-context="%7B%22appView%22:%22accountDropdownPanel%22%7D"
@@ -66,7 +80,7 @@
                                             <ul class="sub-menu-list profiles" role="list" aria-label="프로필">
                                                 <li class="sub-menu-item profile" role="listitem">
                                                     <div><a class="profile-link" tabindex="0"
-                                                            href="/main"
+                                                            href="/search_page"
                                                             data-uia="action-select-profile+primary">
                                                         <div class="avatar-wrapper"><img class="profile-icon"
                                                                                          src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABW6CcyxMhswxsXLwQIU0aOSE3fbpOWawb9JenXFNMJgF5uXHTW2eG_gqqoTnw6CYl6XPW60UvrQnjsE8hPKwQMU.png?r=552"
@@ -77,12 +91,45 @@
                                                 </li>
                                                 <li class="sub-menu-item profile" role="listitem">
                                                     <div><a class="profile-link" tabindex="0"
-                                                            href="/main"
+                                                            href="/search_enter"
                                                             data-uia="action-select-profile+secondary">
                                                         <div class="avatar-wrapper"><img class="profile-icon"
-                                                                                         src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABXywvdPHBhL7h0TOuNr2uURK28yBKhjImyfjzYLWmUOB3qbQLUsIIYd9maV-kCAB2CqWulEzCApnRtm09vQoD6M.png?r=6f4"
+                                                                                         src="https://occ-0-4796-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbtJj_v0V-og1tsUH0W6cLj7elQFCbLUdkDI7YyvdC5ixHsLWxjuXzGErh21Tg4Ol-4AFjQdG7EtULnkRGXPFR1VP-qs.png?r=6ab"
                                                                                          alt=""></div>
-                                                        <span class="profile-name">김지연</span></a>
+                                                        <span class="profile-name">이성오</span></a>
+                                                        <div class="profile-children"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="sub-menu-item profile" role="listitem">
+                                                    <div><a class="profile-link" tabindex="0"
+                                                            href="/main"
+                                                            data-uia="action-select-profile+primary">
+                                                        <div class="avatar-wrapper"><img class="profile-icon"
+                                                                                         src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABeUqbfriC_pGWtwTa1KOx-ZSiQYa7ltLkOuduGxY_GRRc41ugYJNGYHe4LNcmshST4qkRSENvcs2xFomPc0rtX8wq2NG.png?r=b97"
+                                                                                         alt=""></div>
+                                                        <span class="profile-name">윤소현</span></a>
+                                                        <div class="profile-children"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="sub-menu-item profile" role="listitem">
+                                                    <div><a class="profile-link" tabindex="0"
+                                                            href="/main"
+                                                            data-uia="action-select-profile+primary">
+                                                        <div class="avatar-wrapper"><img class="profile-icon"
+                                                                                         src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABWu33TcylnaLZwSdtgKR6mr0O63afqQLxZbzHYQZLkCJ9bgMTtsf6tzs_ua2BuTpAVPbhxnroiEA-_bqJmKWiXblO9h-.png?r=f71"
+                                                                                         alt=""></div>
+                                                        <span class="profile-name">김석준</span></a>
+                                                        <div class="profile-children"></div>
+                                                    </div>
+                                                </li>
+                                                <li class="sub-menu-item profile" role="listitem">
+                                                    <div><a class="profile-link" tabindex="0"
+                                                            href="/main"
+                                                            data-uia="action-select-profile+primary">
+                                                        <div class="avatar-wrapper"><img class="profile-icon"
+                                                                                         src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABYhiXQV-hAgUwuVu5dAcjPe0XIxFW31x9skftI5k3hoaF4XLJ89LqQ0jy9l9FuRI3NjD_eKWVmiipYAIAU2XjsbXTFEd_zy2uWsEPZ-OVCHZ1SL0EvRWXC-J6hPJmEc15Ttv1DXY0xQ.png?r=a41"
+                                                                                         alt=""></div>
+                                                        <span class="profile-name">KIDS</span></a>
                                                         <div class="profile-children"></div>
                                                     </div>
                                                 </li>
@@ -92,7 +139,8 @@
                                             </ul>
                                             <ul class="sub-menu-list responsive-links"></ul>
                                             <ul class="account-links sub-menu-list" aria-label="계정">
-                                                <li class="sub-menu-item"><a class="sub-menu-link" href="/login/profile">계정</a>
+                                                <li class="sub-menu-item"><a class="sub-menu-link"
+                                                                             href="/login/profile">계정</a>
                                                 </li>
                                                 <li class="sub-menu-item"><a class="sub-menu-link"
                                                                              href="https://help.netflix.com/">고객 센터</a>
@@ -203,7 +251,8 @@
                         <div class="copy-text-block">사업자등록번호: 783-86-01715</div>
                         <div class="copy-text-block">클라우드 호스팅: Amazon Web Services Inc.</div>
                         <div id="" class="copy-text-block" data-uia="">
-                            <a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2018300016930200431&amp;pageUnit=10&amp;searchCnd=bup_nm&amp;searchKrwd=%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4&amp;pageIndex=1"><span class="footer_label">공정거래위원회 웹사이트</span></a>
+                            <a href="http://www.ftc.go.kr/www/bizCommView.do?key=232&amp;apv_perm_no=2018300016930200431&amp;pageUnit=10&amp;searchCnd=bup_nm&amp;searchKrwd=%EB%84%B7%ED%94%8C%EB%A6%AD%EC%8A%A4&amp;pageIndex=1"><span
+                                    class="footer_label">공정거래위원회 웹사이트</span></a>
                         </div>
                     </div>
                 </div>
@@ -211,6 +260,20 @@
         </div>
     </div>
 </div>
+
+<script>
+    // base_main.html 헤더 우측상단 2번째 네비 리스트 열고 닫기 기능
+    function dropdownshow() {
+        let drop = document.getElementById("dropdown");
+        if (drop.style.display == 'block') {
+            drop.style.display = 'none';
+            console.log('나는빡빡이다!')
+        } else {
+            drop.style.display = 'block';
+            console.log('나의 모발은 빽빽이다!')
+        }
+    }
+</script>
 </body>
 
 <script>
