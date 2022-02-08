@@ -77,16 +77,16 @@
                                     <div class="title-card-container ltr-0">
                                         <div id="title-card-0-0" class="title-card">
                                             <div class="ptrack-content">
-                                                <a href="{{video_clip}}"
+                                                <a href="{{movie.video_clip}}"
                                                    role="link" aria-label="${title}" tabindex="0"
                                                    aria-hidden="false" class="slider-refocus">
                                                     <div class="boxart-size-16x9 boxart-container boxart-rounded">
                                                         <img class="boxart-image boxart-image-in-padded-container"
-                                                             src="{{video_image}}"
+                                                             src="{{movie.video_image}}"
                                                              alt="">
                                                         <div class="fallback-text-container"
                                                              aria-hidden="true"><p
-                                                                class="fallback-text">{{title}}</p>
+                                                                class="fallback-text">{{movie.title}}</p>
                                                         </div>
                                                     </div>
                                                     <div class="click-to-change-JAW-indicator">
@@ -109,6 +109,7 @@
                                     </div>
                                 </div>
                                         {% endfor %}
+
                                     </div>
                                 </section>
 
