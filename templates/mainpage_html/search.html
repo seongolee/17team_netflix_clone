@@ -66,76 +66,53 @@
                 </div>
                 <div class="galleryContent">
                     <div>
-                        <div id="fullPage" class="row row-cols-1 row-cols-md-6 g-4">
-                            <div class="slider-item slider-item-0">
-                                <div class="title-card-container ltr-0">
-                                    <div id="title-card-0-0" class="title-card">
-                                        <div class="ptrack-content">
-                                            <a href="/watch/70099113?tctx=0%2C0%2C%2C%2C%2C%2C%2C"
-                                               role="link" aria-label="twillight트와일라잇" tabindex="0"
-                                               aria-hidden="false" class="slider-refocus">
-                                                <div class="boxart-size-16x9 boxart-container boxart-rounded">
-                                                    <img class="boxart-image boxart-image-in-padded-container"
-                                                         src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYFByvTyiKx93HjtNeLgM-oGVKkMUcZvYn2Iqx_mnZ83eYE_m3kEFPcImsbX3v5GRduQWyEN7y919QDDl58WinE6DDU.webp?r=f5b"
-                                                         alt="">
-                                                    <div class="fallback-text-container"
-                                                         aria-hidden="true"><p
-                                                            class="fallback-text">twillight트와일라잇</p>
+
+
+
+                            <section id="search">
+                                    <h1>모든 검색 결과를 보여준다 <span>"{{query}}"</span></h1>
+                                    <div id="fullPage" class="row row-cols-1 row-cols-md-6 g-4">
+                                        {% for movie in title %}
+                                        <div class="slider-item slider-item-0" aria-label="${title}">
+                                    <div class="title-card-container ltr-0">
+                                        <div id="title-card-0-0" class="title-card">
+                                            <div class="ptrack-content">
+                                                <a href="{{video_clip}}"
+                                                   role="link" aria-label="${title}" tabindex="0"
+                                                   aria-hidden="false" class="slider-refocus">
+                                                    <div class="boxart-size-16x9 boxart-container boxart-rounded">
+                                                        <img class="boxart-image boxart-image-in-padded-container"
+                                                             src="{{video_image}}"
+                                                             alt="">
+                                                        <div class="fallback-text-container"
+                                                             aria-hidden="true"><p
+                                                                class="fallback-text">{{title}}</p>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="click-to-change-JAW-indicator">
-                                                    <div class="bob-jawbone-chevron">
-                                                        <svg width="24" height="24"
-                                                             viewBox="0 0 24 24" fill="none"
-                                                             xmlns="http://www.w3.org/2000/svg"
-                                                             class="svg-icon svg-icon-chevron-down">
-                                                            <path fill-rule="evenodd"
-                                                                  clip-rule="evenodd"
-                                                                  d="M19.293 7.29297L12.0001 14.5859L4.70718 7.29297L3.29297 8.70718L11.293 16.7072C11.4805 16.8947 11.7349 17.0001 12.0001 17.0001C12.2653 17.0001 12.5196 16.8947 12.7072 16.7072L20.7072 8.70718L19.293 7.29297Z"
-                                                                  fill="currentColor"></path>
-                                                        </svg>
+                                                    <div class="click-to-change-JAW-indicator">
+                                                        <div class="bob-jawbone-chevron">
+                                                            <svg width="24" height="24"
+                                                                 viewBox="0 0 24 24" fill="none"
+                                                                 xmlns="http://www.w3.org/2000/svg"
+                                                                 class="svg-icon svg-icon-chevron-down">
+                                                                <path fill-rule="evenodd"
+                                                                      clip-rule="evenodd"
+                                                                      d="M19.293 7.29297L12.0001 14.5859L4.70718 7.29297L3.29297 8.70718L11.293 16.7072C11.4805 16.8947 11.7349 17.0001 12.0001 17.0001C12.2653 17.0001 12.5196 16.8947 12.7072 16.7072L20.7072 8.70718L19.293 7.29297Z"
+                                                                      fill="currentColor"></path>
+                                                            </svg>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="bob-container"></div>
+                                                </a>
+                                            </div>
+                                            <div class="bob-container"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="slider-item slider-item-0">
-                                <div class="title-card-container ltr-0">
-                                    <div id="title-card-0-1" class="title-card">
-                                        <div class="ptrack-content">
-                                            <a href="/watch/70099113?tctx=0%2C0%2C%2C%2C%2C%2C%2C"
-                                               role="link" aria-label="arirang아리랑" tabindex="0"
-                                               aria-hidden="false" class="slider-refocus">
-                                                <div class="boxart-size-16x9 boxart-container boxart-rounded">
-                                                    <img class="boxart-image boxart-image-in-padded-container"
-                                                         src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABYFByvTyiKx93HjtNeLgM-oGVKkMUcZvYn2Iqx_mnZ83eYE_m3kEFPcImsbX3v5GRduQWyEN7y919QDDl58WinE6DDU.webp?r=f5b"
-                                                         alt="">
-                                                    <div class="fallback-text-container"
-                                                         aria-hidden="true"><p
-                                                            class="fallback-text">arirang아리랑</p>
-                                                    </div>
-                                                </div>
-                                                <div class="click-to-change-JAW-indicator">
-                                                    <div class="bob-jawbone-chevron">
-                                                        <svg width="24" height="24"
-                                                             viewBox="0 0 24 24" fill="none"
-                                                             xmlns="http://www.w3.org/2000/svg"
-                                                             class="svg-icon svg-icon-chevron-down">
-                                                            <path fill-rule="evenodd"
-                                                                  clip-rule="evenodd"
-                                                                  d="M19.293 7.29297L12.0001 14.5859L4.70718 7.29297L3.29297 8.70718L11.293 16.7072C11.4805 16.8947 11.7349 17.0001 12.0001 17.0001C12.2653 17.0001 12.5196 16.8947 12.7072 16.7072L20.7072 8.70718L19.293 7.29297Z"
-                                                                  fill="currentColor"></path>
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            </a></div>
-                                        <div class="bob-container"></div>
+                                        {% endfor %}
                                     </div>
-                                </div>
-                            </div>
-                        </div>
+                                </section>
+
+
                     </div>
                 </div>
             </div>

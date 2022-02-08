@@ -65,19 +65,20 @@ def showvideo(request):
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 
-#
-#
-# # like 해당하는 제목찾아서 그 제목의 like 쌓는 기능
-# # 좋아요 기능 구현  POST 방식
+
+
+# like 해당하는 제목찾아서 그 제목의 like 쌓는 기능
+# 좋아요 기능 구현  POST 방식
 # def like_star():
 #     title_receive = request.form['title_give']
 #     target_prodct = Video.objects.get({'title':title_receive})
 #     current_prodct = target_prodct['like']
 #     new_like = current_prodct + 1
+#     video.total_like = new_like
 #
 #     db.crawling.update_one({'title': title_receive}, {'$set': {'like' : new_like}})
 #     return jsonify({'msg': 'like!'})
-#
+
 #
 # # like 순으로 배열하는 기능  GET 방식
 # def showHeart():
@@ -202,46 +203,68 @@ def showColumn(request):
 
 # 장고 검색기능 재도전!
 def search(request):
-    # if request.method == 'GET':
+    if request.method == 'GET':
 
-    query = request.GET.get['query']
-    # genre = Genre.objects.filter(genre_name__contains=query)
-    # selectmovie = title.union(genre)
+        query = request.GET['query']
+
+        title = Video.objects.filter(video_title__contains=query)
+        video_title = []
+        image = []
+        # video_explain = []
+        clip = []
+
+        for i in range(len(title)):
 
 
+            doc =
 
-    video_title = []
-    video_image = []
-    video_explain = []
-    video_clip = []
+            video_image = Video.objects.filter(video_title__contains=query).values('video_image')[i]
+            video_clip = Video.objects.filter(video_title__contains=query).values('video_clip')[i]
+            image.append(video_image)
+            clip.append(video_clip)
+        print(title)
+        print(image)
+        print(clip)
+        # genre = Video.genre.all()
+        # video = Video.objects.get(video_title__contains=query)
+        # title = video.video_title
+        # video_image = video.video_image(video_title=video_image[i].video_title)
+        # video_clip = video.video_clip
+        # genre = Genre.objects.filter(genre_name__contains=query)
+        # selectmovie = title.union(genre)
 
-    video = Video.objects.filter(video_title__contains=query)
-    # explain = VideoModal.objects.all()
-    print(video)
-    for i in range(len(video)):
-        video_title.append(video[i].video_title)
-        video_image.append(video[i].video_image)
-        # video_explain.append(explain[i].video_description)
-        video_clip.append(video[i].video_clip)
 
-    print(video_clip)
-    print('success')
-    print(video_image)
-    context = {
-        # 'selectmovie': selectmovie,
-        "query": query,
-        # "title": title,
-        'video_title': video_title,
-        'video_image': video_image,
-        # 'explain':video_explain,
-        'video_clip': video_clip,
-    }
-    # context = {'video_title': video_title,
-    #            'video_image': video_image,
-    #            # 'explain':video_explain,
-    #            'video_clip': video_clip}
+        #
+        # video = Video.objects.all()
+        # explain = VideoModal.objects.all()
+        # print(video)
+        # for i in range(40):
+            # video_title.append(video[i].video_title)
+            # video_image.append(video[i].video_image)
+            # video_explain.append(explain[i].video_description)
+            # video_clip.append(video[i].video_clip)
+        #
+        # print(video_clip)
+        # print('success')
+        # print(video_image)
+        context = {
+            # 'selectmovie': selectmovie,
+            "query": query,
+            "title": title,
+            # 'video_title': video_title,
+            'video_image': image,
+            # 'explain':video_explain,
+            'video_clip': clip,
+        }
+        # context = {'video_title': title,
+        #            'video_image': video_image,
+        #            # 'explain':video_explain,
+        #            'video_clip': video_clip}
 
-    return HttpResponse(json.dumps(context), content_type="application/json")
-    # return render(request, 'mainpage_html/search.html', context)
-# elif request.method == 'POST':
-#     return render(request, 'mainpage_html/search.html')
+
+        return render(request, 'mainpage_html/search.html', context)
+    elif request.method == 'POST':
+        return render(request, 'mainpage_html/search.html')
+    #
+    # else:
+    #     return render(request, 'mainpage_html/search.html')

@@ -49,14 +49,14 @@
 <!--                                    </div>-->
 <!--                                </form>-->
 
-<!--                            <form action="/search" class="search-form"> {% csrf_token %}-->
+                            <form action="/search" class="search-form"> {% csrf_token %}
                                 <div class="search-box" style="margin-top: 1.5rem; margin-right: 1rem;">
-                                    <input class="search-input" type="text" name="query" id="query" placeholder="Pesquise">
-                                    <a class="search-btn">
-                                        <button onclick="showvideo()" type="submit" class="search-icon" style="display: none;"><i class="fas fa-search"></i></button>
+                                    <input class="search-input" type="text" name="query" id="query" placeholder="검색어를 입력해주세요.">
+                                    <a href="/search_page" class="search-btn">
+                                        <button type="submit" class="search-icon" style="display: none;"><i class="fas fa-search"></i></button>
                                     </a>
                                 </div>
-<!--                            </form>-->
+                            </form>
                             </div>
                             <div class="nav-element">
                                 <div class="account-menu-item">
@@ -80,7 +80,7 @@
                                             <ul class="sub-menu-list profiles" role="list" aria-label="프로필">
                                                 <li class="sub-menu-item profile" role="listitem">
                                                     <div><a class="profile-link" tabindex="0"
-                                                            href="/search_page"
+                                                            href="/main"
                                                             data-uia="action-select-profile+primary">
                                                         <div class="avatar-wrapper"><img class="profile-icon"
                                                                                          src="https://occ-0-3077-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABW6CcyxMhswxsXLwQIU0aOSE3fbpOWawb9JenXFNMJgF5uXHTW2eG_gqqoTnw6CYl6XPW60UvrQnjsE8hPKwQMU.png?r=552"
@@ -91,7 +91,7 @@
                                                 </li>
                                                 <li class="sub-menu-item profile" role="listitem">
                                                     <div><a class="profile-link" tabindex="0"
-                                                            href="/search_enter"
+                                                            href="/main"
                                                             data-uia="action-select-profile+secondary">
                                                         <div class="avatar-wrapper"><img class="profile-icon"
                                                                                          src="https://occ-0-4796-993.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABbtJj_v0V-og1tsUH0W6cLj7elQFCbLUdkDI7YyvdC5ixHsLWxjuXzGErh21Tg4Ol-4AFjQdG7EtULnkRGXPFR1VP-qs.png?r=6ab"

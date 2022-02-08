@@ -2,66 +2,64 @@
 //             showvideo();
 //         });
 //
-window.onload = function showvideo() {
-    let query = document.getElementById('query').value;
-    $.ajax({
-
-        type: "GET",
-        url: "/search",
-        data: {'query':query},
-        async: false,
-        datatype: 'json',
-        success: function (data) {
-            let video_title = data.video_title
-            let video_image = data.video_image
-            // let detail = data.explain
-            let video_clip = data.video_clip
-            for (let i = 0; i < video_title.length; i++) {
-                let title = video_title[i]
-                let img = video_image[i]
-                // let explain = detail[i]
-                let video_url = video_clip[i]
-                let temp_html = `<div class="slider-item slider-item-0" aria-label="${title}">
-                                    <div class="title-card-container ltr-0">
-                                        <div id="title-card-0-0" class="title-card">
-                                            <div class="ptrack-content">
-                                                <a href="${video_url}"
-                                                   role="link" aria-label="${title}" tabindex="0"
-                                                   aria-hidden="false" class="slider-refocus">
-                                                    <div class="boxart-size-16x9 boxart-container boxart-rounded">
-                                                        <img class="boxart-image boxart-image-in-padded-container"
-                                                             src="${img}"
-                                                             alt="">
-                                                        <div class="fallback-text-container"
-                                                             aria-hidden="true"><p
-                                                                class="fallback-text">${title}</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="click-to-change-JAW-indicator">
-                                                        <div class="bob-jawbone-chevron">
-                                                            <svg width="24" height="24"
-                                                                 viewBox="0 0 24 24" fill="none"
-                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                 class="svg-icon svg-icon-chevron-down">
-                                                                <path fill-rule="evenodd"
-                                                                      clip-rule="evenodd"
-                                                                      d="M19.293 7.29297L12.0001 14.5859L4.70718 7.29297L3.29297 8.70718L11.293 16.7072C11.4805 16.8947 11.7349 17.0001 12.0001 17.0001C12.2653 17.0001 12.5196 16.8947 12.7072 16.7072L20.7072 8.70718L19.293 7.29297Z"
-                                                                      fill="currentColor"></path>
-                                                            </svg>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="bob-container"></div>
-                                        </div>
-                                    </div>
-                                </div>`
-                $('#fullPage').append(temp_html)
-            }
-        }
-    })
-
-}
+// window.onload = function showvideo() {
+//     $.ajax({
+//         type: "GET",
+//         url: "/search_enter",
+//         data: {},
+//         async: false,
+//         datatype: 'json',
+//         success: function (data) {
+//             let video_title = data.video_title
+//             let video_image = data.video_image
+//             // let detail = data.explain
+//             let video_clip = data.video_clip
+//             for (let i = 0; i < video_title.length; i++) {
+//                 let title = video_title[i]
+//                 let img = video_image[i]
+//                 // let explain = detail[i]
+//                 let video_url = video_clip[i]
+//                 let temp_html = `<div class="slider-item slider-item-0" aria-label="${title}">
+//                                     <div class="title-card-container ltr-0">
+//                                         <div id="title-card-0-0" class="title-card">
+//                                             <div class="ptrack-content">
+//                                                 <a href="${video_url}"
+//                                                    role="link" aria-label="${title}" tabindex="0"
+//                                                    aria-hidden="false" class="slider-refocus">
+//                                                     <div class="boxart-size-16x9 boxart-container boxart-rounded">
+//                                                         <img class="boxart-image boxart-image-in-padded-container"
+//                                                              src="${img}"
+//                                                              alt="">
+//                                                         <div class="fallback-text-container"
+//                                                              aria-hidden="true"><p
+//                                                                 class="fallback-text">${title}</p>
+//                                                         </div>
+//                                                     </div>
+//                                                     <div class="click-to-change-JAW-indicator">
+//                                                         <div class="bob-jawbone-chevron">
+//                                                             <svg width="24" height="24"
+//                                                                  viewBox="0 0 24 24" fill="none"
+//                                                                  xmlns="http://www.w3.org/2000/svg"
+//                                                                  class="svg-icon svg-icon-chevron-down">
+//                                                                 <path fill-rule="evenodd"
+//                                                                       clip-rule="evenodd"
+//                                                                       d="M19.293 7.29297L12.0001 14.5859L4.70718 7.29297L3.29297 8.70718L11.293 16.7072C11.4805 16.8947 11.7349 17.0001 12.0001 17.0001C12.2653 17.0001 12.5196 16.8947 12.7072 16.7072L20.7072 8.70718L19.293 7.29297Z"
+//                                                                       fill="currentColor"></path>
+//                                                             </svg>
+//                                                         </div>
+//                                                     </div>
+//                                                 </a>
+//                                             </div>
+//                                             <div class="bob-container"></div>
+//                                         </div>
+//                                     </div>
+//                                 </div>`
+//                 $('#fullPage').append(temp_html)
+//             }
+//         }
+//     })
+//
+// }
     // 중간 메인
 
 
