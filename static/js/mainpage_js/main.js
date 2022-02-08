@@ -188,9 +188,9 @@ function modalOn(clicked_id) {
      data-uia="mini-modal-controls"><a tabindex="0" toolkitsize="small"
                                        data-uia="play-button"
                                        role="link" aria-label="재생"
-                                       style="margin-left: 25rem; display:inline-block;"
+                                       style="margin-left: 30rem; display:inline-block;"
                                        class="primary-button playLink isToolkit isRound"
-                                       href="/watch/80239482?trackId=13752289&amp;tctx=0%2C0%2C0e3f77bbd8e377d24372d3f5b99492a3e1ca0b24%3A7eea2c56806b6cc708d9cc3b8f3e55422c1c14ef%2C0e3f77bbd8e377d24372d3f5b99492a3e1ca0b24%3A7eea2c56806b6cc708d9cc3b8f3e55422c1c14ef%2Cunknown%2C%2C%2C">
+                                       href="${clip}&controls=0"
     <button class="color-primary hasIcon round ltr-1knzl35" tabindex="-1" type="button">
         <div class="ltr-1ksxkn9">
             <div class="small ltr-18dhnor" role="presentation">
