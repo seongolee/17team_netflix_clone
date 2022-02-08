@@ -211,16 +211,16 @@ window.addEventListener("keyup", e => {
 })
 
 // base_main.html 헤더 우측상단 2번째 네비 리스트 열고 닫기 기능
-function dropdownshow(){
-     let drop =  document.getElementById("dropdown");
-     if(drop.style.display=='block'){
-		drop.style.display = 'none';
-        console.log('나는빡빡이다!')
-	}else{
-		drop.style.display = 'block';
-        console.log('나의 모발은 빽빽이다!')
-	}
-}
+// function dropdownshow(){
+//      let drop =  document.getElementById("dropdown");
+//      if(drop.style.display=='block'){
+// 		drop.style.display = 'none';
+//         console.log('나는빡빡이다!')
+// 	}else{
+// 		drop.style.display = 'block';
+//         console.log('나의 모발은 빽빽이다!')
+// 	}
+// }
 
 
 

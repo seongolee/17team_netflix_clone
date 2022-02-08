@@ -7,5 +7,6 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('show-col/', views.showColumn, name='show-col'),
     # path('show-genre/', views.show_genre, name='show-genre'),
-    # path('search_enter/', views.SearchView, name='search_enter'),
+    path('search_enter/', views.showvideo, name='search_enter'),
+    path('search_page/', views.search_page, name='search_page'),
 ]

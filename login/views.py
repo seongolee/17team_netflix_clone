@@ -3,7 +3,7 @@ from django.contrib import auth
 from django.contrib.auth.decorators import login_required
 from user.models import UserModel
 
-
+# AWS json 가져오기 위한 장치
 import os
 import json
 from pathlib import Path
