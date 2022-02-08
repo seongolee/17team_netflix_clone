@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from login.views import login_required
 from django.contrib import auth
-from .models import Video, VideoModal, Genre, Actor
+from .models import Video, VideoModal, Genre, Actor,Recommendation
+from user.models import UserModel
 from django.http import HttpResponse
 import json
 from django.core import serializers
@@ -100,12 +101,15 @@ def showColumn(request):
     video_title = []
     video_image = []
     video_explain = []
-    video = Video.objects.all()
-    explain = VideoModal.objects.all()
-    for i in range(6):
-        video_title.append(video[i].video_title)
-        video_image.append(video[i].video_image)
-        video_explain.append(explain[i].video_description)
+    #아이템 기반 협업필터링
+    cosine_item = item_based_recommenation()
+    print(cosine_item)
+    for i in cosine_item:
+        video = Video.objects.get(video_title=i)
+        explain = VideoModal.objects.get(video_id=video)
+        video_title.append(video.video_title)
+        video_image.append(video.video_image)
+        video_explain.append(explain.video_description)
 
     # 별점 순
     star_title = []
@@ -200,24 +204,6 @@ def showColumn(request):
 
 
 
-#모델 부분
-
-import h5py
-import os
-from keras.models import load_model
-import tensorflow as tf
-from .models import Recommendation
-
-
-model = load_model('static/model/final.h5')
-def predict(user):
-
-    pred = model.predict(user)
-
-def User(request):
-    user=request.user
-    data = Recommendation.objects.filter()
-
 # 장고 검색기능 재도전!
 def search(request):
     if request.method == 'GET':
@@ -300,3 +286,55 @@ def modal(request):
                }
     return HttpResponse(json.dumps(context), content_type="application/json")
 
+import csv
+import pandas as pd
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+
+
+ratings = pd.read_csv('static/recommendation/ratings.csv', encoding='cp949')
+movies = pd.read_csv('static/recommendation/movies.csv', encoding='cp949')
+
+# 데이터프레임을 출력했을때 더 많은 열이 보이도록 함
+pd.set_option('display.max_columns', 10)
+pd.set_option('display.width', 300)
+# movieId를 기준으로 ratings 와 movies 를 결합함
+movie_ratings = pd.merge(ratings, movies, on='movieId')
+
+
+
+def item_based_recommenation():
+    user_title = movie_ratings.pivot_table('rating', index='title', columns='userId')
+
+    user_title = user_title.fillna(0)
+
+    item_based_collab = cosine_similarity(user_title, user_title)
+
+    item_based_collab = pd.DataFrame(item_based_collab, index=user_title.index, columns=user_title.index)
+
+    collab = item_based_collab['불가살'].sort_values(ascending=False)[1:11].index
+    # collab = item_based_collab['불가살'].values.tolist()
+    # 불가살과 비슷하게 유저들로부터 평점을 부여받은 영화들은?
+
+    return collab
+
+def thumbs(request):
+    print('소통')
+    user = request.user
+    users = UserModel.objects.get(email=user)
+    print(users.id)
+    title_give = request.POST.get('title_give')
+    like = request.POST.get('final_like')
+    video = Video.objects.get(video_title=title_give)
+    # Recommendation.objects.create(user_id=users,video_id=video,thumbs=like)
+    video.total_like += int(like)
+    video.save()
+    print(video.total_like)
+    print(title_give)
+    print(like)
+
+    print('성공')
+
+    context = {'count': '성공'}
+
+    return HttpResponse(json.dumps(context), content_type="application/json")

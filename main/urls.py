@@ -10,4 +10,5 @@ urlpatterns = [
     path('search_enter/', views.showvideo, name='search_enter'),
     path('search_page/', views.search_page, name='search_page'),
     path('modal/', views.modal, name='modal'),
+    path('thumbs/', views.thumbs, name='thumbs'),
 ]

@@ -18,128 +18,128 @@ window.onload = function () {
                                     </figcaption>
                                 </figure>`
                 $('.popular').append(temp_html)
+            }
                 //별점 높은순
-                let star_title = data.star_title
-                let star_image = data.star_image
-                let star_explain = data.star_explain
+            let star_title = data.star_title
+            let star_image = data.star_image
+            let star_explain = data.star_explain
 
-                for (let i = 0; i < star_title.length; i++) {
-                    let title = star_title[i]
-                    let img = star_image[i]
-                    let explain = star_explain[i]
-                    let temp_html = `<figure class="snip1273">
-                                <img src=${img} style="background-size: cover;"
-                                     alt="sample72"/>
-                                <figcaption id=${title} onclick="modalOn(this.id)">
-                                    <h3>${title}</h3>
-                                    <p>${explain}</p>
-                                    <a href="#"></a>
-                                </figcaption>
-                            </figure>`
-                    $('.star_rank').append(temp_html)
-                }
+            for (let i = 0; i < star_title.length; i++) {
+                let title = star_title[i]
+                let img = star_image[i]
+                let explain = star_explain[i]
+                let temp_html = `<figure class="snip1273">
+                            <img src=${img} style="background-size: cover;"
+                                 alt="sample72"/>
+                            <figcaption id=${title} onclick="modalOn(this.id)">
+                                <h3>${title}</h3>
+                                <p>${explain}</p>
+                                <a href="#"></a>
+                            </figcaption>
+                        </figure>`
+                $('.star_rank').append(temp_html)
+            }
 
                 // 장르 로맨스
-                let romance_title = data.romance_title
-                let romance_image = data.romance_image
-                let romance_explain = data.romance_explain
+            let romance_title = data.romance_title
+            let romance_image = data.romance_image
+            let romance_explain = data.romance_explain
 
-                for (let i = 0; i < romance_title.length; i++) {
-                    let title = romance_title[i]
-                    let img = romance_image[i]
-                    let explain = romance_explain[i]
-                    let temp_html = `<figure class="snip1273">
-                                <img src=${img} style="background-size: cover;"
-                                     alt="sample72"/>
-                                <figcaption id=${title} onclick="modalOn(this.id)">
-                                    <h3>${title}</h3>
-                                    <p>${explain}</p>
-                                    <a href="#"></a>
-                                </figcaption>
-                            </figure>`
-                    $('.Romance').append(temp_html)
-                }
+            for (let i = 0; i < romance_title.length; i++) {
+                let title = romance_title[i]
+                let img = romance_image[i]
+                let explain = romance_explain[i]
+                let temp_html = `<figure class="snip1273">
+                            <img src=${img} style="background-size: cover;"
+                                 alt="sample72"/>
+                            <figcaption id=${title} onclick="modalOn(this.id)">
+                                <h3>${title}</h3>
+                                <p>${explain}</p>
+                                <a href="#"></a>
+                            </figcaption>
+                        </figure>`
+                $('.Romance').append(temp_html)
+            }
 
                 //장르 액션
-                let action_title = data.action_title
-                let action_image = data.action_image
-                let action_explain = data.action_explain
+            let action_title = data.action_title
+            let action_image = data.action_image
+            let action_explain = data.action_explain
 
-                for (let i = 0; i < action_title.length; i++) {
-                    let title = action_title[i]
-                    let img = action_image[i]
-                    let explain = action_explain[i]
-                    let temp_html = `<figure class="snip1273">
-                                <img src=${img} style="background-size: cover;"
-                                     alt="sample72"/>
-                                <figcaption id=${title} onclick="modalOn(this.id)">
-                                    <h3>${title}</h3>
-                                    <p>${explain}</p>
-                                    <a href="#"></a>
-                                </figcaption>
-                            </figure>`
-                    $('.Action').append(temp_html)
-                }
-                // 장르 공포
-                let horror_title = data.horror_title
-                let horror_image = data.horror_image
-                let horror_explain = data.horror_explain
+            for (let i = 0; i < action_title.length; i++) {
+                let title = action_title[i]
+                let img = action_image[i]
+                let explain = action_explain[i]
+                let temp_html = `<figure class="snip1273">
+                            <img src=${img} style="background-size: cover;"
+                                 alt="sample72"/>
+                            <figcaption id=${title} onclick="modalOn(this.id)">
+                                <h3>${title}</h3>
+                                <p>${explain}</p>
+                                <a href="#"></a>
+                            </figcaption>
+                        </figure>`
+                $('.Action').append(temp_html)
+            }
+            // 장르 공포
+            let horror_title = data.horror_title
+            let horror_image = data.horror_image
+            let horror_explain = data.horror_explain
 
-                for (let i = 0; i < horror_title.length; i++) {
-                    let title = horror_title[i]
-                    let img = horror_image[i]
-                    let explain = horror_explain[i]
-                    let temp_html = `<figure class="snip1273">
-                                <img src=${img} style="background-size: cover;"
-                                     alt="sample72"/>
-                                <figcaption id=${title} onclick="modalOn(this.id)">
-                                    <h3>${title}</h3>
-                                    <p>${explain}</p>
-                                    <a href="#"></a>
-                                </figcaption>
-                            </figure>`
-                    $('.Horror').append(temp_html)
-                }
+            for (let i = 0; i < horror_title.length; i++) {
+                let title = horror_title[i]
+                let img = horror_image[i]
+                let explain = horror_explain[i]
+                let temp_html = `<figure class="snip1273">
+                            <img src=${img} style="background-size: cover;"
+                                 alt="sample72"/>
+                            <figcaption id=${title} onclick="modalOn(this.id)">
+                                <h3>${title}</h3>
+                                <p>${explain}</p>
+                                <a href="#"></a>
+                            </figcaption>
+                        </figure>`
+                $('.Horror').append(temp_html)
+            }
                 // 장르 코미디
-                let comedy_title = data.comedy_title
-                let comedy_image = data.comedy_image
-                let comedy_explain = data.comedy_explain
+            let comedy_title = data.comedy_title
+            let comedy_image = data.comedy_image
+            let comedy_explain = data.comedy_explain
 
-                for (let i = 0; i < comedy_title.length; i++) {
-                    let title = comedy_title[i]
-                    let img = comedy_image[i]
-                    let explain = comedy_explain[i]
-                    let temp_html = `<figure  class="snip1273">
-                                <img src=${img} style="background-size: cover;"
-                                     alt="sample72"/>
-                                <figcaption id=${title} onclick="modalOn(this.id)">
-                                    <h3>${title}</h3>
-                                    <p>${explain}</p>
-                                    <a href="#"></a>
-                                </figcaption>
-                            </figure>`
-                    $('.Comedy').append(temp_html)
-                }
+            for (let i = 0; i < comedy_title.length; i++) {
+                let title = comedy_title[i]
+                let img = comedy_image[i]
+                let explain = comedy_explain[i]
+                let temp_html = `<figure  class="snip1273">
+                            <img src=${img} style="background-size: cover;"
+                                 alt="sample72"/>
+                            <figcaption id=${title} onclick="modalOn(this.id)">
+                                <h3>${title}</h3>
+                                <p>${explain}</p>
+                                <a href="#"></a>
+                            </figcaption>
+                        </figure>`
+                $('.Comedy').append(temp_html)
+            }
                 // 장르 판타지
-                let fantasy_title = data.fantasy_title
-                let fantasy_image = data.fantasy_image
-                let fantasy_explain = data.fantasy_explain
+            let fantasy_title = data.fantasy_title
+            let fantasy_image = data.fantasy_image
+            let fantasy_explain = data.fantasy_explain
 
-                for (let i = 0; i < fantasy_title.length; i++) {
-                    let title = fantasy_title[i]
-                    let img = fantasy_image[i]
-                    let explain = fantasy_explain[i]
-                    let temp_html = `<figure class="snip1273">
-                                <img src=${img} style="background-size: cover;"
-                                     alt="sample72"/>
-                                <figcaption id = ${title} onclick="modalOn()">
-                                    <h3>${title}</h3>
-                                    <p>${explain}</p>
-                                    <a href="#"></a>
-                                </figcaption>
-                            </figure>`
-                    $('.Fantasy').append(temp_html)
-                }
+            for (let i = 0; i < fantasy_title.length; i++) {
+                let title = fantasy_title[i]
+                let img = fantasy_image[i]
+                let explain = fantasy_explain[i]
+                let temp_html = `<figure class="snip1273">
+                            <img src=${img} style="background-size: cover;"
+                                 alt="sample72"/>
+                            <figcaption id = ${title} onclick="modalOn()">
+                                <h3>${title}</h3>
+                                <p>${explain}</p>
+                                <a href="#"></a>
+                            </figcaption>
+                        </figure>`
+                $('.Fantasy').append(temp_html)
             }
         }
     });
@@ -224,25 +224,25 @@ function modalOn(clicked_id) {
         </div>
     </div>
     <div class="ltr-79elbk">
-        <button aria-label="'좋아요'로 평가하기"
-                class="color-supplementary hasIcon round ltr-1knzl35"
+        <button aria-label="'좋아요'로 평가하기" onclick="likeheart(this.name)"
+                class="color-supplementary hasIcon round ltr-1knzl35" name =${title} id="like" style="background-color: black"
                 data-uia="thumbsUp-button" type="button">
             <div class="ltr-1ksxkn9">
                 <div class="small ltr-18dhnor" role="presentation">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white"
                          xmlns="http://www.w3.org/2000/svg"
                          class="Hawkins-Icon Hawkins-Icon-Standard">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                               d="M9.97014 1C8.88206 1 8 1.88206 8 2.97014V5.76393L5.8023 10.1593L2.72528 11.0385C2.29598 11.1611 2 11.5535 2 12V19C2 19.4465 2.29598 19.8389 2.72528 19.9615L6.17609 20.9475L6.84053 21.2132C8.13985 21.733 9.52641 22 10.9258 22H16.7086C18.5124 22 20.0931 20.7927 20.5677 19.0525L21.9313 14.0525C22.6253 11.5079 20.7097 9 18.0722 9H14.2808L14.7276 7.21268C14.9267 6.41648 14.9267 5.58352 14.7276 4.78732L14.705 4.69686C14.1618 2.52419 12.2097 1 9.97014 1ZM9.78885 6.65836C9.92771 6.38065 10 6.07442 10 5.76393V3.00015C11.3093 3.01358 12.4465 3.90926 12.7647 5.18193L12.7873 5.27239C12.9068 5.75011 12.9068 6.24989 12.7873 6.72761L12.0299 9.75746L11.7192 11H13H18.0722C19.391 11 20.3488 12.254 20.0018 13.5262L18.6381 18.5262C18.4008 19.3964 17.6105 20 16.7086 20H10.9258C9.78085 20 8.64639 19.7815 7.58331 19.3563L6.87139 19.0715C6.83975 19.0589 6.80749 19.0478 6.77472 19.0385L4 18.2457V12.7543L6.35174 12.0824C6.89079 11.9284 7.34044 11.5552 7.59116 11.0538L9.78885 6.65836Z"
-                              fill="currentColor"></path>
+                              fill="rgb(42,169,224);"></path>
                     </svg>
                 </div>
             </div>
         </button>
     </div>
     <div class="ltr-79elbk">
-        <button aria-label="'맘에 안 들어요'로 평가하기"
-                class="color-supplementary hasIcon round ltr-1knzl35"
+        <button aria-label="'맘에 안 들어요'로 평가하기" style="background-color: black" onclick="dislikeheart(${title})"
+                class="color-supplementary hasIcon round ltr-1knzl35" id="dislike"
                 data-uia="thumbsDown-button" type="button">
             <div class="ltr-1ksxkn9">
                 <div class="small ltr-18dhnor" role="presentation">
@@ -312,65 +312,58 @@ window.addEventListener("keyup", e => {
     }
 })
 
-// base_main.html 헤더 우측상단 2번째 네비 리스트 열고 닫기 기능
-// function dropdownshow(){
-//      let drop =  document.getElementById("dropdown");
-//      if(drop.style.display=='block'){
-// 		drop.style.display = 'none';
-//         console.log('나는빡빡이다!')
-// 	}else{
-// 		drop.style.display = 'block';
-//         console.log('나의 모발은 빽빽이다!')
-// 	}
-// }
 
 
-// function moveScrollLeft(){
-//     let _scrollX = $('.movie-list').scrollLeft();
-//     $('.movie-list').scrollLeft(_scrollX + 20);
-// }
 
-// // Get the video
-// let video = document.getElementById("myVideo");
-//
-// // Get the button
-// let btn = document.getElementById("myBtn");
-//
-// // Pause and play the video, and change the button text
-// function myFunction() {
-//   if (video.paused) {
-//     video.play();
-//     btn.innerHTML = "Pause";
-//   } else {
-//     video.pause();
-//     btn.innerHTML = "Play";
-//   }
-// }
+function likeheart(title) {
+    alert(title)
+    let final_like = '0';
+    let dislike = document.getElementById('dislike');
+    let like = document.getElementById('like');
+    if (like.style.backgroundColor === "black") {
+        alert('좋아요 완료!')
+        like.style.backgroundColor = "lightgray";
+        final_like = '1';
+        dislike.disabled=true;
 
+    } else {
+        alert('좋아요 취소')
+        like.style.backgroundColor = "black";
+        final_like = '0';
+        dislike.disabled=false;
+    }
 
-// /* Get the documentElement (<html>) to display the page in fullscreen */
-// let elem = document.documentElement;
-//
-// /* View in fullscreen */
-// function openFullscreen() {
-//   if (elem.requestFullscreen) {
-//     elem.requestFullscreen();
-//   } else if (elem.webkitRequestFullscreen) { /* Safari */
-//     elem.webkitRequestFullscreen();
-//   } else if (elem.msRequestFullscreen) { /* IE11 */
-//     elem.msRequestFullscreen();
-//   }
-// }
-//
-// /* Close fullscreen */
-// function closeFullscreen() {
-//   if (document.exitFullscreen) {
-//     document.exitFullscreen();
-//   } else if (document.webkitExitFullscreen) { /* Safari */
-//     document.webkitExitFullscreen();
-//   } else if (document.msExitFullscreen) { /* IE11 */
-//     document.msExitFullscreen();
-//   }
-// }
+    $.ajax({
+        type: 'POST',
+        url: '/thumbs/',
+        data: {'title_give': title,
+                'final_like':final_like},
+        dataType: "json",
+        success: function (response) {
 
+        }
+    });
+
+}
+
+function dislikeheart(title) {
+
+    let final_like = 0;
+    let like = document.getElementById('like');
+    let dislike = document.getElementById('dislike');
+    if (dislike.style.backgroundColor === "black") {
+        alert('싫어요 완료!')
+        dislike.style.backgroundColor = "lightgray";
+        final_like = -1;
+        like.disabled=true;
+
+    } else {
+        alert('싫어요 취소')
+        like.style.backgroundColor = "black";
+        like.disabled=false;
+        final_like = 0;
+
+    }
+
+}
 
