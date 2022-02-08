@@ -108,7 +108,7 @@ class Recommendation(models.Model):
     # video_id / 비디오ID (채번값부여된)
     video_id = models.ForeignKey(Video, on_delete=models.CASCADE, db_column='video_id')
     # thumbs / 좋아요 or 싫어요
-    thumbs = models.BooleanField(null=True)
+    thumbs = models.IntegerField(default=0)
     # my_list_or_not / 찜
     my_list_or_not = models.BooleanField(null=True)
     # streaming_info / 영상재생시간
