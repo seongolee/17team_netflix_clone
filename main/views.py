@@ -211,9 +211,19 @@ def showColumn(request):
 
 
 #모델 부분
-import pandas as pd
-import numpy as np
+
+import h5py
+import os
+from keras.models import load_model
+import tensorflow as tf
 from .models import Recommendation
-def predict(request):
-    movie_ratings = Recommendation.objects.all().values()
-    data = pd.DataFrame(movie_ratings)
+
+
+model = load_model('static/model/final.h5')
+def predict(user):
+
+    pred = model.predict(user)
+
+def User(request):
+    user=request.user
+    data = Recommendation.objects.filter()
