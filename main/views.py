@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from login.views import login_required
 from django.contrib import auth
-from .models import Video, VideoModal, Genre
+from .models import Video, VideoModal, Genre, Actor
 from django.http import HttpResponse
 import json
 from django.core import serializers
@@ -29,7 +29,7 @@ def logout(request):
     return redirect('/')
 
 
-def search(request):
+def search_page(request):
     return render(request, 'mainpage_html/search.html')
 
 
@@ -37,55 +37,48 @@ from main.models import Video
 from django.http import JsonResponse
 from django.views import View
 
+
 # # 장고 검색기능 구현
-# class SearchView(View):
-#     def get(self, request):
-#         try:
-#             word = request.GET.get('word', '')
-#             results = []
-#
-#             ko_name = Video.objects.filter(korean_name__icontains=word).exists()
-#             en_name = Video.objects.filter(english_name__icontains=word).exists()
-#             # category_name = Category.objects.filter(name__icontains=word).exists()
-#
-#             if ko_name:
-#                 videos = Video.objects.filter(korean_name__icontains=word)
-#                 for video in videos:
-#                     results.append({
-#                         'word': video.korean_name
-#                     })
-#
-#             if en_name:
-#                 videos = Video.objects.filter(english_name__icontains=word)
-#                 for video in videos:
-#                     results.append({
-#                         'word': video.english_name
-#                     })
-#
-#             # if category_name:
-#             #     categories = Category.objects.filter(name__icontains=word)
-#             #     for category in categories:
-#             #         results.append({
-#             #             'word': category.name
-#             #         })
-#
-#             return JsonResponse({'results': results}, status=201)
-#
-#         except Exception as error:
-#             return JsonResponse({'message': error}, status=400)
-#
-#
-# # like 해당하는 제목찾아서 그 제목의 like 쌓는 기능
-# # 좋아요 기능 구현  POST 방식
+
+def showvideo(request):
+    video_title = []
+    video_image = []
+    # video_explain = []
+    video_clip = []
+
+    video = Video.objects.all()
+    # explain = VideoModal.objects.all()
+    print(video)
+    for i in range(40):
+        video_title.append(video[i].video_title)
+        video_image.append(video[i].video_image)
+        # video_explain.append(explain[i].video_description)
+        video_clip.append(video[i].video_clip)
+
+    print(video_clip)
+    print('success')
+    print(video_image)
+    context = {'video_title': video_title,
+               'video_image': video_image,
+               # 'explain':video_explain,
+               'video_clip': video_clip}
+    return HttpResponse(json.dumps(context), content_type="application/json")
+
+
+
+
+# like 해당하는 제목찾아서 그 제목의 like 쌓는 기능
+# 좋아요 기능 구현  POST 방식
 # def like_star():
 #     title_receive = request.form['title_give']
 #     target_prodct = Video.objects.get({'title':title_receive})
 #     current_prodct = target_prodct['like']
 #     new_like = current_prodct + 1
+#     video.total_like = new_like
 #
 #     db.crawling.update_one({'title': title_receive}, {'$set': {'like' : new_like}})
 #     return jsonify({'msg': 'like!'})
-#
+
 #
 # # like 순으로 배열하는 기능  GET 방식
 # def showHeart():
@@ -105,9 +98,7 @@ from django.views import View
 #     return jsonify({'products': product})
 
 
-
 def showColumn(request):
-
     video_title = []
     video_image = []
     video_explain = []
@@ -118,7 +109,7 @@ def showColumn(request):
         video_image.append(video[i].video_image)
         video_explain.append(explain[i].video_description)
 
-    #별점 순
+    # 별점 순
     star_title = []
     star_image = []
     star_explain = []
@@ -185,9 +176,9 @@ def showColumn(request):
 
     print('success')
     print(star_title)
-    context = {'video_title': video_title ,
-               'video_image':video_image,
-               'explain':video_explain,
+    context = {'video_title': video_title,
+               'video_image': video_image,
+               'explain': video_explain,
                'romance_title': romance_title,
                'romance_image': romance_image,
                'romance_explain': romance_explain,
@@ -209,3 +200,65 @@ def showColumn(request):
                }
     return HttpResponse(json.dumps(context), content_type="application/json")
 
+
+# 장고 검색기능 재도전!
+def search(request):
+    if request.method == 'GET':
+
+        query = request.GET['query']
+
+        title = Video.objects.filter(video_title__contains=query)
+        actor = Actor.objects.filter(actor_name__contains=query)
+        genre = Genre.objects.filter(genre_name__contains=query)
+        if title:
+            title = Video.objects.filter(video_title__contains=query)
+        else:
+            if actor:
+                title = Actor.objects.get(actor_name__contains=query).actor.all()
+            else:
+                if genre:
+                    title = Genre.objects.get(genre_name__contains=query).genre.all()
+                else:
+                    title = []
+
+
+
+
+        # genre = Video.genre.all()
+        # video = Video.objects.get(video_title__contains=query)
+        # title = video.video_title
+        # video_image = video.video_image(video_title=video_image[i].video_title)
+        # video_clip = video.video_clip
+        # genre = Genre.objects.filter(genre_name__contains=query)
+        # selectmovie = title.union(genre)
+
+
+        #
+        # video = Video.objects.all()
+        # explain = VideoModal.objects.all()
+        # print(video)
+        # for i in range(40):
+            # video_title.append(video[i].video_title)
+            # video_image.append(video[i].video_image)
+            # video_explain.append(explain[i].video_description)
+            # video_clip.append(video[i].video_clip)
+        #
+        # print(video_clip)
+        # print('success')
+        # print(video_image)
+        context = {
+            # 'selectmovie': selectmovie,
+            "query": query,
+            "title": title,
+
+
+        }
+
+
+
+        return render(request, 'mainpage_html/search.html', context)
+    elif request.method == 'POST':
+        return render(request, 'mainpage_html/search.html')
+    #
+    # else:
+    #     return render(request, 'mainpage_html/search.html')
