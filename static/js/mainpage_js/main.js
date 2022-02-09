@@ -316,18 +316,18 @@ window.addEventListener("keyup", e => {
 
 
 function likeheart(title) {
-    alert(title)
+
     let final_like = '0';
     let dislike = document.getElementById('dislike');
     let like = document.getElementById('like');
     if (like.style.backgroundColor === "black") {
-        alert('좋아요 완료!')
+
         like.style.backgroundColor = "lightgray";
         final_like = '1';
         dislike.disabled=true;
 
     } else {
-        alert('좋아요 취소')
+
         like.style.backgroundColor = "black";
         final_like = '0';
         dislike.disabled=false;
@@ -352,13 +352,13 @@ function dislikeheart(title) {
     let like = document.getElementById('like');
     let dislike = document.getElementById('dislike');
     if (dislike.style.backgroundColor === "black") {
-        alert('싫어요 완료!')
+
         dislike.style.backgroundColor = "lightgray";
         final_like = -1;
         like.disabled=true;
 
     } else {
-        alert('싫어요 취소')
+
         like.style.backgroundColor = "black";
         like.disabled=false;
         final_like = 0;

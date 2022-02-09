@@ -115,7 +115,7 @@ def showColumn(request):
     star_title = []
     star_image = []
     star_explain = []
-    stars = Video.objects.all().order_by('-star_point')
+    stars = Video.objects.all().order_by('-total_like')
     for i in range(8):
         star_title.append(stars[i].video_title)
         star_image.append(stars[i].video_image)
