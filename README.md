@@ -112,7 +112,7 @@
 
 
 ### 📌 끈기와 집념! 문제해결!
-##### 안되면 될때까지!! - <a href="https://github.com/seongolee/17team_netflix_clone/wiki" >상세보기 - WIKI 이동</a>
+##### 안되면 될때까지!! - <a href="https://github.com/seongolee/17team_netflix_clone/wiki/%EC%8B%9C%ED%96%89%EC%B0%A9%EC%98%A4!" >상세보기 - WIKI 이동</a>
 
 ### 📌[Notion](https://www.notion.so/Netflix-Clone-17Team-Project-c5753c3e9b434085ac9e68f0a2a49007)
 
